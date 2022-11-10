@@ -1,0 +1,10 @@
+    {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+        <h2>admin</h2>
+        <div class="inhalt">
+            <p>inhalt</p>
+        </div>
+
+    </div>
+    {% endblock %}
