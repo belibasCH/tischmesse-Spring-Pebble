@@ -16,9 +16,9 @@
     <main>
         <nav>
             <ul>
-                <li><a href="{{ href("/") }}">li 1 </a></li>
-                <li><a href="{{ href("/branchen") }}">li 2 </a></li>
-                <li><a href="{{ href("/") }}">li 3 </a></li>
+                <li><img src="{{ href("/img/aussteller-icon.svg") }}" alt="Aussteller-icon"> <a href="{{ href("/") }}">Aussteller </a></li>
+                <li><img src="{{ href("/img/branchen-icon.svg") }}" alt="Branchen-icon"> <a href="{{ href("/branchen") }}">Branchen</a></li>
+                <li><img src="{{ href("/img/user-icon.svg") }}" alt="User-icon"> <a href="{{ href("/") }}">User </a></li>
             </ul>
             <div id="navigation-bottom">
                 <p>Icons?</p>

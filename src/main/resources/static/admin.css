@@ -1,3 +1,5 @@
+
+
 #container  {
     display: flex;
     flex-direction: column;
@@ -12,9 +14,7 @@ header {
     padding: 0 1rem;
     box-sizing: border-box;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: sans-serif;
-}
+
 h1{
     font-size: 1em;
 }
@@ -29,22 +29,41 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     background-color: azure;
-    min-width: 100px;
+    min-width: 200px;
 }
 
 ul{
     display: flex;
+    gap: 2rem;
     flex-direction: column;
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+li{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
 
+a {
+    color: black;
+}
+
+
+
+li img {
+    width: 30px;
+    height: 30px;
 }
 #navigation-bottom {
-    background-color: blueviolet;
+    background-color: var(--primary-color);
 }
 .content {
     width: 100%;
-    background-color: aqua;
+    background-color: var(--background-color);
     padding: 1rem;
 }
