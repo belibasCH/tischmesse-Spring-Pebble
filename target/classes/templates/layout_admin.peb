@@ -1,0 +1,25 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ href("/style.css") }}">
+    <title>Tischmesse</title>
+</head> <body>
+<div id="container">
+    <header>
+        <h1>Tischmesse</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ href("/") }}">li 1 </a></li>
+            <li><a href="{{ href("/contacts") }}">li 2 </a></li>
+            <li><a href="{{ href("/about") }}">li 3 </a></li>
+        </ul>
+    </nav>
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+</html>
