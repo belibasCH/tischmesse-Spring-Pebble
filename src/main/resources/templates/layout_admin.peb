@@ -20,6 +20,9 @@
                 <li><a href="{{ href("/branchen") }}">li 2 </a></li>
                 <li><a href="{{ href("/") }}">li 3 </a></li>
             </ul>
+            <div id="navigation-bottom">
+                <p>Icons?</p>
+            </div>
         </nav>
 
         {% block content %}{% endblock %}
