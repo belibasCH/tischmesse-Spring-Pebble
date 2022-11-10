@@ -10,4 +10,7 @@ public class TischmesseController {
     public String admin() {
         return "/admin";
     }
+
+    @GetMapping("/")
+    public String home(){ return "/home";}
 }
