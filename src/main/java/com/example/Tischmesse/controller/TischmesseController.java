@@ -28,6 +28,6 @@ public class TischmesseController {
                              @RequestParam String jobTitle,
                              @RequestParam String company) {
         //var created =
-        return "redirect:/aussteller/" + created.getId(); ;
+        return "redirect:/aussteller/" + created.getId();
     }
 }
