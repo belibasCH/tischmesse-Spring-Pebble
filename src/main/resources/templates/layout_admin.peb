@@ -19,18 +19,17 @@
     <main>
         <nav>
             <ul>
-                <li><img src="{{ href("/img/aussteller-icon.svg") }}" alt="Aussteller-icon"> <a href="{{ href("/") }}">Aussteller </a></li>
-                <li><img src="{{ href("/img/branchen-icon.svg") }}" alt="Branchen-icon"> <a href="{{ href("/branchen") }}">Branchen</a></li>
-                <li><img src="{{ href("/img/user-icon.svg") }}" alt="User-icon"> <a href="{{ href("/") }}">User </a></li>
+                <li> <a href="{{ href("/") }}"><img src="{{ href("/img/aussteller-icon.svg") }}" alt="Aussteller-icon"> Aussteller </a></li>
+                <li><a href="{{ href("/branchen") }}"><img src="{{ href("/img/branchen-icon.svg") }}" alt="Branchen-icon"> Branchen</a></li>
+                <li><a href="{{ href("/") }}"><img src="{{ href("/img/user-icon.svg") }}" alt="User-icon"> User </a></li>
             </ul>
             <div id="navigation-bottom">
-                <p>Icons?</p>
+                <p>About</p>
             </div>
         </nav>
 
         {% block content %}{% endblock %}
     </main>
-
     </div>
 </body>
 </html>

@@ -47,7 +47,7 @@ ul{
     margin: 0;
     padding: 0;
 }
-li{
+nav li a{
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -62,7 +62,7 @@ a {
 
 
 
-li img {
+li a img {
     width: 30px;
     height: 30px;
 }
