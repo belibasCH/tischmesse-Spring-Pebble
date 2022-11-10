@@ -3,22 +3,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ href("/style.css") }}">
+    <link href="{{ href("/styles.css") }}" rel="stylesheet">
+    <link href="{{ href("/admin.css") }}" rel="stylesheet">
     <title>Tischmesse</title>
-</head> <body>
+</head>
+<body>
 <div id="container">
     <header>
-        <h1>Tischmesse</h1>
+        <h1>Tischmesse - Admin</h1>
+        <p>User: Administrator</p>
     </header>
-    <nav>
-        <ul>
-            <li><a href="{{ href("/") }}">li 1 </a></li>
-            <li><a href="{{ href("/contacts") }}">li 2 </a></li>
-            <li><a href="{{ href("/about") }}">li 3 </a></li>
-        </ul>
-    </nav>
+    <main>
+        <nav>
+            <ul>
+                <li><img src="{{ href("/img/aussteller-icon.svg") }}" alt="Aussteller-icon"> <a href="{{ href("/") }}">Aussteller </a></li>
+                <li><img src="{{ href("/img/branchen-icon.svg") }}" alt="Branchen-icon"> <a href="{{ href("/branchen") }}">Branchen</a></li>
+                <li><img src="{{ href("/img/user-icon.svg") }}" alt="User-icon"> <a href="{{ href("/") }}">User </a></li>
+            </ul>
+            <div id="navigation-bottom">
+                <p>Icons?</p>
+            </div>
+        </nav>
 
         {% block content %}{% endblock %}
+    </main>
+
     </div>
 </body>
 </html>

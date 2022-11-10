@@ -1,9 +1,10 @@
     {% extends "layout_admin" %}
     {% block content %}
-    <main> <h1>admin</h1>
+    <div class="content">
+        <h1>admin</h1>
         <div class="inhalt">
             <p>inhalt</p>
         </div>
 
-    </main>
+    </div>
     {% endblock %}
