@@ -11,7 +11,10 @@
 <div id="container">
     <header>
         <h1>Tischmesse - Admin</h1>
-        <p>User: Administrator</p>
+        <div id="user">
+            <img src="{{ href("/img/single-user-icon.svg") }}" alt="Single-User-icon">
+        <p>Elias Braem</p>
+        </div>
     </header>
     <main>
         <nav>

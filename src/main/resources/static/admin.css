@@ -10,13 +10,20 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    background-color: gray;
+    background-color: var(--newblack-color);
     padding: 0 1rem;
     box-sizing: border-box;
+
+}
+#user {
+    display: flex;
+    gap: 1rem;
+    color: var(--background-color);
 }
 
 h1{
-    font-size: 1em;
+    font-size: 1.2em;
+    color: var(--background-color);
 }
 main {
     display: flex;
@@ -28,7 +35,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: azure;
+    background-color: var(--nav-color);
     min-width: 200px;
 }
 
@@ -45,7 +52,7 @@ li{
     align-items: center;
     gap: 1rem;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
 }
 
