@@ -4,22 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <link href="{{ href("/styles.css") }}" rel="stylesheet">
+    <link href="{{ href("/admin.css") }}" rel="stylesheet">
     <title>Tischmesse</title>
 </head>
 <body>
 <div id="container">
     <header>
         <h1>Tischmesse - Admin</h1>
+        <p>User: Administrator</p>
     </header>
-    <nav>
-        <ul>
-            <li><a href="{{ href("/") }}">li 1 </a></li>
-            <li><a href="{{ href("/branchen") }}">li 2 </a></li>
-            <li><a href="{{ href("/") }}">li 3 </a></li>
-        </ul>
-    </nav>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="{{ href("/") }}">li 1 </a></li>
+                <li><a href="{{ href("/branchen") }}">li 2 </a></li>
+                <li><a href="{{ href("/") }}">li 3 </a></li>
+            </ul>
+        </nav>
 
         {% block content %}{% endblock %}
+    </main>
+
     </div>
 </body>
 </html>
