@@ -1,0 +1,36 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{ href("/styles.css") }}" rel="stylesheet">
+    <link href="{{ href("/admin.css") }}" rel="stylesheet">
+    <title>Tischmesse</title>
+</head>
+<body>
+<div id="container">
+    <header>
+        <h1>Tischmesse - Admin</h1>
+        <div id="user">
+            <img src="{{ href("/img/single-user-icon.svg") }}" alt="Single-User-icon">
+        <p>Elias Braem</p>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li> <a href="{{ href("/") }}"><img src="{{ href("/img/aussteller-icon.svg") }}" alt="Aussteller-icon"> Aussteller </a></li>
+                <li><a href="{{ href("/branchen") }}"><img src="{{ href("/img/branchen-icon.svg") }}" alt="Branchen-icon"> Branchen</a></li>
+                <li><a href="{{ href("/") }}"><img src="{{ href("/img/user-icon.svg") }}" alt="User-icon"> User </a></li>
+            </ul>
+            <div id="navigation-bottom">
+                <p>About</p>
+            </div>
+        </nav>
+
+        {% block content %}{% endblock %}
+    </main>
+    </div>
+</body>
+</html>
+</html>
