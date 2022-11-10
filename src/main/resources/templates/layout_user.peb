@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ href("/style.css") }}">
+    <link rel="stylesheet" href="{{ href("/home.css") }}">
     <title>Tischmesse</title>
 </head> <body>
 <div id="container">
