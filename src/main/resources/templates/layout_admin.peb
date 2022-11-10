@@ -3,18 +3,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ href("/style.css") }}">
+    <link href="{{ href("/styles.css") }}" rel="stylesheet">
     <title>Tischmesse</title>
-</head> <body>
+</head>
+<body>
 <div id="container">
     <header>
-        <h1>Tischmesse</h1>
+        <h1>Tischmesse - Admin</h1>
     </header>
     <nav>
         <ul>
             <li><a href="{{ href("/") }}">li 1 </a></li>
-            <li><a href="{{ href("/contacts") }}">li 2 </a></li>
-            <li><a href="{{ href("/about") }}">li 3 </a></li>
+            <li><a href="{{ href("/branchen") }}">li 2 </a></li>
+            <li><a href="{{ href("/") }}">li 3 </a></li>
         </ul>
     </nav>
 
