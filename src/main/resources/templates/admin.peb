@@ -1,4 +1,4 @@
-    {% extends "layout" %}
+    {% extends "layout_admin" %}
     {% block content %}
     <main> <h1>admin</h1>
         <div class="inhalt">
