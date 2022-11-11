@@ -13,21 +13,8 @@ public class TischmesseController {
         return "/admin";
     }
 
-    @GetMapping("/aussteller")
-    public String showAussteller() {
-        return "/aussteller";
-    }
 
-    @GetMapping("/anmeldung")
-    public String anmeldung() {
-        return "/anmeldung";
-    }
-//    @PostMapping("/anmeldung")
-//    public String addAussteller(@RequestParam String firstName,
-//                             @RequestParam  String lastName,
-//                             @RequestParam String jobTitle,
-//                             @RequestParam String company) {
-//        //var created =
-//        return "redirect:/aussteller/;
-//    }
+    @GetMapping("/")
+    public String home(){ return "/home";}
+
 }
