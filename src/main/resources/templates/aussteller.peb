@@ -1,0 +1,13 @@
+    {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+        <h2>Aussteller</h2>
+        <div class="inhalt">
+            <p>inhalt</p>
+            {% for entry in aussterllerListe%}
+                <p> {{ entry.email }}</p>
+            {% endfor %}
+        </div>
+
+    </div>
+    {% endblock %}
