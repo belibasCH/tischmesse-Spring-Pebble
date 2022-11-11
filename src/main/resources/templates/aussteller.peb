@@ -1,7 +1,12 @@
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
-        <h2>Aussteller</h2>
+        <div class="admin-title">
+        <h2>Aussteller</h2><a href="{{ href("/aussteller") }}">
+            <a href="{{ href("/aussteller/add") }}"><button><img src="{{ href("/img/plus-icon.svg") }}" alt="add-aussteller"> Hinzufügen </button> </a>
+
+        </div>
+
         <div id="aussteller-container">
             {% for entry in aussterllerListe%}
                 <div class="aussteller-card">
