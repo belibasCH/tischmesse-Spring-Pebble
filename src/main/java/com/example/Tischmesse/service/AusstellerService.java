@@ -25,5 +25,9 @@ public class AusstellerService {
              ));
      return ausstellerListe;
  }
+    public List<Aussteller> addAussteller(Aussteller newAussteller) {
+        ausstellerListe.add(newAussteller);
+        return ausstellerListe;
+    }
 
 }

@@ -6,11 +6,11 @@ public class Aussteller {
     private String email;
     private int telefonNr;
     private String beschreibung;
-    private int anmdeldeDatum;
+    private int anmeldeDatum;
     private int tischNummer;
-    private int PLZ;
-    private String Ort;
-    private String Adresse;
+    private int plz;
+    private String ort;
+    private String adresse;
     private String url;
 
     private Boolean bezahlt;
@@ -19,16 +19,16 @@ public class Aussteller {
     //Branche Objekt
     //Liste mit Personen
 
-    public Aussteller(String firmenname, String email, int telefonNr, String beschreibung, int anmdeldeDatum, int tischNummer, int PLZ, String ort, String adresse, String url) {
+    public Aussteller(String firmenname, String email, int telefonNr, String beschreibung, int anmeldeDatum, int tischNummer, int plz, String ort, String adresse, String url) {
         this.firmenname = firmenname;
         this.email = email;
         this.telefonNr = telefonNr;
         this.beschreibung = beschreibung;
-        this.anmdeldeDatum = anmdeldeDatum;
+        this.anmeldeDatum = anmeldeDatum;
         this.tischNummer = tischNummer;
-        this.PLZ = PLZ;
-        Ort = ort;
-        Adresse = adresse;
+        this.plz = plz;
+        this.ort = ort;
+        this.adresse = adresse;
         this.url = url;
         this.bezahlt = false;
         this.akzeptiert = false;
@@ -67,11 +67,11 @@ public class Aussteller {
     }
 
     public int getAnmdeldeDatum() {
-        return anmdeldeDatum;
+        return anmeldeDatum;
     }
 
-    public void setAnmdeldeDatum(int anmdeldeDatum) {
-        this.anmdeldeDatum = anmdeldeDatum;
+    public void setAnmdeldeDatum(int anmeldeDatum) {
+        this.anmeldeDatum = anmeldeDatum;
     }
 
     public int getTischNummer() {
@@ -83,27 +83,27 @@ public class Aussteller {
     }
 
     public int getPLZ() {
-        return PLZ;
+        return plz;
     }
 
     public void setPLZ(int PLZ) {
-        this.PLZ = PLZ;
+        this.plz = PLZ;
     }
 
     public String getOrt() {
-        return Ort;
+        return ort;
     }
 
     public void setOrt(String ort) {
-        Ort = ort;
+        ort = ort;
     }
 
     public String getAdresse() {
-        return Adresse;
+        return adresse;
     }
 
     public void setAdresse(String adresse) {
-        Adresse = adresse;
+        adresse = adresse;
     }
 
     public String getUrl() {

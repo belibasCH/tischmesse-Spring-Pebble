@@ -99,4 +99,15 @@ li a img {
     background-color: var(--primary-color);
 }
 
+#aussteller-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+.form-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
 
