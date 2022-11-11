@@ -2,10 +2,14 @@
     {% block content %}
     <div class="content">
         <h2>Aussteller</h2>
-        <div class="inhalt">
-            <p>inhalt</p>
+        <div id="aussteller-container">
             {% for entry in aussterllerListe%}
-                <p> {{ entry.email }}</p>
+                <div class="aussteller-card">
+                    <p> {{ entry.firmenname }}</p>
+                    <p> E-Mail: {{ entry.email }}</p>
+                    <p> Tischnummer: {{ entry.tischnummer }}</p>
+                </div>
+
             {% endfor %}
         </div>
 
