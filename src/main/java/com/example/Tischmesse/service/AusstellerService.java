@@ -3,6 +3,7 @@ package com.example.Tischmesse.service;
 import com.example.Tischmesse.model.Aussteller;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class AusstellerService {
              "elias.braem@students.fhnw.ch" ,
              79,
              "Beschreibungstext",
-             01012022,
+             LocalDate.now(),
              20,
              8200,
              "Schaffhausen",

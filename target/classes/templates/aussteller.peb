@@ -1,10 +1,11 @@
+    {% import "button" %}
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
-        <div class="admin-title">
-        <h2>Aussteller</h2><a href="{{ href("/aussteller") }}">
-            <a href="{{ href("/aussteller/add") }}"><button><img src="{{ href("/img/plus-icon.svg") }}" alt="add-aussteller"> Hinzufügen </button> </a>
 
+        <div class="admin-title">
+        <h2>Aussteller</h2>
+            {{ button("/aussteller/add", "Button hinzufuegen", "/img/plus-icon.svg","Hinzufuegen" )}}
         </div>
 
         <div id="aussteller-container">
