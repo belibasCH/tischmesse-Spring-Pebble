@@ -2,8 +2,9 @@
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
+
         <div class="admin-title">
-        <h2>Aussteller</h2><a href="{{ href("/aussteller") }}">
+        <h2>Aussteller</h2>
             {{ button("/aussteller/add", "Button hinzufuegen", "/img/plus-icon.svg","Hinzufuegen" )}}
         </div>
 

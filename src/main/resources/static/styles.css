@@ -2,6 +2,7 @@
 
 :root {
     --primary-color: #ffd82a;
+    --primary-variant-color: #b2971d;
     --background-color: #EEEEEE;
     --nav-color: #BBBBBB;
     --newblack-color: #111111;
@@ -26,7 +27,13 @@ p {
 button{
     display: flex;
     align-items: center;
-    padding: 0.5rem;
-    gap: 0.5rem;
+    padding: 0.8rem;
+    gap: 0.8rem;
+    cursor: pointer;
     background-color: var(--primary-color);
+    border: 0px;
+}
+button:hover{
+    background-color: var(--primary-variant-color);
+
 }
