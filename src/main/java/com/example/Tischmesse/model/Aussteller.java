@@ -1,12 +1,14 @@
 package com.example.Tischmesse.model;
 
+import java.time.LocalDate;
+
 public class Aussteller {
 
     private String firmenname;
     private String email;
     private int telefonNr;
     private String beschreibung;
-    private int anmeldeDatum;
+    private LocalDate anmeldeDatum;
     private int tischNummer;
     private int plz;
     private String ort;
@@ -19,7 +21,7 @@ public class Aussteller {
     //Branche Objekt
     //Liste mit Personen
 
-    public Aussteller(String firmenname, String email, int telefonNr, String beschreibung, int anmeldeDatum, int tischNummer, int plz, String ort, String adresse, String url) {
+    public Aussteller(String firmenname, String email, int telefonNr, String beschreibung, LocalDate anmeldeDatum, int tischNummer, int plz, String ort, String adresse, String url) {
         this.firmenname = firmenname;
         this.email = email;
         this.telefonNr = telefonNr;
@@ -66,11 +68,11 @@ public class Aussteller {
         this.beschreibung = beschreibung;
     }
 
-    public int getAnmdeldeDatum() {
+    public LocalDate getAnmdeldeDatum() {
         return anmeldeDatum;
     }
 
-    public void setAnmdeldeDatum(int anmeldeDatum) {
+    public void setAnmdeldeDatum(LocalDate anmeldeDatum) {
         this.anmeldeDatum = anmeldeDatum;
     }
 

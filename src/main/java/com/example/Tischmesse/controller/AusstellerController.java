@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
+
 @Controller
 public class AusstellerController {
 
@@ -23,7 +25,7 @@ public class AusstellerController {
     }
     @GetMapping("/aussteller/add")
     public String anmeldung() {
-        return "/form";
+        return "/ausstellerForm";
     }
 
     @PostMapping("/aussteller/add")
@@ -31,13 +33,13 @@ public class AusstellerController {
                                 @RequestParam String email,
                                 @RequestParam int telefonNr,
                                 @RequestParam String beschreibung,
-                                @RequestParam int anmeldeDatum,
-                                @RequestParam int tischNummer,
                                 @RequestParam int plz,
                                 @RequestParam String ort,
                                 @RequestParam String adresse,
                                 @RequestParam String url) {
-        service.addAussteller(new Aussteller(firmenname, email, telefonNr, beschreibung, anmeldeDatum, tischNummer, plz, ort, adresse,url));
+        LocalDate currentDate = LocalDate.now(); // Create a date object
+        int tischNummer = 0;
+        service.addAussteller(new Aussteller(firmenname, email, telefonNr, beschreibung, currentDate, tischNummer, plz, ort, adresse,url));
         return "redirect:/aussteller";
     }
 

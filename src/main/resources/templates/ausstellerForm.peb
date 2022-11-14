@@ -1,0 +1,74 @@
+    {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+        <h1>Aussteller hinzufügen</h1>
+        <form action="{{ href("/aussteller/add") }}" method="post">
+            <div id="aussteller-form">
+                <div id="aussteller-left">
+                    <div class="form-block">
+                        <h2>Informationen übe Sie und Ihre Firma</h2>
+                        <p>Damit wir Sie wenn nötig kontaktieren können</p>
+                    </div>
+                    <div class="form-block">
+                        <label for="firmenname" class="form-label">Firmenname*</label>
+                        <input type="text" name="firmenname" id="firmenname">
+                    </div>
+
+                    <div class="form-block">
+                        <label for="email" class="form-label">email</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+
+                    <div class="form-block">
+                        <label for="telefonNr" class="form-label">telefonNr</label>
+                        <input type="number" name="telefonNr" id="telefonNr">
+                    </div>
+
+                    <div class="form-block">
+                        <label for="plz" class="form-label">plz</label>
+                        <input type="number" name="plz" id="plz">
+                    </div>
+
+                    <div class="form-block">
+                        <label for="ort" class="form-label">ort</label>
+                        <input type="text" name="ort" id="ort">
+                    </div>
+
+                    <div class="form-block">
+                        <label for="adresse" class="form-label">adresse</label>
+                        <input type="text" name="adresse" id="adresse">
+                    </div>
+
+                </div>
+                <div id="aussteller-right">
+                    <div class="form-block">
+                        <h2>Informationen für das öffentliche Ausstellerverzeichniss</h2>
+                        <p>Mehr Informationen: <a href="https://tischmesse.sh" target="_blank">tischmesse.sh</a></p>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="url" class="form-label">Branche auswählen</label>
+                        <input type="text" name="url" id="url" placeholder="---">
+                    </div>
+
+                    <div class="form-block">
+                        <label for="beschreibung" class="form-label">beschreibung</label>
+                        <textarea name="beschreibung" id="beschreibung"></textarea>
+                    </div>
+
+
+                    <div class="form-block">
+                        <label for="url" class="form-label">Website-Url</label>
+                        <input type="text" name="url" id="url" placeholder="https://standort-sh.ch">
+                    </div>
+
+                </div>
+            </div>
+            <p>
+                <input type="submit" value="Hinzufügen">
+                <a class="button secondary" href="{{ href("/aussteller") }}">Back</a>
+            </p>
+        </form>
+
+    </div>
+    {% endblock %}
