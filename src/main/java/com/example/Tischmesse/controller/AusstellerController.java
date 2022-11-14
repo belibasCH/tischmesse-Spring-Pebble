@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
+import java.util.Optional;
+
 @Controller
 public class AusstellerController {
 
@@ -23,21 +26,31 @@ public class AusstellerController {
     }
     @GetMapping("/aussteller/add")
     public String anmeldung() {
-        return "/form";
+        return "/ausstellerForm";
     }
 
     @PostMapping("/aussteller/add")
     public String addAussteller(@RequestParam String firmenname,
-                                @RequestParam String email,
-                                @RequestParam int telefonNr,
-                                @RequestParam String beschreibung,
-                                @RequestParam int anmeldeDatum,
-                                @RequestParam int tischNummer,
-                                @RequestParam int plz,
-                                @RequestParam String ort,
-                                @RequestParam String adresse,
-                                @RequestParam String url) {
-        service.addAussteller(new Aussteller(firmenname, email, telefonNr, beschreibung, anmeldeDatum, tischNummer, plz, ort, adresse,url));
+                                @RequestParam Optional<String> email,
+                                @RequestParam Optional<Integer> telefonNr,
+                                @RequestParam Optional<String> beschreibung,
+                                @RequestParam Optional<Integer> plz,
+                                @RequestParam Optional<String> ort,
+                                @RequestParam Optional<String> adresse,
+                                @RequestParam Optional<String> url) {
+        LocalDate currentDate = LocalDate.now(); // Create a date object
+        int tischNummer = 0;
+        service.addAussteller(new Aussteller(
+                firmenname,
+                email.orElse(""),
+                telefonNr.orElse(0),
+                beschreibung.orElse(""),
+                currentDate,
+                tischNummer,
+                plz.orElse(0),
+                ort.orElse(""),
+                adresse.orElse(""),
+                url.orElse("")));
         return "redirect:/aussteller";
     }
 
