@@ -1,0 +1,22 @@
+    {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+        <div class="admin-title">
+        <h2>Aussteller</h2><a href="{{ href("/aussteller") }}">
+            <a href="{{ href("/aussteller/add") }}"><button><img src="{{ href("/img/plus-icon.svg") }}" alt="add-aussteller"> Hinzufügen </button> </a>
+
+        </div>
+
+        <div id="aussteller-container">
+            {% for entry in aussterllerListe%}
+                <div class="aussteller-card">
+                    <p> {{ entry.firmenname }}</p>
+                    <p> E-Mail: {{ entry.email }}</p>
+                    <p> Tischnummer: {{ entry.tischnummer }}</p>
+                </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+    {% endblock %}

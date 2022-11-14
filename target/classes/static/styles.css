@@ -3,6 +3,8 @@
 :root {
     --primary-color: #ffd82a;
     --background-color: #EEEEEE;
+    --nav-color: #BBBBBB;
+    --newblack-color: #111111;
 }
 
 body {
@@ -13,6 +15,10 @@ a:not(:hover) {
     text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 , li{
+    font-family: 'Montserrat', sans-serif;
+    font-variant: small-caps;
+}
+p {
     font-family: 'Montserrat', sans-serif;
 }
