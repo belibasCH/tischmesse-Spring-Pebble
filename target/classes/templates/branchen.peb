@@ -11,8 +11,6 @@
             <div class="branchen-card">
                 <p class="form-label">{{ entry }}</p>
             </div>
-
-
             {% endfor %}
         </div>
 

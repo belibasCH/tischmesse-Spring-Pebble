@@ -4,7 +4,7 @@
             <h1>Aussteller hinzufügen</h1>
             <form action="{{ href("/aussteller/add") }}" method="post">
                 <div id="aussteller-form">
-                    <label for="firmenname" class="form-label">Firmenname</label>
+                    <label for="firmenname" class="form-label">Firmenname*</label>
                     <input type="text" name="firmenname" id="firmenname">
 
                     <label for="email" class="form-label">email</label>
@@ -14,7 +14,7 @@
                     <input type="number" name="telefonNr" id="telefonNr">
 
                     <label for="beschreibung" class="form-label">beschreibung</label>
-                    <input type="text" name="beschreibung" id="beschreibung">
+                    <textarea name="beschreibung" id="beschreibung"></textarea>
 
                     <label for="anmeldeDatum" class="form-label">anmeldeDatum</label>
                     <input type="number" name="anmeldeDatum" id="anmeldeDatum">
@@ -37,7 +37,6 @@
                 </div>
                 <p>
                     <input type="submit" value="Hinzufügen">
-
                     <a class="button secondary" href="{{ href("/aussteller") }}">Back</a>
                 </p>
             </form>

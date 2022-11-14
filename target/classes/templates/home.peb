@@ -2,11 +2,13 @@
 
     {% block content %}
     <main>
-        <div>This is the Home-Page</div>
+        <div>Ausstellerliste 2022</div>
 
+        {% for entry in ausstellerListe %}
+                <div class="article-box">
+                    <p class="form-label">{{ entry }}</p>
+                </div>
+                {% endfor %}
 
-        <div class="articleBox">
-
-        </div>
     </main>
     {% endblock %}
