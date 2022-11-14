@@ -2,8 +2,9 @@
 
 :root {
     --primary-color: #ffd82a;
+    --primary-variant-color: #b2971d;
     --background-color: #EEEEEE;
-    --nav-color: #BBBBBB;
+    --onBackground-color: #BBBBBB;
     --newblack-color: #111111;
 }
 
@@ -21,4 +22,18 @@ h1, h2, h3, h4, h5, h6 , li{
 }
 p {
     font-family: 'Montserrat', sans-serif;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    gap: 0.8rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: 0px;
+}
+button:hover{
+    background-color: var(--primary-variant-color);
+
 }
