@@ -23,8 +23,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Tischmesse/service/BranchenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Tischmesse/service/BranchenService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/branchen.peb" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/branchen.peb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/form.peb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/aussteller.peb" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/aussteller.peb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/form.peb" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/form.peb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,7 @@
       <recent name="com.example.Tischmesse" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.TischmesseApplication (1)">
+  <component name="RunManager" selected="Spring Boot.TischmesseApplication">
     <configuration name="TischmesseApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="webec-project_elias.braem_joel.finger" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Tischmesse.TischmesseApplication" />
