@@ -35,7 +35,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: var(--nav-color);
+    background-color: var(--onBackground-color);
     min-width: 200px;
 }
 
@@ -115,5 +115,19 @@ li a img {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
 }
+input, select{
+    border: 1px solid var(--onBackground-color);
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    height: 2rem;
+    padding: 5px;
+}
 
+textarea{
+    border: 1px solid var(--onBackground-color);
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    height: 8em;
+    padding: 5px;
+}
 

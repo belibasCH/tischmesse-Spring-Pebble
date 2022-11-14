@@ -22,27 +22,27 @@
                     </div>
 
                     <div class="form-block">
-                        <label for="email" class="form-label">email</label>
-                        <input type="text" name="email" id="email">
+                        <label for="email" class="form-label">E-Mail</label>
+                        <input type="email" name="email" id="email">
                     </div>
 
                     <div class="form-block">
-                        <label for="telefonNr" class="form-label">telefonNr</label>
+                        <label for="telefonNr" class="form-label">Telefon</label>
                         <input type="number" name="telefonNr" id="telefonNr">
                     </div>
 
                     <div class="form-block">
-                        <label for="plz" class="form-label">plz</label>
+                        <label for="plz" class="form-label">PlZ</label>
                         <input type="number" name="plz" id="plz">
                     </div>
 
                     <div class="form-block">
-                        <label for="ort" class="form-label">ort</label>
+                        <label for="ort" class="form-label">Ort</label>
                         <input type="text" name="ort" id="ort">
                     </div>
 
                     <div class="form-block">
-                        <label for="adresse" class="form-label">adresse</label>
+                        <label for="adresse" class="form-label">Adresse</label>
                         <input type="text" name="adresse" id="adresse">
                     </div>
 
@@ -54,12 +54,17 @@
                     </div>
 
                     <div class="form-block">
-                        <label for="url" class="form-label">Branche auswählen</label>
-                        <input type="text" name="url" id="url" placeholder="---">
+                        <label for="branche" class="form-label">Branche auswählen</label>
+                        <select name="branche" id="branche">
+                            <option value="---">---</option>
+                            <option value="saab">Finanzwesen</option>
+                            <option value="mercedes">Gesundheitswesen</option>
+                            <option value="audi">Sanitär, Sepngler, Dachdecker</option>
+                        </select>
                     </div>
 
                     <div class="form-block">
-                        <label for="beschreibung" class="form-label">beschreibung</label>
+                        <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
                         <textarea name="beschreibung" id="beschreibung"></textarea>
                     </div>
 

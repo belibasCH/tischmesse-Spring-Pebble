@@ -6,11 +6,11 @@ public class Aussteller {
 
     private String firmenname;
     private String email;
-    private int telefonNr;
+    private Integer telefonNr;
     private String beschreibung;
     private LocalDate anmeldeDatum;
-    private int tischNummer;
-    private int plz;
+    private Integer tischNummer;
+    private Integer plz;
     private String ort;
     private String adresse;
     private String url;
@@ -21,7 +21,7 @@ public class Aussteller {
     //Branche Objekt
     //Liste mit Personen
 
-    public Aussteller(String firmenname, String email, int telefonNr, String beschreibung, LocalDate anmeldeDatum, int tischNummer, int plz, String ort, String adresse, String url) {
+    public Aussteller(String firmenname, String email, Integer telefonNr, String beschreibung, LocalDate anmeldeDatum, Integer tischNummer, Integer plz, String ort, String adresse, String url) {
         this.firmenname = firmenname;
         this.email = email;
         this.telefonNr = telefonNr;
@@ -52,7 +52,7 @@ public class Aussteller {
         this.email = email;
     }
 
-    public int getTelefonNr() {
+    public Integer getTelefonNr() {
         return telefonNr;
     }
 
@@ -76,7 +76,7 @@ public class Aussteller {
         this.anmeldeDatum = anmeldeDatum;
     }
 
-    public int getTischNummer() {
+    public Integer getTischNummer() {
         return tischNummer;
     }
 
@@ -84,7 +84,7 @@ public class Aussteller {
         this.tischNummer = tischNummer;
     }
 
-    public int getPLZ() {
+    public Integer getPLZ() {
         return plz;
     }
 
