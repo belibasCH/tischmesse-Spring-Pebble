@@ -1,18 +1,30 @@
     {% extends "layout_admin" %}
     {% block content %}
-    <div class="content">
+    <div class="content" id="Branchenanordnung">
 
-        <div class="admin-title">
-            <h2>Branche</h2>
-        </div>
-
-        <div class="branchen-view">
-            {% for entry in branchenListe %}
-            <div class="branchen-card">
-                <p class="form-label">{{ entry }}</p>
+        <div>
+            <div class="admin-title">
+                <h2>Branche</h2>
             </div>
-            {% endfor %}
+            <div class="branchen-view">
+                    {% for entry in branchenListe %}
+                    <div class="branchen-card">
+                        <p class="form-label">{{ entry }}</p>
+                    </div>
+                    {% endfor %}
+            </div>
         </div>
-
     </div>
+    <div id="addBranchenBox">
+        <div id="BranchenBox">
+            <div id="EingabeBlock">
+                <form action="{{ href("/branchen") }}" method="post">
+                <label for="branchenname" class="form-label">Branchenname</label>
+                <input type="text" name="branchenname" id="branchenname">
+                    <input type="submit" value="Hinzufügen">
+                </form>
+            </div>
+        </div>
+    </div>
+
     {% endblock %}
