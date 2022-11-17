@@ -1,9 +1,15 @@
 package com.example.Tischmesse.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+@Entity
 public class Aussteller {
-
+    @Id
+    @GeneratedValue
+    private int id;
     private String firmenname;
     private String email;
     private Integer telefonNr;
@@ -34,6 +40,10 @@ public class Aussteller {
         this.url = url;
         this.bezahlt = false;
         this.akzeptiert = false;
+    }
+
+    public Aussteller() {
+
     }
 
     public String getFirmenname() {

@@ -54,4 +54,5 @@ public class AusstellerController {
         return "redirect:/aussteller";
     }
 
+
 }
