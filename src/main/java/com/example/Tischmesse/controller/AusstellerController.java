@@ -5,6 +5,7 @@ import com.example.Tischmesse.service.AusstellerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,7 +22,7 @@ public class AusstellerController {
     }
     @GetMapping("/aussteller")
     public String showAussteller(Model model) {
-        model.addAttribute("aussterllerListe", service.getAusstellerListe());
+        model.addAttribute("ausstellerListe", service.getAusstellerListe());
         return "/aussteller";
     }
     @GetMapping("/aussteller/add")
@@ -54,5 +55,14 @@ public class AusstellerController {
         return "redirect:/aussteller";
     }
 
+    @GetMapping("/aussteller/{id}")
+    public String anmeldung( @PathVariable int id, Model model
+    ) {
+        var aussteller = service.findAusstellerById(id).orElseThrow(ContactNotFound::new);
+        model.addAttribute("aktuellerAussteller", aussteller);
+        return "/ausstellerEinzeln";
+    }
+
+        private static class ContactNotFound extends RuntimeException {}
 
 }

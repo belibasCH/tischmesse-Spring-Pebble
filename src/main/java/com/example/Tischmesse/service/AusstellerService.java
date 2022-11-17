@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AusstellerService {
@@ -26,4 +27,7 @@ public class AusstellerService {
         return newAussteller;
     }
 
+    public Optional<Aussteller> findAusstellerById(int id) {
+            return repo.findById(id);
+    }
 }

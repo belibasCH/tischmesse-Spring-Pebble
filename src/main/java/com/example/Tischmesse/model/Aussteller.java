@@ -20,7 +20,6 @@ public class Aussteller {
     private String ort;
     private String adresse;
     private String url;
-
     private Boolean bezahlt;
     private Boolean akzeptiert;
 

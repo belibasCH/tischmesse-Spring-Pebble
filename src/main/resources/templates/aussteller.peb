@@ -9,11 +9,17 @@
         </div>
 
         <div id="aussteller-container">
-            {% for entry in aussterllerListe%}
+            {% for entry in ausstellerListe%}
                 <div class="aussteller-card">
                     <p> {{ entry.firmenname }}</p>
                     <p> E-Mail: {{ entry.email }}</p>
                     <p> Tischnummer: {{ entry.tischnummer }}</p>
+                    <div class="aussteller-card-icons">
+
+                    <a href=" {{ href("/aussteller/"+entry.id) }}"><img src="/img/eye-icon.svg" alt="view icon"/></a>
+                        <a href=" {{ href("/aussteller/"+entry.id) }}"><img src="/img/edit-icon.svg" alt="edit icon"/></a>
+                        <a href=" {{ href("/aussteller/"+entry.id) }}"><img src="/img/del-icon.svg" alt="delete icon"/></a>
+                    </div>
                 </div>
 
             {% endfor %}

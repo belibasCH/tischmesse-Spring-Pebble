@@ -82,11 +82,21 @@ li a img {
 }
 .aussteller-card {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     background-color: azure;
     padding: 0 1rem;
 }
+.aussteller-card-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+.aussteller-card-icons img{
+height: 1rem;
+
+}
+
 .admin-title{
     display: flex;
     justify-content: space-between;
@@ -145,4 +155,14 @@ textarea{
     height: 8em;
     padding: 5px;
 }
+.aussteller-status {
+    display: flex;
+    gap: 2rem;
 
+}
+.aussteller-status div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
