@@ -11,7 +11,6 @@ public class BranchenService {
     private List<String> branchenListe = new ArrayList<>();
 
     public List<String> getBranchenListe(){
-        branchenListe.add("Autobranche");
         return branchenListe;
     }
 
