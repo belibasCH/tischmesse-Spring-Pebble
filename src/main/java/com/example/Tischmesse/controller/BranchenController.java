@@ -45,7 +45,7 @@ public class BranchenController {
     }
 
 
-
+    /*
     private void checkBranchenname(String branchenName){
         if(branchenName == null || branchenName.length() < 2){
             throw new InvalidBranchenName();
@@ -60,6 +60,8 @@ public class BranchenController {
     }
 
     private static class InvalidBranchenName extends RuntimeException{}
+
+     */
 
 
 
