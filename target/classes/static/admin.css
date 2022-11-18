@@ -148,15 +148,15 @@ textarea{
 
 #addBranchenBox{
     background-color: darkgray;
-    width: 25%;
+    width: 25em;
     height: 100%;
-    align-content: center;
     padding: 1em;
-    flex-direction: column;
 }
 
 
 #EingabeBlock{
     padding-bottom: 0.5em;
+    flex-direction: unset;
+
 }
 
