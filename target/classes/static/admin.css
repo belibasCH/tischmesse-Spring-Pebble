@@ -149,7 +149,6 @@ textarea{
 #addBranchenBox{
     background-color: darkgray;
     width: 25em;
-    height: 100%;
     padding: 1em;
 }
 
@@ -178,5 +177,14 @@ textarea{
     font-size: 0.9rem;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+}
+
+input[value=Delete]{
+    color: white;
+    background-color: crimson;
+}
+
+input[value=Hinzufügen]{
+    background-color: #ffd82a;
 }
 
