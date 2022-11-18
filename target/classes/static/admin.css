@@ -157,6 +157,26 @@ textarea{
 #EingabeBlock{
     padding-bottom: 0.5em;
     flex-direction: unset;
+}
 
+#branchenübersicht{
+
+}
+
+#branchenDelete{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branchenentries{
+    flex-direction: row;
+}
+
+.branchen-label{
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
 }
 

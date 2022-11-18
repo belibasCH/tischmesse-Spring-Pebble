@@ -34,6 +34,16 @@ public class BranchenController {
     }
 
     /*
+    @PostMapping("/branchen")
+    public String deleteBranche(@RequestParam String branchennameDelete , Model model){
+        model.addAttribute("branchenListe", branchenService.removeBranche(branchennameDelete));
+        model.addAttribute("branchenListe", branchenService.getBranchenListe());
+        return "/branchen";
+    }
+
+     */
+
+    /*
 
     private void checkBranchenname(String branchenName){
         if(branchenName == null || branchenName.length() < 4){
