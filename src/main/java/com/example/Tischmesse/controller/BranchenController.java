@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -26,27 +28,26 @@ public class BranchenController {
     }
 
     @PostMapping("/branchen")
-    public String showBranchen(@RequestParam String branchenname, Model model){
+    public String addBranchen(@RequestParam String branchenname, Model model){
         //checkBranchenname(branchenname);
         model.addAttribute("branchenListe", branchenService.addBranche(branchenname));
         model.addAttribute("branchenListe", branchenService.getBranchenListe());
         return "/branchen";
     }
 
-    /*
-    @PostMapping("/branchen")
-    public String deleteBranche(@RequestParam String branchennameDelete , Model model){
-        model.addAttribute("branchenListe", branchenService.removeBranche(branchennameDelete));
+
+    @PostMapping("/branchen/{id}")
+    public String deleteBranche(@PathVariable String id , Model model) {
+        model.addAttribute("branchenListe", branchenService.removeBranche(id));
+        System.out.println("Hello");
         model.addAttribute("branchenListe", branchenService.getBranchenListe());
         return "/branchen";
     }
 
-     */
 
-    /*
 
     private void checkBranchenname(String branchenName){
-        if(branchenName == null || branchenName.length() < 4){
+        if(branchenName == null || branchenName.length() < 2){
             throw new InvalidBranchenName();
         }
     }
@@ -60,7 +61,7 @@ public class BranchenController {
 
     private static class InvalidBranchenName extends RuntimeException{}
 
-     */
+
 
 
 }

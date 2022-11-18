@@ -26,7 +26,7 @@
                 <h3>Branchen-Übersicht</h3>
 
                     {% for entry in branchenListe %}
-                    <form action="{{ href("/branchen") }}" method="post">
+                    <form action="{{ href("/branchen/" + entry) }}" method="post">
                         <div id="branchenDelete">
                             <p class="branchen-label" id="branchennameDelete">{{ entry }}</p>
                             <input type="submit" value="Delete">
