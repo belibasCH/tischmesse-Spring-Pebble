@@ -1,0 +1,71 @@
+    {% import "button" %}
+        {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+
+        <div class="admin-title">
+            <h2>{{ aktuellerAussteller.firmenname}}</h2>
+            <div class="aussteller-status">
+
+            <div>
+                <h3>Akzepiert
+                </h3>
+                <p>{{aktuellerAussteller.akzeptiert}}</p>
+            </div>
+
+            <div>
+                <h3>Bezahlt
+                </h3>
+                <p>{{aktuellerAussteller.bezahlt}}</p>
+            </div>
+            </div>
+            {{ button("/aussteller/", "Button edit", "/img/plus-icon.svg","Bearbeiten" )}}
+        </div>
+
+        <div id="ausstellerEinzeln-container">
+            <div>
+                <h3>E-Mail
+                </h3>
+                <p>{{aktuellerAussteller.email}}</p>
+            </div>
+
+            <div>
+                <h3>Telefon
+                </h3>
+                <p>{{aktuellerAussteller.telefonNummer}}</p>
+            </div>
+
+            <div>
+                <h3>tischnummer
+                </h3>
+                <p>{{aktuellerAussteller.tischNummer}}</p>
+            </div>
+
+            <div>
+                <h3>Plz
+                </h3>
+                <p>{{aktuellerAussteller.plz}}</p>
+            </div>
+
+            <div>
+                <h3>Ort
+                </h3>
+                <p>{{aktuellerAussteller.ort}}</p>
+            </div>
+
+            <div>
+                <h3>Adresse
+                </h3>
+                <p>{{aktuellerAussteller.adresse}}</p>
+            </div>
+
+            <div>
+                <h3>Url
+                </h3>
+                <p>{{aktuellerAussteller.url}}</p>
+            </div>
+
+        </div>
+
+    </div>
+    {% endblock %}

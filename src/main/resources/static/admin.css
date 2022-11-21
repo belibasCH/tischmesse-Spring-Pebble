@@ -87,6 +87,17 @@ li a img {
     background-color: azure;
     padding: 0 1rem;
 }
+.aussteller-card-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+.aussteller-card-icons img{
+height: 1rem;
+
+}
+
 .admin-title{
     display: flex;
     justify-content: space-between;
@@ -145,6 +156,10 @@ textarea{
     height: 8em;
     padding: 5px;
 }
+.aussteller-status {
+    display: flex;
+    gap: 2rem;
+}
 
 #add-branchen-box{
     background-color: darkgray;
@@ -184,3 +199,10 @@ input[value=Hinzufügen]{
     background-color: #ffd82a;
 }
 
+
+.aussteller-status div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
