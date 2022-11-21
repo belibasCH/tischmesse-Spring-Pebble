@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div id="addBranchenBox">
+    <div id="add-branchen-box">
         <h2>Branchen-Editor</h2>
             <form action="{{ href("/branchen") }}" method="post" style="padding-bottom: 50px">
             <label for="branchenname" class="form-label">Branchenname</label>
@@ -27,7 +27,7 @@
 
                     {% for entry in branchenListe %}
                     <form action="{{ href("/branchen/" + entry) }}" method="post">
-                        <div id="branchenDelete">
+                        <div id="branchen-delete">
                             <p class="branchen-label" id="branchennameDelete">{{ entry }}</p>
                             <input type="submit" value="Delete">
                         </div>
