@@ -1,0 +1,82 @@
+    {% import "button" %}
+    {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+
+        <div class="admin-title">
+            <h2>Aussteller editieren</h2>
+            {{ button("/aussteller", "Button zurück", "/img/back-icon.svg","zurück" )}}
+        </div>
+
+        <form action="{{ href("/aussteller/edit") }}" method="post">
+            <input type="hidden"  name="id" value={{ aktuellerAussteller.id}}>
+            <div id="aussteller-form">
+                <div id="aussteller-left">
+                    <div class="form-block">
+                        <h3>{{aktuellerAussteller.firmenname}}</h3>
+
+                    </div>
+                    <div class="form-block">
+                        <label for="firmenname" class="form-label">Firmenname*</label>
+                        <input type="text" name="firmenname" id="firmenname" value={{aktuellerAussteller.firmenname}}>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="email" class="form-label">E-Mail</label>
+                        <input type="email" name="email" id="email" value={{aktuellerAussteller.email}}>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="telefonNr" class="form-label">Telefon</label>
+                        <input type="number" name="telefonNr" id="telefonNr" value={{aktuellerAussteller.telefonNr}}>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="plz" class="form-label">PlZ</label>
+                        <input type="number" name="plz" id="plz" value={{aktuellerAussteller.plz}}>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="ort" class="form-label">Ort</label>
+                        <input type="text" name="ort" id="ort" value={{aktuellerAussteller.ort}}>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="adresse" class="form-label">Adresse</label>
+                        <input type="text" name="adresse" id="adresse" value={{aktuellerAussteller.adresse}}>
+                    </div>
+
+                </div>
+                <div id="aussteller-right">
+                   <div class="form-block">
+                        <label for="branche" class="form-label">Branche auswählen</label>
+                        <select name="branche" id="branche">
+                            <option value="---">---</option>
+                            <option value="saab" selected>Finanzwesen</option>
+                            <option value="mercedes">Gesundheitswesen</option>
+                            <option value="audi">Sanitär, Sepngler, Dachdecker</option>
+                        </select>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
+                        <textarea name="beschreibung" id="beschreibung" >{{aktuellerAussteller.beschreibung}}</textarea>
+                    </div>
+
+
+                    <div class="form-block">
+                        <label for="url" class="form-label">Website-Url</label>
+                        <input type="text" name="url" id="url" placeholder="https://standort-sh.ch" value={{aktuellerAussteller.url}}>
+                    </div>
+
+                </div>
+            </div>
+            <p>
+                <input type="submit" value="Hinzufügen">
+
+
+            </p>
+        </form>
+
+    </div>
+    {% endblock %}

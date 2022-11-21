@@ -159,6 +159,7 @@ textarea{
 .aussteller-status {
     display: flex;
     gap: 2rem;
+}
 
 #addBranchenBox{
     background-color: darkgray;
@@ -202,7 +203,7 @@ input[value=Hinzufügen]{
     background-color: #ffd82a;
 }
 
-}
+
 .aussteller-status div{
     display: flex;
     justify-content: space-between;

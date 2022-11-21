@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 public class Aussteller {
+
     @Id
     @GeneratedValue
     private int id;
@@ -23,7 +24,7 @@ public class Aussteller {
     private Boolean bezahlt;
     private Boolean akzeptiert;
 
-    //Branche Objekt
+    //Listen mit Branchen
     //Liste mit Personen
 
     public Aussteller(String firmenname, String email, Integer telefonNr, String beschreibung, LocalDate anmeldeDatum, Integer tischNummer, Integer plz, String ort, String adresse, String url) {
@@ -44,6 +45,15 @@ public class Aussteller {
     public Aussteller() {
 
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getFirmenname() {
         return firmenname;
@@ -106,7 +116,7 @@ public class Aussteller {
     }
 
     public void setOrt(String ort) {
-        ort = ort;
+        this.ort = ort;
     }
 
     public String getAdresse() {
@@ -114,7 +124,7 @@ public class Aussteller {
     }
 
     public void setAdresse(String adresse) {
-        adresse = adresse;
+        this.adresse = adresse;
     }
 
     public String getUrl() {

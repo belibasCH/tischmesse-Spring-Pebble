@@ -17,8 +17,8 @@
                     <div class="aussteller-card-icons">
 
                     <a href=" {{ href("/aussteller/"+entry.id) }}"><img src="/img/eye-icon.svg" alt="view icon"/></a>
-                        <a href=" {{ href("/aussteller/"+entry.id) }}"><img src="/img/edit-icon.svg" alt="edit icon"/></a>
-                        <a href=" {{ href("/aussteller/"+entry.id) }}"><img src="/img/del-icon.svg" alt="delete icon"/></a>
+                        <a href=" {{ href("/aussteller/"+entry.id+"/edit") }}"><img src="/img/edit-icon.svg" alt="edit icon"/></a>
+                        <a href=" {{ href("/aussteller/"+entry.id+"/delete") }}"><img src="/img/del-icon.svg" alt="delete icon"/></a>
                     </div>
                 </div>
 

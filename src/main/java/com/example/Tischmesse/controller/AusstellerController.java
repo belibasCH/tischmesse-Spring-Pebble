@@ -39,30 +39,45 @@ public class AusstellerController {
                                 @RequestParam Optional<String> ort,
                                 @RequestParam Optional<String> adresse,
                                 @RequestParam Optional<String> url) {
-        LocalDate currentDate = LocalDate.now(); // Create a date object
-        int tischNummer = 0;
-        service.addAussteller(new Aussteller(
-                firmenname,
-                email.orElse(""),
-                telefonNr.orElse(0),
-                beschreibung.orElse(""),
-                currentDate,
-                tischNummer,
-                plz.orElse(0),
-                ort.orElse(""),
-                adresse.orElse(""),
-                url.orElse("")));
+
+        service.addAussteller(firmenname, email, telefonNr, beschreibung, plz, ort, adresse, url);
+        return "redirect:/aussteller";
+    }
+    @PostMapping("/aussteller/edit")
+    public String addAussteller(@RequestParam Integer id,
+            @RequestParam String firmenname,
+                                @RequestParam Optional<String> email,
+                                @RequestParam Optional<Integer> telefonNr,
+                                @RequestParam Optional<String> beschreibung,
+                                @RequestParam Optional<Integer> plz,
+                                @RequestParam Optional<String> ort,
+                                @RequestParam Optional<String> adresse,
+                                @RequestParam Optional<String> url) {
+
+        service.editAussteller(firmenname,id,  email, telefonNr, beschreibung, plz, ort, adresse, url);
         return "redirect:/aussteller";
     }
 
     @GetMapping("/aussteller/{id}")
     public String anmeldung( @PathVariable int id, Model model
     ) {
-        var aussteller = service.findAusstellerById(id).orElseThrow(ContactNotFound::new);
+        var aussteller = service.findAusstellerById(id).orElseThrow(AusstellerNotFound::new);
         model.addAttribute("aktuellerAussteller", aussteller);
         return "/ausstellerEinzeln";
     }
 
-        private static class ContactNotFound extends RuntimeException {}
+    @GetMapping("/aussteller/{id}/delete")
+    public String addAussteller(@PathVariable int id)                      {
+        service.deleteAussteller(id);
+        return "redirect:/aussteller";
+    }
+    @GetMapping("/aussteller/{id}/edit")
+    public String editAussteller(@PathVariable int id, Model model)                      {
+        model.addAttribute("aktuellerAussteller", service.findAusstellerById(id).orElseThrow(AusstellerNotFound::new));
+        return "/ausstellerEdit";
+    }
+
+
+    private static class AusstellerNotFound extends RuntimeException {}
 
 }
