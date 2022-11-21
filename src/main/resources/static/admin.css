@@ -146,30 +146,26 @@ textarea{
     padding: 5px;
 }
 
-#addBranchenBox{
+#add-branchen-box{
     background-color: darkgray;
     width: 25em;
     padding: 1em;
 }
 
 
-#EingabeBlock{
+#eingabe-block{
     padding-bottom: 0.5em;
     flex-direction: unset;
 }
 
-#branchenübersicht{
-
-}
-
-#branchenDelete{
+#branchen-delete{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.branchenentries{
+.branchen-entries{
     flex-direction: row;
 }
 
