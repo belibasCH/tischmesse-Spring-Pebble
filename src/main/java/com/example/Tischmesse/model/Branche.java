@@ -17,12 +17,8 @@ public class Branche {
 
     private String branchenName;
 
-    @ElementCollection
-    private List<String> ausstellerList;
-
     public Branche(String branchenName){
         this.branchenName = branchenName;
-        ausstellerList = Collections.emptyList();
     }
 
     public Branche() {

@@ -57,9 +57,9 @@
                         <label for="branche" class="form-label">Branche auswählen</label>
                         <select name="branche" id="branche">
                             <option value="---">---</option>
-                            <option value="saab">Finanzwesen</option>
-                            <option value="mercedes">Gesundheitswesen</option>
-                            <option value="audi">Sanitär, Sepngler, Dachdecker</option>
+                             {% for entry in branchenListe%}
+                                <option value={{ entry.branchenName }}>{{ entry.branchenName }}</option>
+                            {% endfor%}
                         </select>
                     </div>
 

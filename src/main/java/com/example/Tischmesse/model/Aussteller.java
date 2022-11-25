@@ -1,9 +1,8 @@
 package com.example.Tischmesse.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Aussteller {
@@ -25,6 +24,9 @@ public class Aussteller {
     private Boolean akzeptiert;
 
     //Listen mit Branchen
+
+    @OneToOne
+    private Branche branche;
     //Liste mit Personen
 
     public Aussteller(String firmenname, String email, Integer telefonNr, String beschreibung, LocalDate anmeldeDatum, Integer tischNummer, Integer plz, String ort, String adresse, String url) {
@@ -151,5 +153,11 @@ public class Aussteller {
         this.akzeptiert = akzeptiert;
     }
 
+    public Branche getBranche() {
+        return branche;
+    }
 
+    public void setBranche(Branche branche) {
+        this.branche = branche;
+    }
 }
