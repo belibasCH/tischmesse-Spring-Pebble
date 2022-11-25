@@ -37,7 +37,7 @@ public class BranchenController {
 
 
     @PostMapping("/branchen/{id}")
-    public String deleteBranche(@PathVariable String id , Model model) {
+    public String deleteBranche(@PathVariable int id , Model model) {
         model.addAttribute("branchenListe", branchenService.removeBranche(id));
         System.out.println("Hello");
         model.addAttribute("branchenListe", branchenService.getBranchenListe());

@@ -5,7 +5,6 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,8 +13,9 @@ public class Branche {
 
     @Id
     @GeneratedValue
-    private String branchenName;
+    private int id;
 
+    private String branchenName;
 
     @ElementCollection
     private List<String> ausstellerList;
@@ -29,23 +29,32 @@ public class Branche {
 
     }
 
+
     public String getBranchenName(){
         return branchenName;
     }
 
-    public void setBranchenName(String newName){
-        branchenName = newName;
+    public int getId() {
+        return id;
     }
 
-    public List<String> getAusstellerList(){
-        return ausstellerList;
+    public void setId(int id) {
+        this.id = id;
     }
-
-    public void addAusstellerToList(String branchenName){
-        ausstellerList.add(branchenName);
-    }
-
-    public void removeAusstellerFromList(String branchenName){
-        ausstellerList.remove(branchenName);
-    }
+//
+//    public void setBranchenName(String newName){
+//        branchenName = newName;
+//    }
+//
+//    public List<String> getAusstellerList(){
+//        return ausstellerList;
+//    }
+//
+//    public void addAusstellerToList(String branchenName){
+//        ausstellerList.add(branchenName);
+//    }
+//
+//    public void removeAusstellerFromList(String branchenName){
+//        ausstellerList.remove(branchenName);
+//    }
 }
