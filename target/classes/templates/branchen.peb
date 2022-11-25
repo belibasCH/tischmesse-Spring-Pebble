@@ -9,13 +9,13 @@
             <div class="branchen-view">
                     {% for entry in branchenListe %}
                     <div class="branchen-card">
-                        <p class="form-label">{{ entry }}</p>
+                        <p class="form-label">{{ entry.branchenName}}</p>
                     </div>
                     {% endfor %}
             </div>
         </div>
     </div>
-    <div id="addBranchenBox">
+    <div id="add-branchen-box">
         <h2>Branchen-Editor</h2>
             <form action="{{ href("/branchen") }}" method="post" style="padding-bottom: 50px">
             <label for="branchenname" class="form-label">Branchenname</label>
@@ -26,9 +26,9 @@
                 <h3>Branchen-Übersicht</h3>
 
                     {% for entry in branchenListe %}
-                    <form action="{{ href("/branchen/" + entry) }}" method="post">
-                        <div id="branchenDelete">
-                            <p class="branchen-label" id="branchennameDelete">{{ entry }}</p>
+                    <form action="{{ href("/branchen/" + entry.id) }}" method="post">
+                        <div id="branchen-delete">
+                            <p class="branchen-label" id="branchennameDelete">{{ entry.branchenName }}</p>
                             <input type="submit" value="Delete">
                         </div>
                     </form>
