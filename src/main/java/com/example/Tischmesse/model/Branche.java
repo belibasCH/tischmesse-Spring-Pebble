@@ -18,11 +18,11 @@ public class Branche {
     private String branchenName;
 
     @ElementCollection
-    private List<String> ausstellerList;
+    private List<String> ausstellerListe;
 
     public Branche(String branchenName){
         this.branchenName = branchenName;
-        ausstellerList = Collections.emptyList();
+        ausstellerListe = Collections.emptyList();
     }
 
     public Branche() {

@@ -34,19 +34,4 @@ public class BranchenService {
 
     public Optional<Branche> findBrancheById(int id){ return repo.findById(id);}
 
-//    private List<String> branchenListe = new ArrayList<>();
-//
-//    public List<String> getBranchenListe(){
-//        return branchenListe;
-//    }
-//
-//    public List<String> addBranche(String branche){
-//        branchenListe.add(branche);
-//        return branchenListe;
-//    }
-//
-//    public List<String> removeBranche(String branche){
-//        branchenListe.remove(branche);
-//        return branchenListe;
-//    }
 }
