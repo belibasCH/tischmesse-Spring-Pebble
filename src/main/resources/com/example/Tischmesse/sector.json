@@ -1,0 +1,22 @@
+[
+  {
+    "id": 10,
+    "sectorName": "IT"
+  },
+  {
+    "id": 2,
+    "sectorName": "Baugewerbe"
+  },
+  {
+    "id": 3,
+    "sectorName": "Versicherung"
+  },
+  {
+    "id": 4,
+    "sectorName": "Bank"
+  },
+  {
+    "id": 5,
+    "sectorName": "Guguussektor"
+  }
+]

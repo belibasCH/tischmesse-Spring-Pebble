@@ -2,7 +2,6 @@ package com.example.Tischmesse.service;
 
 import com.example.Tischmesse.model.Sector;
 import com.example.Tischmesse.repository.SectorRepository;
-import com.example.Tischmesse.repository.ExhibitorRepository;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +13,6 @@ public class SectorService {
     private SectorRepository repo;
 
     public SectorService(SectorRepository repo){ this.repo = repo;}
-
-    private List<Sector> sectorList = new ArrayList<>();
 
     public List<Sector> getSectorList(){
         return repo.findAll();
@@ -32,6 +29,7 @@ public class SectorService {
         return repo.findAll();
     }
 
-    public Optional<Sector> findSectorById(int id){ return repo.findById(id);}
-
+    public Sector add(Sector sector) {
+        return repo.save(sector);
+    }
 }
