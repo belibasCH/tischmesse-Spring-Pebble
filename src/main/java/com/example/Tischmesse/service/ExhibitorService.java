@@ -14,11 +14,11 @@ import java.util.Optional;
 public class ExhibitorService {
 
     private ExhibitorRepository repo;
-    private SectorRepository branchenRepo;
+    private SectorRepository sectorRepo;
 
-    public ExhibitorService(ExhibitorRepository repo, SectorRepository branchenRepo) {
+    public ExhibitorService(ExhibitorRepository repo, SectorRepository sectorRepo) {
         this.repo = repo;
-        this.branchenRepo = branchenRepo;
+        this.sectorRepo = sectorRepo;
     }
     private List<Exhibitor> exhibitorList = new ArrayList<Exhibitor>();
 

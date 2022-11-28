@@ -24,7 +24,7 @@ public class SectorController {
         return "/sectors";
     }
 
-    @PostMapping("/sectors")
+    @PostMapping("/sectors/add")
     public String addSector(@RequestParam String sectorName, Model model){
             checkSectorName(sectorName);
             model.addAttribute("sectorList", sectorService.addSector(sectorName));
@@ -33,12 +33,20 @@ public class SectorController {
     }
 
 
-    @PostMapping("/sectors/{id}")
-    public String deleteSector(@PathVariable int id , Model model) {
+    @PostMapping("/sectors/delete")
+    public String deleteSector(@RequestParam int id , Model model) {
         model.addAttribute("sectorList", sectorService.removeSector(id));
         model.addAttribute("sectorList", sectorService.getSectorList());
         return "/sectors";
     }
+
+    @PostMapping("/sectors/update")
+    public String updateSectorName(@RequestParam int id, @RequestParam String sectorTitle, Model model){
+        model.addAttribute("sectorList", sectorService.updateSector(id, sectorTitle));
+        model.addAttribute("sectorList", sectorService.getSectorList());
+        return "/sectors";
+    }
+
 
     private void checkSectorName(String sectorName){
         if(sectorName == null || sectorName.length() < 2 || sectorName.length() > 50){

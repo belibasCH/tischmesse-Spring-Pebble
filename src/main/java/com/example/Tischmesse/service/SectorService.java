@@ -34,4 +34,8 @@ public class SectorService {
 
     public Optional<Sector> findSectorById(int id){ return repo.findById(id);}
 
+    public List<Sector> updateSector(int id, String newName) {
+        repo.findSectorById(id).setSectorName(newName);
+        return repo.findAll();
+    }
 }

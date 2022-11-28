@@ -9,8 +9,9 @@
                     {% for entry in sectorList %}
                     <div class="sector-card">
                         <p class="form-label">
-                            <form action="{{ href("/sectors") }}" method="post">
-                                <input type="text" name="sectorTitle" value="{{ entry.sectorName}}">
+                            <form action="{{ href("/sectors/update") }}" method="post">
+                                <input type="text" name="sectorTitle" value={{ entry.sectorName }}>
+                                <input type="hidden" name="id" value={{ entry.id }}>
                                 <input type="submit" value="Speichern">
                             </form>
 
@@ -21,7 +22,7 @@
     </div>
     <div id="add-sector-box">
         <h2>Branchen-Editor</h2>
-            <form action="{{ href("/sectors") }}" method="post">
+            <form action={{ href("/sectors/add") }} method="post">
             <label for="sectorName" class="form-label">Branchenname</label>
             <input type="text" name="sectorName" id="sectorName">
                 <input type="submit" value="Hinzufügen">
@@ -34,9 +35,10 @@
             <div id="sector-uebersicht">
                 <h3>Branchen-Übersicht</h3>
                     {% for entry in sectorList %}
-                    <form action="{{ href("/sectors/" + entry.id) }}" method="post">
+                    <form action="{{ href("/sectors/delete") }}" method="post">
                         <div id="sector-delete">
                             <p class="sector-label" id="sector-name-delete">{{ entry.sectorName }}</p>
+                            <input type="hidden" name="id" value={{ entry.id }}>
                             <input type="submit" value="Delete">
                         </div>
                     </form>
