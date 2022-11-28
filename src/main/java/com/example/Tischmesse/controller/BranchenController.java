@@ -29,10 +29,10 @@ public class BranchenController {
 
     @PostMapping("/branchen")
     public String addBranchen(@RequestParam String branchenname, Model model){
-        //checkBranchenname(branchenname);
-        model.addAttribute("branchenListe", branchenService.addBranche(branchenname));
-        model.addAttribute("branchenListe", branchenService.getBranchenListe());
-        return "/branchen";
+            checkBranchenname(branchenname);
+            model.addAttribute("branchenListe", branchenService.addBranche(branchenname));
+            model.addAttribute("branchenListe", branchenService.getBranchenListe());
+            return "/branchen";
     }
 
 
@@ -43,10 +43,15 @@ public class BranchenController {
         return "/branchen";
     }
 
+//    @GetMapping("/branchen")
+//    public String filterBranche(Model model){
+//        model.addAttribute("filteredBranchenListe", branchenService.filterBranchenListe());
+//    }
 
-    /*
+
+
     private void checkBranchenname(String branchenName){
-        if(branchenName == null || branchenName.length() < 2){
+        if(branchenName == null || branchenName.length() < 2 || branchenName.length() > 50){
             throw new InvalidBranchenName();
         }
     }
@@ -54,15 +59,11 @@ public class BranchenController {
     @ExceptionHandler(InvalidBranchenName.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String invalidBranchenName(Model model){
-        model.addAttribute("errorMessage", "Dein Branchenname ist leer.");
+        model.addAttribute("branchenListe", branchenService.getBranchenListe());
+        model.addAttribute("errorMessage", "Der Branchenname muss zwischen 3 und 50 Zeichen lang sein.");
         return "/branchen";
     }
 
     private static class InvalidBranchenName extends RuntimeException{}
-
-     */
-
-
-
 
 }

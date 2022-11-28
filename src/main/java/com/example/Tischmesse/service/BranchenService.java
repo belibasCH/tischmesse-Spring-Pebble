@@ -1,7 +1,10 @@
 package com.example.Tischmesse.service;
 
+import com.example.Tischmesse.model.Aussteller;
 import com.example.Tischmesse.model.Branche;
+import com.example.Tischmesse.repository.AusstellerRepository;
 import com.example.Tischmesse.repository.BranchenRepository;
+import org.apache.el.stream.Stream;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,6 +15,7 @@ import java.util.Optional;
 public class BranchenService {
 
     private BranchenRepository repo;
+    private AusstellerRepository exhibitorRepo;
 
     public BranchenService(BranchenRepository repo){ this.repo = repo;}
 
@@ -34,4 +38,8 @@ public class BranchenService {
 
     public Optional<Branche> findBrancheById(int id){ return repo.findById(id);}
 
+//    public List<Branche> filterBranchenListe() {
+//        exhibitorRepo.findAll().stream()
+//            .filter(a -> a.)
+//    }
 }

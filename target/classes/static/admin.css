@@ -206,3 +206,14 @@ input[value=Hinzufügen]{
     align-items: center;
     gap: 1rem;
 }
+
+#branchen-uebersicht{
+    padding-top: 50px;
+}
+
+.error-message{
+    background-color: crimson;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 10px;
+}
