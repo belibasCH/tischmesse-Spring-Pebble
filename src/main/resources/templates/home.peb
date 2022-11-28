@@ -1,14 +1,19 @@
 {% extends "layout_user" %}
+    {% import "macros/button" %}
 
     {% block content %}
     <main>
         <div>Ausstellerliste 2022</div>
-
+        <div>
         {% for entry in ausstellerListe %}
                 <div class="article-box">
                     <p class="form-label">{{ entry }}</p>
                 </div>
                 {% endfor %}
 
+
+        {{ button("/exhibitor/add", "Anmeldung", "/img/plus-icon.svg","Jetzt Anmelden" )}}
+            {{ button("/admin", "Admin", "/img/edit-icon.svg","Admin" )}}
+        </div>
     </main>
     {% endblock %}

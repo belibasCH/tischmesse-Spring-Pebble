@@ -11,8 +11,8 @@
     "location":"Schaffhausen",
     "address": "Im Riet 6",
     "url": "www.generis.ch",
-    "paid": false,
-    "accepted": false
+    "paid": true,
+    "accepted": true
 
   },
 
@@ -28,8 +28,8 @@
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
     "url": "www.generis.ch",
-    "paid": true,
-    "accepted": true
+    "paid": false,
+    "accepted": false
 
   },
   {

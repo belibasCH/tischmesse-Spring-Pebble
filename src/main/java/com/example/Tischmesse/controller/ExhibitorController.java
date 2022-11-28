@@ -31,32 +31,35 @@ public class ExhibitorController {
     }
 
     @PostMapping("/exhibitor/add")
-    public String addExhibitor(@RequestParam String firmenname,
+    public String addExhibitor(@RequestParam String companyName,
                                @RequestParam Optional<String> email,
-                               @RequestParam Optional<Integer> telefonNr,
-                               @RequestParam Optional<String> beschreibung,
+                               @RequestParam Optional<Integer> tel,
+                               @RequestParam Optional<String> description,
                                @RequestParam Optional<Integer> plz,
-                               @RequestParam Optional<String> ort,
-                               @RequestParam Optional<String> adresse,
+                               @RequestParam Optional<String> location,
+                               @RequestParam Optional<String> address,
                                @RequestParam Optional<String> url,
                                @RequestParam Optional<List<String>> sectors) {
-       exhibitorService.addExhibitor(firmenname, email, telefonNr, beschreibung, plz, ort, adresse, url, sectors);
+       exhibitorService.addExhibitor(companyName, email, tel, description, plz, location, address, url, sectors);
 
-        return "redirect:/exhibitor";
+        return "redirect:/confirmation";
     }
     @PostMapping("/exhibitor/edit")
     public String addExhibitor(@RequestParam Integer id,
-                               @RequestParam String firmenname,
+                               @RequestParam String companyName,
                                @RequestParam Optional<String> email,
-                               @RequestParam Optional<Integer> telefonNr,
-                               @RequestParam Optional<String> beschreibung,
+                               @RequestParam Optional<Integer> tel,
+                               @RequestParam Optional<String> description,
                                @RequestParam Optional<Integer> plz,
-                               @RequestParam Optional<String> ort,
-                               @RequestParam Optional<String> adresse,
+                               @RequestParam Optional<String> location,
+                               @RequestParam Optional<String> address,
                                @RequestParam Optional<String> url,
-                               @ModelAttribute Optional<String> sector) {
+                               @RequestParam Optional<Boolean> paid,
+                               @RequestParam Optional<Boolean> accepted,
+                               @RequestParam Optional<List<String>> sectors
+                               ) {
 
-        exhibitorService.editExhibitor(firmenname,id,  email, telefonNr, beschreibung, plz, ort, adresse, url);
+        exhibitorService.editExhibitor(companyName,id,  email, tel, description, plz, location, address, url, paid, accepted, sectors);
         return "redirect:/exhibitor";
     }
 
@@ -73,10 +76,14 @@ public class ExhibitorController {
         exhibitorService.deleteExhibitor(id);
         return "redirect:/exhibitor";
     }
+    @GetMapping("/confirmation")
+    public String showConfirmation(){
+        return "confirmation";
+    }
     @GetMapping("/exhibitor/{id}/edit")
     public String editExhibitor(@PathVariable int id, Model model)                      {
         model.addAttribute("currentExhibitor", exhibitorService.findExhibitorById(id).orElseThrow(ExhibitorNotFound::new));
-        model.addAttribute("branchenListe", sectorService.getSectorList());
+        model.addAttribute("sectorList", sectorService.getSectorList());
         return "/exhibitor-edit";
     }
 

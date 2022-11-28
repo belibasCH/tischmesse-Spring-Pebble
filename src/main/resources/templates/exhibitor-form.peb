@@ -1,55 +1,31 @@
     {% import "macros/button" %}
-    {% extends "layout_admin" %}
+        {% import "macros/forminput" %}
+    {% extends "layout_user" %}
     {% block content %}
     <div class="content">
 
-        <div class="admin-title">
+        <div id="anmeldung-title">
             <h2>Aussteller hinzufügen</h2>
-            {{ button("/exhibitor", "Button zurück", "/img/back-icon.svg","zurück" )}}
         </div>
         <form action="{{ href("/exhibitor/add") }}" method="post">
             <div id="aussteller-form">
                 <div id="aussteller-left">
-                    <div class="form-block">
-                        <h3>Informationen übe Sie und Ihre Firma</h3>
-                        <p>Damit wir Sie wenn nötig kontaktieren können</p>
-                    </div>
-                    <div class="form-block">
-                        <label for="firmenname" class="form-label">Firmenname*</label>
-                        <input type="text" name="firmenname" id="firmenname">
-                    </div>
+                    <h3>Informationen übe Sie und Ihre Firma</h3>
 
-                    <div class="form-block">
-                        <label for="email" class="form-label">E-Mail</label>
-                        <input type="email" name="email" id="email">
-                    </div>
+                    {{ forminput("companyName", "text", "Firmenname*","")}}
+                    {{ forminput("email", "email", "E-Mail","")}}
+                    {{ forminput("telefonNr", "number", "Telefon","")}}
+                    {{ forminput("plz", "number", "PlZ","")}}
+                    {{ forminput("location", "text", "Ort","")}}
+                    {{ forminput("address", "text", "Adresse","")}}
+                    {{ forminput("url", "text", "Webseiten-URL","")}}
 
-                    <div class="form-block">
-                        <label for="telefonNr" class="form-label">Telefon</label>
-                        <input type="number" name="telefonNr" id="telefonNr">
-                    </div>
-
-                    <div class="form-block">
-                        <label for="plz" class="form-label">PlZ</label>
-                        <input type="number" name="plz" id="plz">
-                    </div>
-
-                    <div class="form-block">
-                        <label for="ort" class="form-label">Ort</label>
-                        <input type="text" name="ort" id="ort">
-                    </div>
-
-                    <div class="form-block">
-                        <label for="adresse" class="form-label">Adresse</label>
-                        <input type="text" name="adresse" id="adresse">
-                    </div>
 
                 </div>
                 <div id="aussteller-right">
                     <div class="form-block">
                         <h3>Informationen für das öffentliche Ausstellerverzeichniss</h3>
-                        <p>Mehr Informationen: <a href="https://tischmesse.sh" target="_blank">tischmesse.sh</a></p>
-                    </div>
+                       </div>
 
                     <div class="form-block">
                         <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
@@ -57,15 +33,15 @@
                     </div>
                     <label for="sectors" class="form-label">Branche</label>
 
-                    <div class="checkboxes">
+                    <div id="checkboxes">
                         {% for entry in sectorList %}
-                        <input type="checkbox" name="sectors" value={{ entry.sectorName }}>{{ entry.sectorName }}</input>
-                        {% endfor %}
-                    </div>
 
-                    <div class="form-block">
-                        <label for="url" class="form-label">Website-Url</label>
-                        <input type="text" name="url" id="url" placeholder="https://standort-sh.ch">
+                          <div class="checkbox-div">
+                            <input type="checkbox" name="sectors" value={{ entry.sectorName }}>
+                              <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
+
+                          </div>
+                        {% endfor %}
                     </div>
 
                 </div>

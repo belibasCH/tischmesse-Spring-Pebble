@@ -130,7 +130,6 @@ input, select{
     border: 1px solid var(--onBackground-color);
     background-color: var(--background-color);
     border-radius: 0.5rem;
-    height: 2rem;
     padding: 5px;
 }
 
@@ -214,4 +213,15 @@ input[value=Hinzufügen]{
     color: white;
     border-radius: 0.5rem;
     padding: 10px;
+}
+
+#checkboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-div {
+    display: flex;
+    align-items: center;
+
 }

@@ -66,19 +66,36 @@ public class ExhibitorService {
         return repo.save(exhibitor);
     }
 
-    public void editExhibitor(String firmenname, int id, Optional<String> email, Optional<Integer> telefonNr, Optional<String> beschreibung, Optional<Integer> plz, Optional<String> ort, Optional<String> adresse, Optional<String> url) {
+    public void editExhibitor(
+            String companyName,
+            int id,
+            Optional<String> email,
+            Optional<Integer> tel,
+            Optional<String> description,
+            Optional<Integer> plz,
+            Optional<String> location,
+            Optional<String> address,
+            Optional<String> url,
+            Optional<Boolean> paid,
+            Optional<Boolean> accepted,
+            Optional<List<String>> sectors) {
         var exhibitor = findExhibitorById(id).orElseThrow(ExhibitorNotFound::new);
-        exhibitor.setCompanyName(firmenname);
+        exhibitor.setCompanyName(companyName);
         exhibitor.setEmail(email.orElse(""));
-        exhibitor.setTel(telefonNr.orElse(0));
-        exhibitor.setDescription(beschreibung.orElse(""));
+        exhibitor.setTel(tel.orElse(0));
+        exhibitor.setDescription(description.orElse(""));
         exhibitor.setPLZ(plz.orElse(0));
-        exhibitor.setLocation(ort.orElse(""));
-        exhibitor.setAddress(adresse.orElse(""));
+        exhibitor.setLocation(location.orElse(""));
+        exhibitor.setAddress(address.orElse(""));
         exhibitor.setUrl(url.orElse(""));
         exhibitor.setAccepted(false);
         exhibitor.setPaid(false);
         exhibitor.setTableNr(0);
+        exhibitor.setPaid(paid.orElse(false));
+        exhibitor.setPaid(accepted.orElse(false));
+        List<String> stringList= sectors.orElse(Collections.emptyList());
+        List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).toList();
+        exhibitor.setSectors(sectorsList);
         repo.save(exhibitor);
  }
     private static class ExhibitorNotFound extends RuntimeException {}
