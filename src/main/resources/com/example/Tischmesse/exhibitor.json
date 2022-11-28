@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "firmenname": "Elias AG",
+    "email": "elias@braem.ch",
+    "telefonNr": 405,
+    "beschreibung": "Beschreibung"
+
+  }  ,
+  {
+    "id": 2,
+    "firmenname": "Joel AG",
+    "email": "joel@finger.ch",
+    "telefonNr": 406,
+    "beschreibung": "Beschreibung"
+
+  }
+]

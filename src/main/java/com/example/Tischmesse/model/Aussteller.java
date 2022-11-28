@@ -25,9 +25,9 @@ public class Aussteller {
     private Boolean akzeptiert;
 
     //Listen mit Branchen
-
     @OneToMany
     private List<Branche> branchen;
+
     //Liste mit Personen
 
     public Aussteller(String firmenname, String email, Integer telefonNr, String beschreibung, LocalDate anmeldeDatum, Integer tischNummer, Integer plz, String ort, String adresse, String url) {
@@ -162,14 +162,4 @@ public class Aussteller {
         this.branchen = branchen;
     }
 
-    public void addExhibitorToSector(Branche sector) {
-        this.branchen.add(sector);
-    }
-
-    public void setSectorsByString(List<String> sector) {
-        for(String s:sector){
-          branchen.add(new Branche(s)) ;
-        }
-
-    }
 }

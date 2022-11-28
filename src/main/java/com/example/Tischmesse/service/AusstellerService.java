@@ -60,6 +60,10 @@ public class AusstellerService {
 
     }
 
+    public Aussteller add(Aussteller contact) {
+        return repo.save(contact);
+    }
+
     public void editAussteller(String firmenname, int id, Optional<String> email, Optional<Integer> telefonNr, Optional<String> beschreibung, Optional<Integer> plz, Optional<String> ort, Optional<String> adresse, Optional<String> url) {
         var aussteller = findAusstellerById(id).orElseThrow(AusstellerNotFound::new);
         aussteller.setFirmenname(firmenname);

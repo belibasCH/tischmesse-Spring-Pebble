@@ -58,7 +58,6 @@
                         <textarea name="beschreibung" id="beschreibung"></textarea>
                     </div>
 
-
                     <div class="form-block">
                         <label for="url" class="form-label">Website-Url</label>
                         <input type="text" name="url" id="url" placeholder="https://standort-sh.ch">
@@ -67,7 +66,7 @@
                 </div>
             </div>
             <p>
-                <input type="submit" value="Hinzufügen">
+                <input type="submit" value="weiter">
 
 
             </p>

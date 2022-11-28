@@ -1,4 +1,4 @@
-    {% import "button" %}
+    {% import "macros/button" %}
         {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
