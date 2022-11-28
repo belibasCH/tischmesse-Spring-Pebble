@@ -1,15 +1,13 @@
-    {% import "button" %}
+    {% import "macros/button" %}
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
 
         <div class="admin-title">
             <h2>Aussteller hinzufügen</h2>
-            {{ button("/aussteller", "Button zurück", "/img/back-icon.svg","zurück" )}}
+            {{ button("/exhibitor", "Button zurück", "/img/back-icon.svg","zurück" )}}
         </div>
-
-
-        <form action="{{ href("/aussteller/add") }}" method="post">
+        <form action="{{ href("/exhibitor/add") }}" method="post">
             <div id="aussteller-form">
                 <div id="aussteller-left">
                     <div class="form-block">
@@ -54,20 +52,9 @@
                     </div>
 
                     <div class="form-block">
-                        <label for="branche" class="form-label">Branche auswählen</label>
-                        <select name="branche" id="branche">
-                            <option value="---">---</option>
-                            <option value="saab">Finanzwesen</option>
-                            <option value="mercedes">Gesundheitswesen</option>
-                            <option value="audi">Sanitär, Sepngler, Dachdecker</option>
-                        </select>
-                    </div>
-
-                    <div class="form-block">
                         <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
                         <textarea name="beschreibung" id="beschreibung"></textarea>
                     </div>
-
 
                     <div class="form-block">
                         <label for="url" class="form-label">Website-Url</label>
@@ -77,7 +64,7 @@
                 </div>
             </div>
             <p>
-                <input type="submit" value="Hinzufügen">
+                <input type="submit" value="weiter">
 
 
             </p>
