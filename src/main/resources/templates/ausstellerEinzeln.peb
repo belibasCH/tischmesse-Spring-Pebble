@@ -65,6 +65,12 @@
                 <p>{{aktuellerAussteller.url}}</p>
             </div>
 
+            <div>
+                <h3>Branche
+                </h3>
+                <p>{{aktuellerAussteller.branche.BranchenName}}</p>
+            </div>
+
         </div>
 
     </div>

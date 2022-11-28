@@ -2,6 +2,7 @@ package com.example.Tischmesse.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,8 +26,8 @@ public class Aussteller {
 
     //Listen mit Branchen
 
-    @OneToOne
-    private Branche branche;
+    @OneToMany
+    private List<Branche> branchen;
     //Liste mit Personen
 
     public Aussteller(String firmenname, String email, Integer telefonNr, String beschreibung, LocalDate anmeldeDatum, Integer tischNummer, Integer plz, String ort, String adresse, String url) {
@@ -153,11 +154,22 @@ public class Aussteller {
         this.akzeptiert = akzeptiert;
     }
 
-    public Branche getBranche() {
-        return branche;
+    public List<Branche> getBranchen() {
+        return branchen;
     }
 
-    public void setBranche(Branche branche) {
-        this.branche = branche;
+    public void setBranchen(List<Branche> branchen) {
+        this.branchen = branchen;
+    }
+
+    public void addExhibitorToSector(Branche sector) {
+        this.branchen.add(sector);
+    }
+
+    public void setSectorsByString(List<String> sector) {
+        for(String s:sector){
+          branchen.add(new Branche(s)) ;
+        }
+
     }
 }

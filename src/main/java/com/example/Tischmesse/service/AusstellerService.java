@@ -2,10 +2,12 @@ package com.example.Tischmesse.service;
 
 import com.example.Tischmesse.model.Aussteller;
 import com.example.Tischmesse.repository.AusstellerRepository;
+import com.example.Tischmesse.repository.BranchenRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,9 +15,11 @@ import java.util.Optional;
 public class AusstellerService {
 
     private AusstellerRepository repo;
+    private BranchenRepository branchenRepo;
 
-    public AusstellerService (AusstellerRepository repo) {
+    public AusstellerService (AusstellerRepository repo, BranchenRepository branchenRepo) {
         this.repo = repo;
+        this.branchenRepo = branchenRepo;
     }
     private List<Aussteller> ausstellerListe = new ArrayList<Aussteller>();
 
@@ -69,7 +73,6 @@ public class AusstellerService {
         aussteller.setAkzeptiert(false);
         aussteller.setBezahlt(false);
         aussteller.setTischNummer(0);
-        aussteller.setAnmdeldeDatum(LocalDate.now());
         repo.save(aussteller);
  }
     private static class AusstellerNotFound extends RuntimeException {}

@@ -14,7 +14,6 @@
                 <div id="aussteller-left">
                     <div class="form-block">
                         <h3>{{aktuellerAussteller.firmenname}}</h3>
-
                     </div>
                     <div class="form-block">
                         <label for="firmenname" class="form-label">Firmenname*</label>
@@ -48,14 +47,13 @@
 
                 </div>
                 <div id="aussteller-right">
-                   <div class="form-block">
-                        <label for="branche" class="form-label">Branche auswählen</label>
-                        <select name="branche" id="branche">
-                            <option value="---">---</option>
-                            <option value="saab" selected>Finanzwesen</option>
-                            <option value="mercedes">Gesundheitswesen</option>
-                            <option value="audi">Sanitär, Sepngler, Dachdecker</option>
-                        </select>
+
+                    <div class="form-block">
+                        <label for="sectors[]" class="form-label">Branchen</label>
+                        {% for entry in branchenListe%}
+                            <checkbox name="sectors[]" id="sectors" >{{entry.branchenName}}</checkbox>
+                        {% endfor%}
+
                     </div>
 
                     <div class="form-block">

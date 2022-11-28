@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -55,8 +56,8 @@ public class AusstellerController {
                                 @RequestParam Optional<Integer> plz,
                                 @RequestParam Optional<String> ort,
                                 @RequestParam Optional<String> adresse,
-                                @RequestParam Optional<String> url) {
-
+                                @RequestParam Optional<String> url,
+    @RequestParam Optional<String> branche) {
         ausstellerService.editAussteller(firmenname,id,  email, telefonNr, beschreibung, plz, ort, adresse, url);
         return "redirect:/aussteller";
     }
@@ -66,6 +67,7 @@ public class AusstellerController {
     ) {
         var aussteller = ausstellerService.findAusstellerById(id).orElseThrow(AusstellerNotFound::new);
         model.addAttribute("aktuellerAussteller", aussteller);
+
         return "/ausstellerEinzeln";
     }
 
@@ -77,6 +79,7 @@ public class AusstellerController {
     @GetMapping("/aussteller/{id}/edit")
     public String editAussteller(@PathVariable int id, Model model)                      {
         model.addAttribute("aktuellerAussteller", ausstellerService.findAusstellerById(id).orElseThrow(AusstellerNotFound::new));
+        model.addAttribute("branchenListe", branchenService.getBranchenListe());
         return "/ausstellerEdit";
     }
 

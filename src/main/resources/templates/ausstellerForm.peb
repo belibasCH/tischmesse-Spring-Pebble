@@ -1,4 +1,4 @@
-    {% import "button" %}
+    {% import "macros/button" %}
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
@@ -51,16 +51,6 @@
                     <div class="form-block">
                         <h3>Informationen für das öffentliche Ausstellerverzeichniss</h3>
                         <p>Mehr Informationen: <a href="https://tischmesse.sh" target="_blank">tischmesse.sh</a></p>
-                    </div>
-
-                    <div class="form-block">
-                        <label for="branche" class="form-label">Branche auswählen</label>
-                        <select name="branche" id="branche">
-                            <option value="---">---</option>
-                             {% for entry in branchenListe%}
-                                <option value={{ entry.branchenName }}>{{ entry.branchenName }}</option>
-                            {% endfor%}
-                        </select>
                     </div>
 
                     <div class="form-block">
