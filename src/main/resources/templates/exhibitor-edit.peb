@@ -1,48 +1,48 @@
-    {% import "button" %}
+    {% import "macros/button" %}
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
 
         <div class="admin-title">
             <h2>Aussteller editieren</h2>
-            {{ button("/aussteller", "Button zurück", "/img/back-icon.svg","zurück" )}}
+            {{ button("/exhibitor", "Button zurück", "/img/back-icon.svg","zurück" )}}
         </div>
 
-        <form action="{{ href("/aussteller/edit") }}" method="post">
-            <input type="hidden"  name="id" value={{ aktuellerAussteller.id}}>
+        <form action="{{ href("/exhibitor/edit") }}" method="post">
+            <input type="hidden"  name="id" value={{ currentExhibitor.id}}>
             <div id="aussteller-form">
                 <div id="aussteller-left">
                     <div class="form-block">
-                        <h3>{{aktuellerAussteller.firmenname}}</h3>
+                        <h3>{{currentExhibitor.companyName}}</h3>
                     </div>
                     <div class="form-block">
                         <label for="firmenname" class="form-label">Firmenname*</label>
-                        <input type="text" name="firmenname" id="firmenname" value={{aktuellerAussteller.firmenname}}>
+                        <input type="text" name="firmenname" id="firmenname" value={{currentExhibitor.companyName}}>
                     </div>
 
                     <div class="form-block">
                         <label for="email" class="form-label">E-Mail</label>
-                        <input type="email" name="email" id="email" value={{aktuellerAussteller.email}}>
+                        <input type="email" name="email" id="email" value={{currentExhibitor.email}}>
                     </div>
 
                     <div class="form-block">
                         <label for="telefonNr" class="form-label">Telefon</label>
-                        <input type="number" name="telefonNr" id="telefonNr" value={{aktuellerAussteller.telefonNr}}>
+                        <input type="number" name="telefonNr" id="telefonNr" value={{currentExhibitor.tel}}>
                     </div>
 
                     <div class="form-block">
                         <label for="plz" class="form-label">PlZ</label>
-                        <input type="number" name="plz" id="plz" value={{aktuellerAussteller.plz}}>
+                        <input type="number" name="plz" id="plz" value={{currentExhibitor.plz}}>
                     </div>
 
                     <div class="form-block">
                         <label for="ort" class="form-label">Ort</label>
-                        <input type="text" name="ort" id="ort" value={{aktuellerAussteller.ort}}>
+                        <input type="text" name="ort" id="ort" value={{currentExhibitor.location}}>
                     </div>
 
                     <div class="form-block">
                         <label for="adresse" class="form-label">Adresse</label>
-                        <input type="text" name="adresse" id="adresse" value={{aktuellerAussteller.adresse}}>
+                        <input type="text" name="adresse" id="adresse" value={{currentExhibitor.address}}>
                     </div>
 
                 </div>
@@ -58,13 +58,13 @@
 
                     <div class="form-block">
                         <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
-                        <textarea name="beschreibung" id="beschreibung" >{{aktuellerAussteller.beschreibung}}</textarea>
+                        <textarea name="beschreibung" id="beschreibung" >{{aktuellerAussteller.description}}</textarea>
                     </div>
 
 
                     <div class="form-block">
                         <label for="url" class="form-label">Website-Url</label>
-                        <input type="text" name="url" id="url" placeholder="https://standort-sh.ch" value={{aktuellerAussteller.url}}>
+                        <input type="text" name="url" id="url" placeholder="https://standort-sh.ch" value={{currentExhibitor.url}}>
                     </div>
 
                 </div>

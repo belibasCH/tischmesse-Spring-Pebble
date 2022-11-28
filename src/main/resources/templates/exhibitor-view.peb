@@ -4,71 +4,71 @@
     <div class="content">
 
         <div class="admin-title">
-            <h2>{{ aktuellerAussteller.firmenname}}</h2>
+            <h2>{{ currentExhibitor.companyName}}</h2>
             <div class="aussteller-status">
-                <h4>Anmeldedatum: {{ aktuellerAussteller.anmeldeDatum}}</h4>
+                <h4>Anmeldedatum: {{ currentExhibitor.registrationDate}}</h4>
             <div>
                 <h3>Akzepiert
                 </h3>
-                <p>{{aktuellerAussteller.akzeptiert}}</p>
+                <p>{{currentExhibitor.accepted}}</p>
             </div>
 
             <div>
                 <h3>Bezahlt
                 </h3>
-                <p>{{aktuellerAussteller.bezahlt}}</p>
+                <p>{{currentExhibitor.paid}}</p>
             </div>
             </div>
-            {{ button("/aussteller/"+aktuellerAussteller.id +"/edit", "Button edit", "/img/plus-icon.svg","Bearbeiten" )}}
+            {{ button("/exhibitor/"+currentExhibitor.id +"/edit", "Button edit", "/img/plus-icon.svg","Bearbeiten" )}}
         </div>
 
         <div id="ausstellerEinzeln-container">
             <div>
                 <h3>E-Mail
                 </h3>
-                <p>{{aktuellerAussteller.email}}</p>
+                <p>{{currentExhibitor.email}}</p>
             </div>
 
             <div>
                 <h3>Telefon
                 </h3>
-                <p>{{aktuellerAussteller.telefonNummer}}</p>
+                <p>{{currentExhibitor.tel}}</p>
             </div>
 
             <div>
                 <h3>tischnummer
                 </h3>
-                <p>{{aktuellerAussteller.tischNummer}}</p>
+                <p>{{currentExhibitor.tableNr}}</p>
             </div>
 
             <div>
                 <h3>Plz
                 </h3>
-                <p>{{aktuellerAussteller.plz}}</p>
+                <p>{{currentExhibitor.plz}}</p>
             </div>
 
             <div>
                 <h3>Ort
                 </h3>
-                <p>{{aktuellerAussteller.ort}}</p>
+                <p>{{currentExhibitor.location}}</p>
             </div>
 
             <div>
                 <h3>Adresse
                 </h3>
-                <p>{{aktuellerAussteller.adresse}}</p>
+                <p>{{currentExhibitor.address}}</p>
             </div>
 
             <div>
                 <h3>Url
                 </h3>
-                <p>{{aktuellerAussteller.url}}</p>
+                <p>{{currentExhibitor.url}}</p>
             </div>
 
             <div>
                 <h3>Branche
                 </h3>
-                <p>{{aktuellerAussteller.branche.BranchenName}}</p>
+                <p>{{currentExhibitor.branche.BranchenName}}</p>
             </div>
 
         </div>

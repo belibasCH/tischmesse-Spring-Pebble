@@ -5,20 +5,20 @@
 
         <div class="admin-title">
         <h2>Aussteller</h2>
-            {{ button("/aussteller/add", "Button hinzufuegen", "/img/plus-icon.svg","Hinzufuegen" )}}
+            {{ button("/exhibitor/add", "Button hinzufuegen", "/img/plus-icon.svg","Hinzufuegen" )}}
         </div>
 
         <div id="aussteller-container">
-            {% for entry in ausstellerListe%}
+            {% for entry in exhibitorList%}
                 <div class="aussteller-card">
-                    <p> {{ entry.firmenname }}</p>
+                    <p> {{ entry.companyName }}</p>
                     <p> E-Mail: {{ entry.email }}</p>
-                    <p> Tischnummer: {{ entry.tischnummer }}</p>
+                    <p> Tischnummer: {{ entry.tableNr }}</p>
                     <div class="aussteller-card-icons">
 
-                    <a href=" {{ href("/aussteller/"+entry.id) }}"><img src="/img/eye-icon.svg" alt="view icon"/></a>
-                        <a href=" {{ href("/aussteller/"+entry.id+"/edit") }}"><img src="/img/edit-icon.svg" alt="edit icon"/></a>
-                        <a href=" {{ href("/aussteller/"+entry.id+"/delete") }}"><img src="/img/del-icon.svg" alt="delete icon"/></a>
+                    <a href=" {{ href("/exhibitor/"+entry.id) }}"><img src="/img/eye-icon.svg" alt="view icon"/></a>
+                        <a href=" {{ href("/exhibitor/"+entry.id+"/edit") }}"><img src="/img/edit-icon.svg" alt="edit icon"/></a>
+                        <a href=" {{ href("/exhibitor/"+entry.id+"/delete") }}"><img src="/img/del-icon.svg" alt="delete icon"/></a>
                     </div>
                 </div>
 

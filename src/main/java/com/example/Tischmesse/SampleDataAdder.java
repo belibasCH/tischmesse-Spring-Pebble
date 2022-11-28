@@ -1,7 +1,7 @@
 package com.example.Tischmesse;
 
-import com.example.Tischmesse.model.Aussteller;
-import com.example.Tischmesse.service.AusstellerService;
+import com.example.Tischmesse.model.Exhibitor;
+import com.example.Tischmesse.service.ExhibitorService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,10 +23,10 @@ public class SampleDataAdder implements CommandLineRunner {
     private static final Logger logger = LoggerFactory.getLogger(SampleDataAdder.class);
 
     private final ObjectMapper mapper;
-    private final AusstellerService exhibitorService;
+    private final ExhibitorService exhibitorService;
 
     public SampleDataAdder(ObjectMapper mapper,
-                           AusstellerService exhibitorService) {
+                           ExhibitorService exhibitorService) {
         this.mapper = mapper;
         this.exhibitorService = exhibitorService;
     }
@@ -34,18 +34,17 @@ public class SampleDataAdder implements CommandLineRunner {
     @Override
     public void run(String... args) throws IOException {
         addSampleExhibitors();
-        System.out.println("SampleExhibitors");
     }
 
     public void addSampleExhibitors() throws IOException {
-        if (exhibitorService.getAusstellerListe().isEmpty()) {
+        if (exhibitorService.getExhibitorList().isEmpty()) {
             logger.info("Adding sample Exhibitors");
             loadSampleExhibitors(mapper).forEach(exhibitorService::add);
         }
     }
 
-    public static List<Aussteller> loadSampleExhibitors(ObjectMapper mapper) throws IOException {
+    public static List<Exhibitor> loadSampleExhibitors(ObjectMapper mapper) throws IOException {
         return mapper.readValue(SampleDataAdder.class.getResource(JSON_FILE),
-                new TypeReference<List<Aussteller>>() {});
+                new TypeReference<List<Exhibitor>>() {});
     }
 }
