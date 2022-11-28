@@ -215,3 +215,7 @@ input[value=Hinzufügen]{
     border-radius: 0.5rem;
     padding: 10px;
 }
+
+#sector-title{
+    background-color: transparent;
+}
