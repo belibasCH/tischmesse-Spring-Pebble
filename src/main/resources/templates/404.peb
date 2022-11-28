@@ -1,0 +1,8 @@
+    {% extends "layout_admin" %}
+    {% block main%}
+    <main>
+        <h1>Not found</h1>
+        <p>This is not the page you're looking for...</p>
+        <p><a href="{{ href("/") }}">Back</a></p>
+    </main>
+    {% endblock %}

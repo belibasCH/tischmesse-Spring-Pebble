@@ -134,19 +134,17 @@ input, select{
     padding: 5px;
 }
 
-.branchen-card{
+.sector-card{
     text-align: center;
     background-color: azure;
     padding: 0 1rem;
     margin: 1rem;
-    height: 300px;
-    width: 150px;
 }
 
-.branchen-view{
-    flex-wrap: wrap;
-    display: flex;
-    gap: 2em;
+.sector-view{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 textarea{
@@ -161,30 +159,30 @@ textarea{
     gap: 2rem;
 }
 
-#add-branchen-box{
+#add-sector-box{
     background-color: darkgray;
     width: 25em;
     padding: 1em;
 }
 
 
-#eingabe-block{
+#entry-block{
     padding-bottom: 0.5em;
     flex-direction: unset;
 }
 
-#branchen-delete{
+#sector-delete{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.branchen-entries{
+.sector-entries{
     flex-direction: row;
 }
 
-.branchen-label{
+.sector-label{
     font-size: 0.9rem;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
@@ -205,4 +203,15 @@ input[value=Hinzufügen]{
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+}
+
+#sector-uebersicht{
+    padding-top: 50px;
+}
+
+.error-message{
+    background-color: crimson;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 10px;
 }

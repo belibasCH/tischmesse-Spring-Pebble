@@ -1,0 +1,46 @@
+    {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content" id="sector-anordnung">
+        <div>
+            <div class="admin-title">
+                <h2>Branche</h2>
+            </div>
+            <div class="sector-view">
+                    {% for entry in sectorList %}
+                    <div class="sector-card">
+                        <p class="form-label">
+                            <form action="{{ href("/sectors") }}" method="post">
+                                <input type="text" name="sectorTitle" value="{{ entry.sectorName}}">
+                                <input type="submit" value="Speichern">
+                            </form>
+
+                    </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div id="add-sector-box">
+        <h2>Branchen-Editor</h2>
+            <form action="{{ href("/sectors") }}" method="post">
+            <label for="sectorName" class="form-label">Branchenname</label>
+            <input type="text" name="sectorName" id="sectorName">
+                <input type="submit" value="Hinzufügen">
+            </form>
+        {% if errorMessage != null %}
+            <p class="error-message">
+                    {{ errorMessage }}
+            </p>
+        {% endif %}
+            <div id="sector-uebersicht">
+                <h3>Branchen-Übersicht</h3>
+                    {% for entry in sectorList %}
+                    <form action="{{ href("/sectors/" + entry.id) }}" method="post">
+                        <div id="sector-delete">
+                            <p class="sector-label" id="sector-name-delete">{{ entry.sectorName }}</p>
+                            <input type="submit" value="Delete">
+                        </div>
+                    </form>
+                    {% endfor %}
+            </div>
+    </div>
+    {% endblock %}

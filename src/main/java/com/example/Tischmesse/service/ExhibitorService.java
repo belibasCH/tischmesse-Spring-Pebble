@@ -1,9 +1,10 @@
 package com.example.Tischmesse.service;
 
-import com.example.Tischmesse.model.Branche;
+
 import com.example.Tischmesse.model.Exhibitor;
+import com.example.Tischmesse.model.Sector;
 import com.example.Tischmesse.repository.ExhibitorRepository;
-import com.example.Tischmesse.repository.BranchenRepository;
+import com.example.Tischmesse.repository.SectorRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -13,13 +14,12 @@ import java.util.*;
 public class ExhibitorService {
 
     private ExhibitorRepository repo;
-    private BranchenRepository branchenRepo;
+    private SectorRepository sectorRepo;
 
-    public ExhibitorService(ExhibitorRepository repo, BranchenRepository branchenRepo) {
+    public ExhibitorService(ExhibitorRepository repo, SectorRepository sectorRepo) {
         this.repo = repo;
-        this.branchenRepo = branchenRepo;
+        this.sectorRepo = sectorRepo;
     }
-    private List<Exhibitor> exhibitorList = new ArrayList<Exhibitor>();
 
  public List<Exhibitor> getExhibitorList() {
      return repo.findAll();
@@ -56,15 +56,13 @@ public class ExhibitorService {
         exhibitor.setTableNr(0);
         exhibitor.setAnmdeldeDatum(LocalDate.now());
         List<String> stringList= sectors.orElse(Collections.emptyList());
-        List<Branche> sectorsList = stringList.stream().map(e -> branchenRepo.findBrancheByBranchenName(e)).toList();
-        exhibitor.setBranchen(sectorsList);
+        List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).toList();
+        exhibitor.setSectors(sectorsList);
         repo.save(exhibitor);
 
     }
 
     public Exhibitor add(Exhibitor exhibitor) {
-
-        //branchenRepo.save(exhibitor.getBranchen());
         return repo.save(exhibitor);
     }
 

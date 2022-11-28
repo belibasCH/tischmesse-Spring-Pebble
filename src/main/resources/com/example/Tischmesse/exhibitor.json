@@ -13,10 +13,11 @@
     "url": "www.generis.ch",
     "paid": false,
     "accepted": false
-  } ,
+
+  },
 
   {
-    "id": 3,
+    "id": 2,
     "companyName": "Joel AG",
     "email": "elias@braem.ch",
     "tel": 405,
@@ -29,9 +30,10 @@
     "url": "www.generis.ch",
     "paid": true,
     "accepted": true
+
   },
   {
-    "id": 4,
+    "id": 3,
     "companyName": "Francesco AG",
     "email": "francesco@lucia.ch",
     "tel": 405,
@@ -43,21 +45,11 @@
     "address": "Im Riet 6",
     "url": "www.generis.ch",
     "paid": false,
-    "accepted": true,
-    "branchen": [
-      {
-      "id": 1,
-      "branchenName": "sektor1"
-    },
-      {
-        "id": 2,
-        "branchenName": "sektor2"
-      }
-    ]
+    "accepted": true
 
   },
   {
-    "id": 5,
+    "id": 4,
     "companyName": "Michael AG",
     "email": "michael@faes.ch",
     "tel": 405,
@@ -70,6 +62,6 @@
     "url": "www.generis.ch",
     "paid": true,
     "accepted": false
-  }
 
+  }
 ]
