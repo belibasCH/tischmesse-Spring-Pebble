@@ -6,8 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,11 +13,11 @@ import java.util.Optional;
 public class ExhibitorController {
 
     private final ExhibitorService exhibitorService;
-    private final SectorService branchenService;
+    private final SectorService sectorService;
 
     public ExhibitorController(ExhibitorService aservice, SectorService bservice) {
         this.exhibitorService = aservice;
-        this.branchenService = bservice;
+        this.sectorService = bservice;
     }
     @GetMapping("/exhibitor")
     public String showExhibitor(Model model) {
@@ -28,7 +26,7 @@ public class ExhibitorController {
     }
     @GetMapping("/exhibitor/add")
     public String findExhibitor(Model model) {
-        model.addAttribute("branchenListe", branchenService.getSectorList());
+        model.addAttribute("sectorList", sectorService.getSectorList());
         return "/exhibitor-form";
     }
 
@@ -78,7 +76,7 @@ public class ExhibitorController {
     @GetMapping("/exhibitor/{id}/edit")
     public String editExhibitor(@PathVariable int id, Model model)                      {
         model.addAttribute("currentExhibitor", exhibitorService.findExhibitorById(id).orElseThrow(ExhibitorNotFound::new));
-        model.addAttribute("branchenListe", branchenService.getSectorList());
+        model.addAttribute("branchenListe", sectorService.getSectorList());
         return "/exhibitor-edit";
     }
 

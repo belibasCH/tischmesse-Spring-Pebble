@@ -58,8 +58,9 @@
                     <label for="sectors" class="form-label">Branche</label>
 
                     <div class="checkboxes">
-                        <input type="checkbox" name="sectors" value="sektor1">Sektor1</input>
-                        <input type="checkbox" name="sectors" value="sektor2">Sektor2</input>
+                        {% for entry in sectorList %}
+                        <input type="checkbox" name="sectors" value={{ entry.sectorName }}>{{ entry.sectorName }}</input>
+                        {% endfor %}
                     </div>
 
                     <div class="form-block">
