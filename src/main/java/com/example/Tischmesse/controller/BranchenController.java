@@ -43,6 +43,12 @@ public class BranchenController {
         return "/branchen";
     }
 
+//    @PostMapping("/branchen")
+//    public String changeBranchenName(Model model){
+//        model.addAttribute("branchenListe", branchenService.updateBranchenListe());
+//        return "/branchen";
+//    }
+
 //    @GetMapping("/branchen")
 //    public String filterBranche(Model model){
 //        model.addAttribute("filteredBranchenListe", branchenService.filterBranchenListe());

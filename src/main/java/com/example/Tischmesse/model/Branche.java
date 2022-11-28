@@ -41,20 +41,8 @@ public class Branche {
     public void setId(int id) {
         this.id = id;
     }
-//
-//    public void setBranchenName(String newName){
-//        branchenName = newName;
-//    }
-//
-//    public List<String> getAusstellerList(){
-//        return ausstellerList;
-//    }
-//
-//    public void addAusstellerToList(String branchenName){
-//        ausstellerList.add(branchenName);
-//    }
-//
-//    public void removeAusstellerFromList(String branchenName){
-//        ausstellerList.remove(branchenName);
-//    }
+
+    public void setBranchenName(String newName){
+        branchenName = newName;
+    }
 }

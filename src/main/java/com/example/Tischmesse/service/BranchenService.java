@@ -38,6 +38,11 @@ public class BranchenService {
 
     public Optional<Branche> findBrancheById(int id){ return repo.findById(id);}
 
+//    public List<Branche> updateBranchenListe(Branche brancheToUpdate) {
+//        brancheToUpdate.setBranchenName(brancheToUpdate.getBranchenName());
+//        //repo.getReferenceById(brancheToUpdate.getId());
+//    }
+
 //    public List<Branche> filterBranchenListe() {
 //        exhibitorRepo.findAll().stream()
 //            .filter(a -> a.)
