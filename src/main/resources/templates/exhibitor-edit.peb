@@ -1,77 +1,70 @@
-    {% import "button" %}
+    {% import "macros/button" %}
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
 
         <div class="admin-title">
-            <h2>Aussteller hinzufügen</h2>
-            {{ button("/aussteller", "Button zurück", "/img/back-icon.svg","zurück" )}}
+            <h2>Aussteller editieren</h2>
+            {{ button("/exhibitor", "Button zurück", "/img/back-icon.svg","zurück" )}}
         </div>
 
-
-        <form action="{{ href("/aussteller/add") }}" method="post">
+        <form action="{{ href("/exhibitor/edit") }}" method="post">
+            <input type="hidden"  name="id" value={{ currentExhibitor.id}}>
             <div id="aussteller-form">
                 <div id="aussteller-left">
                     <div class="form-block">
-                        <h3>Informationen übe Sie und Ihre Firma</h3>
-                        <p>Damit wir Sie wenn nötig kontaktieren können</p>
+                        <h3>{{currentExhibitor.companyName}}</h3>
                     </div>
                     <div class="form-block">
                         <label for="firmenname" class="form-label">Firmenname*</label>
-                        <input type="text" name="firmenname" id="firmenname">
+                        <input type="text" name="firmenname" id="firmenname" value={{currentExhibitor.companyName}}>
                     </div>
 
                     <div class="form-block">
                         <label for="email" class="form-label">E-Mail</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" value={{currentExhibitor.email}}>
                     </div>
 
                     <div class="form-block">
                         <label for="telefonNr" class="form-label">Telefon</label>
-                        <input type="number" name="telefonNr" id="telefonNr">
+                        <input type="number" name="telefonNr" id="telefonNr" value={{currentExhibitor.tel}}>
                     </div>
 
                     <div class="form-block">
                         <label for="plz" class="form-label">PlZ</label>
-                        <input type="number" name="plz" id="plz">
+                        <input type="number" name="plz" id="plz" value={{currentExhibitor.plz}}>
                     </div>
 
                     <div class="form-block">
                         <label for="ort" class="form-label">Ort</label>
-                        <input type="text" name="ort" id="ort">
+                        <input type="text" name="ort" id="ort" value={{currentExhibitor.location}}>
                     </div>
 
                     <div class="form-block">
                         <label for="adresse" class="form-label">Adresse</label>
-                        <input type="text" name="adresse" id="adresse">
+                        <input type="text" name="adresse" id="adresse" value={{currentExhibitor.address}}>
                     </div>
 
                 </div>
                 <div id="aussteller-right">
-                    <div class="form-block">
-                        <h3>Informationen für das öffentliche Ausstellerverzeichniss</h3>
-                        <p>Mehr Informationen: <a href="https://tischmesse.sh" target="_blank">tischmesse.sh</a></p>
-                    </div>
 
                     <div class="form-block">
-                        <label for="branche" class="form-label">Branche auswählen</label>
-                        <select name="branche" id="branche">
-                            <option value="---">---</option>
-                            <option value="saab">Finanzwesen</option>
-                            <option value="mercedes">Gesundheitswesen</option>
-                            <option value="audi">Sanitär, Sepngler, Dachdecker</option>
-                        </select>
+                        <label for="sectors[]" class="form-label">Branchen</label>
+                        {% for entry in branchenListe%}
+                            <checkbox name="sectors[]" id="sectors" >{{entry.branchenName}}</checkbox>
+                        {% endfor%}
+
                     </div>
 
                     <div class="form-block">
                         <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
-                        <textarea name="beschreibung" id="beschreibung"></textarea>
+                        <textarea name="beschreibung" id="beschreibung" >{{currentExhibitor.description}}</textarea>
                     </div>
 
 
                     <div class="form-block">
                         <label for="url" class="form-label">Website-Url</label>
-                        <input type="text" name="url" id="url" placeholder="https://standort-sh.ch">
+                        <input type="text" name="url" id="url" placeholder="https://standort-sh.ch" value={{currentExhibitor.url}}>
                     </div>
 
                 </div>

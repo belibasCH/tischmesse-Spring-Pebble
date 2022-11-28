@@ -4,5 +4,6 @@ import com.example.Tischmesse.model.Branche;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BranchenRepository extends JpaRepository<Branche, Integer> {
+    Branche findBrancheByBranchenName(String branche);
 
 }

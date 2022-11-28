@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "companyName": "Elias AG",
+    "email": "elias@braem.ch",
+    "tel": 405,
+    "description": "Beschreibung",
+    "registrationDate":"",
+    "tableNr": 22,
+    "plz": 8224,
+    "location":"Schaffhausen",
+    "address": "Im Riet 6",
+    "url": "www.generis.ch",
+    "paid": false,
+    "accepted": false
+  } ,
+
+  {
+    "id": 3,
+    "companyName": "Joel AG",
+    "email": "elias@braem.ch",
+    "tel": 405,
+    "description": "Beschreibung",
+    "registrationDate":"",
+    "tableNr": 22,
+    "plz": 8224,
+    "location":"Hunzenschwil",
+    "address": "Im Riet 6",
+    "url": "www.generis.ch",
+    "paid": true,
+    "accepted": true
+  },
+  {
+    "id": 4,
+    "companyName": "Francesco AG",
+    "email": "francesco@lucia.ch",
+    "tel": 405,
+    "description": "Beschreibung",
+    "registrationDate":"",
+    "tableNr": 22,
+    "plz": 8224,
+    "location":"Hunzenschwil",
+    "address": "Im Riet 6",
+    "url": "www.generis.ch",
+    "paid": false,
+    "accepted": true
+  },
+  {
+    "id": 5,
+    "companyName": "Michael AG",
+    "email": "michael@faes.ch",
+    "tel": 405,
+    "description": "Beschreibung",
+    "registrationDate":"",
+    "tableNr": 22,
+    "plz": 8224,
+    "location":"Hunzenschwil",
+    "address": "Im Riet 6",
+    "url": "www.generis.ch",
+    "paid": true,
+    "accepted": false
+  }
+
+]
