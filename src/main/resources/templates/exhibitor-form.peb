@@ -55,6 +55,12 @@
                         <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
                         <textarea name="beschreibung" id="beschreibung"></textarea>
                     </div>
+                    <label for="sectors" class="form-label">Branche</label>
+
+                    <div class="checkboxes">
+                        <input type="checkbox" name="sectors" value="sektor1">Sektor1</input>
+                        <input type="checkbox" name="sectors" value="sektor2">Sektor2</input>
+                    </div>
 
                     <div class="form-block">
                         <label for="url" class="form-label">Website-Url</label>

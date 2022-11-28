@@ -64,11 +64,16 @@
                 </h3>
                 <p>{{currentExhibitor.url}}</p>
             </div>
+            {% for entry in currentExhibitor.branchen %}
+                <p>{{ entry.branchenName }}</p>
+            {% endfor %}
+
+
 
             <div>
                 <h3>Branche
                 </h3>
-                <p>{{currentExhibitor.branche.BranchenName}}</p>
+                <p>{{currentExhibitor.branche.branchenName}}</p>
             </div>
 
         </div>

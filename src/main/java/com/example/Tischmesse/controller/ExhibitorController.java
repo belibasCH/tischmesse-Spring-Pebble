@@ -4,11 +4,11 @@ import com.example.Tischmesse.service.ExhibitorService;
 import com.example.Tischmesse.service.BranchenService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -40,9 +40,9 @@ public class ExhibitorController {
                                @RequestParam Optional<Integer> plz,
                                @RequestParam Optional<String> ort,
                                @RequestParam Optional<String> adresse,
-                               @RequestParam Optional<String> url) {
-
-        exhibitorService.addExhibitor(firmenname, email, telefonNr, beschreibung, plz, ort, adresse, url);
+                               @RequestParam Optional<String> url,
+                               @RequestParam Optional<List<String>> sectors) {
+       exhibitorService.addExhibitor(firmenname, email, telefonNr, beschreibung, plz, ort, adresse, url, sectors);
 
         return "redirect:/exhibitor";
     }
@@ -56,7 +56,8 @@ public class ExhibitorController {
                                @RequestParam Optional<String> ort,
                                @RequestParam Optional<String> adresse,
                                @RequestParam Optional<String> url,
-                               @RequestParam Optional<String> branche) {
+                               @ModelAttribute Optional<String> sector) {
+
         exhibitorService.editExhibitor(firmenname,id,  email, telefonNr, beschreibung, plz, ort, adresse, url);
         return "redirect:/exhibitor";
     }
@@ -80,7 +81,6 @@ public class ExhibitorController {
         model.addAttribute("branchenListe", branchenService.getBranchenListe());
         return "/exhibitor-edit";
     }
-
 
     private static class ExhibitorNotFound extends RuntimeException {}
 

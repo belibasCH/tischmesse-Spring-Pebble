@@ -43,7 +43,18 @@
     "address": "Im Riet 6",
     "url": "www.generis.ch",
     "paid": false,
-    "accepted": true
+    "accepted": true,
+    "branchen": [
+      {
+      "id": 1,
+      "branchenName": "sektor1"
+    },
+      {
+        "id": 2,
+        "branchenName": "sektor2"
+      }
+    ]
+
   },
   {
     "id": 5,
