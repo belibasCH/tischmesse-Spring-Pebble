@@ -2,7 +2,7 @@ package com.example.Tischmesse.service;
 
 import com.example.Tischmesse.model.Exhibitor;
 import com.example.Tischmesse.repository.ExhibitorRepository;
-import com.example.Tischmesse.repository.BranchenRepository;
+import com.example.Tischmesse.repository.SectorRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -14,9 +14,9 @@ import java.util.Optional;
 public class ExhibitorService {
 
     private ExhibitorRepository repo;
-    private BranchenRepository branchenRepo;
+    private SectorRepository branchenRepo;
 
-    public ExhibitorService(ExhibitorRepository repo, BranchenRepository branchenRepo) {
+    public ExhibitorService(ExhibitorRepository repo, SectorRepository branchenRepo) {
         this.repo = repo;
         this.branchenRepo = branchenRepo;
     }

@@ -1,7 +1,7 @@
 package com.example.Tischmesse.controller;
 
 import com.example.Tischmesse.service.ExhibitorService;
-import com.example.Tischmesse.service.BranchenService;
+import com.example.Tischmesse.service.SectorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +15,9 @@ import java.util.Optional;
 public class ExhibitorController {
 
     private final ExhibitorService exhibitorService;
-    private final BranchenService branchenService;
+    private final SectorService branchenService;
 
-    public ExhibitorController(ExhibitorService aservice, BranchenService bservice) {
+    public ExhibitorController(ExhibitorService aservice, SectorService bservice) {
         this.exhibitorService = aservice;
         this.branchenService = bservice;
     }
@@ -28,7 +28,7 @@ public class ExhibitorController {
     }
     @GetMapping("/exhibitor/add")
     public String findExhibitor(Model model) {
-        model.addAttribute("branchenListe", branchenService.getBranchenListe());
+        model.addAttribute("branchenListe", branchenService.getSectorList());
         return "/exhibitor-form";
     }
 
@@ -77,7 +77,7 @@ public class ExhibitorController {
     @GetMapping("/exhibitor/{id}/edit")
     public String editExhibitor(@PathVariable int id, Model model)                      {
         model.addAttribute("currentExhibitor", exhibitorService.findExhibitorById(id).orElseThrow(ExhibitorNotFound::new));
-        model.addAttribute("branchenListe", branchenService.getBranchenListe());
+        model.addAttribute("branchenListe", branchenService.getSectorList());
         return "/exhibitor-edit";
     }
 
