@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.NoSuchElementException;
 
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Controller
@@ -22,13 +23,16 @@ public class TischmesseController {
     }
 
 
-    @GetMapping("/")
-    public String home(){ return "/home";}
-
     @ExceptionHandler(NoSuchElementException.class)
     @ResponseStatus(NOT_FOUND)
     public String notFound(Model model) {
-        return "404";
+        return "/404";
+    }
+
+    @ExceptionHandler(NoSuchElementException.class)
+    @ResponseStatus(BAD_REQUEST)
+    public String badRequest(Model model) {
+        return "/404";
     }
 
 }

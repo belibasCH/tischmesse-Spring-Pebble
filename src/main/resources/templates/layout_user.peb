@@ -1,3 +1,5 @@
+    {% import "macros/button" %}
+
 <html>
 <!DOCTYPE html>
 <html lang="en">
@@ -5,11 +7,40 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ href("/styles.css") }}">
     <link rel="stylesheet" href="{{ href("/home.css") }}">
-    <title>Tischmesse</title>
-</head> <body>
-<div id="container">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1">
+    <title>Tischmesse SH</title>
+</head>
+<body>
         {% block content %}{% endblock %}
-    </div>
+<footer>
+    <section class="footer-box">
+        <h4>ORGANISATOR</h4>
+        <p><strong>Wirtschaftsförderung Kanton Schaffhausen</strong><br>
+            Christoph Schärrer, Pia von Ow<br>
+            Freier Platz 10, 8200 Schaffhausen<br>
+            Tel. +41 52 674 03 03<br>
+    </section>
+
+    <section class="footer-box">
+        <h4>VERANSTALTUNGSORT</h4>
+        <p>IWC Arena<br>
+            Freizeitpark KSS<br>
+            Breitenaustrasse 117<br>
+            8200 Schaffhausen</p>
+    </section>
+
+    <section class="footer-box">
+        <h4>About</h4>
+        <a href="{{ href("/about") }}"><p>Impressum</p> </a>
+        <a href="{{ href("/admin") }}"><p>Admin</p> </a>
+
+    </section>
+
+
+
+</footer>
+    <script src="{{ href("/cardScript.js") }}"></script>
 </body>
 </html>
 </html>

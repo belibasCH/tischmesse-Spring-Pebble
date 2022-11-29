@@ -25,6 +25,9 @@ public class ExhibitorService {
  public List<Exhibitor> getExhibitorList() {
      return repo.findAll();
  }
+    public List<Exhibitor> getActiveExhibitorList() {
+        return repo.findAll().stream().filter(e -> e.getAccepted()).collect(Collectors.toList());
+    }
 
     public Optional<Exhibitor> findExhibitorById(int id) {
             return repo.findById(id);
