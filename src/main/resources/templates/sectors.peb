@@ -5,7 +5,6 @@
             <div class="admin-title">
                 <h2>Branche</h2>
             </div>
-
             <div class="sector-view">
                     {% for entry in sectorList %}
                     <div class="sector-card">
