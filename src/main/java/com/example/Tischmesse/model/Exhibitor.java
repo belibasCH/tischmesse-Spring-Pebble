@@ -12,7 +12,7 @@ public class Exhibitor {
     private int id;
     private String companyName;
     private String email;
-    private Integer tel;
+    private String tel;
     private String description;
     private LocalDate registrationDate;
     private Integer tableNr;
@@ -29,7 +29,7 @@ public class Exhibitor {
 
     //Liste mit Personen
 
-    public Exhibitor(String companyName, String email, Integer tel, String description, LocalDate registrationDate, Integer tableNr, Integer plz, String location, String adress, String url) {
+    public Exhibitor(String companyName, String email, String tel, String description, LocalDate registrationDate, Integer tableNr, Integer plz, String location, String adress, String url) {
         this.companyName = companyName;
         this.email = email;
         this.tel = tel;
@@ -73,11 +73,11 @@ public class Exhibitor {
         this.email = email;
     }
 
-    public Integer getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int telefonNr) {
+    public void setTel(String telefonNr) {
         this.tel = telefonNr;
     }
 

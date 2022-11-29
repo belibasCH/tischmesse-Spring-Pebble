@@ -39,7 +39,7 @@ public class ExhibitorService {
 
     public void addExhibitor(String firmenname,
                              Optional<String> email,
-                             Optional<Integer> telefonNr,
+                             Optional<String> telefonNr,
                              Optional<String> beschreibung,
                              Optional<Integer> plz,
                              Optional<String> ort,
@@ -49,7 +49,7 @@ public class ExhibitorService {
         var exhibitor = new Exhibitor();
         exhibitor.setCompanyName(firmenname);
         exhibitor.setEmail(email.orElse(""));
-        exhibitor.setTel(telefonNr.orElse(0));
+        exhibitor.setTel(telefonNr.orElse(""));
         exhibitor.setDescription(beschreibung.orElse(""));
         exhibitor.setPLZ(plz.orElse(0));
         exhibitor.setLocation(ort.orElse(""));
@@ -74,7 +74,7 @@ public class ExhibitorService {
             String companyName,
             int id,
             Optional<String> email,
-            Optional<Integer> tel,
+            Optional<String> tel,
             Optional<String> description,
             Optional<Integer> plz,
             Optional<String> location,
@@ -86,7 +86,7 @@ public class ExhibitorService {
         var exhibitor = findExhibitorById(id).orElseThrow(ExhibitorNotFound::new);
         exhibitor.setCompanyName(companyName);
         exhibitor.setEmail(email.orElse(""));
-        exhibitor.setTel(tel.orElse(0));
+        exhibitor.setTel(tel.orElse(""));
         exhibitor.setDescription(description.orElse(""));
         exhibitor.setPLZ(plz.orElse(0));
         exhibitor.setLocation(location.orElse(""));
