@@ -1,4 +1,4 @@
-    {% extends "layout_admin" %}
+    {% extends "layout_user" %}
     {% block main%}
     <main>
         <h1>Not found</h1>

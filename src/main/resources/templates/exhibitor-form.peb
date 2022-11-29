@@ -47,7 +47,7 @@
                 </div>
             </div>
             <p>
-                <input type="submit" value="weiter">
+                <input type="submit" value="weiter" class="btn">
 
 
             </p>

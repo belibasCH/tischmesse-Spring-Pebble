@@ -19,3 +19,8 @@ main {
     background: white;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.20);
 }
+
+.user-title {
+    width: 100%;
+    text-align: center;
+}

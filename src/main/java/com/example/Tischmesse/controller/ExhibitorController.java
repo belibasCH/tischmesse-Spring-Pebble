@@ -20,6 +20,11 @@ public class ExhibitorController {
         this.exhibitorService = aservice;
         this.sectorService = bservice;
     }
+
+    @GetMapping("/")
+    public String home(Model model){
+        model.addAttribute("exhibitorList", exhibitorService.getExhibitorList());
+        return "/home";}
     @GetMapping("/exhibitor")
     public String showExhibitor(Model model) {
         model.addAttribute("exhibitorList", exhibitorService.getExhibitorList());

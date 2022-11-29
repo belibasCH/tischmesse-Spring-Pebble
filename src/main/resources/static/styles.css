@@ -39,9 +39,6 @@ button:hover, .btn:hover{
 
 }
 
-
-
-
 #container  {
     display: flex;
     flex-direction: column;
