@@ -24,15 +24,16 @@ public class ExhibitorService {
         this.sectorRepo = sectorRepo;
     }
 
- public List<Exhibitor> getExhibitorList() {
-     return repo.findAll();
- }
+    public List<Exhibitor> getExhibitorList() {
+        return repo.findAll();
+    }
+
     public List<Exhibitor> getActiveExhibitorList() {
         return repo.findAll().stream().filter(e -> e.getAccepted()).collect(Collectors.toList());
     }
 
     public Optional<Exhibitor> findExhibitorById(int id) {
-            return repo.findById(id);
+        return repo.findById(id);
     }
 
     public void deleteExhibitor(int id) {
@@ -47,7 +48,7 @@ public class ExhibitorService {
                              Optional<String> ort,
                              Optional<String> adresse,
                              Optional<String> url,
-                             Optional<List<String>> sectors ){
+                             Optional<List<String>> sectors) {
         var exhibitor = new Exhibitor();
         exhibitor.setCompanyName(firmenname);
         exhibitor.setEmail(email.orElse(""));
@@ -61,7 +62,7 @@ public class ExhibitorService {
         exhibitor.setPaid(false);
         exhibitor.setTableNr(0);
         exhibitor.setRegistrationDate(LocalDate.now());
-        List<String> stringList= sectors.orElse(Collections.emptyList());
+        List<String> stringList = sectors.orElse(Collections.emptyList());
         List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).toList();
         exhibitor.setSectors(sectorsList);
         repo.save(exhibitor);
@@ -87,6 +88,7 @@ public class ExhibitorService {
             Optional<Boolean> accepted,
             Optional<List<String>> sectors,
             Optional<String> date) throws ParseException {
+
         var exhibitor = findExhibitorById(id).orElseThrow(ExhibitorNotFound::new);
         exhibitor.setCompanyName(companyName);
         exhibitor.setEmail(email.orElse(""));
@@ -100,13 +102,14 @@ public class ExhibitorService {
         exhibitor.setTableNr(0);
         exhibitor.setPaid(paid.orElse(false));
         exhibitor.setAccepted(accepted.orElse(false));
-        List<String> stringList= sectors.orElse(Collections.emptyList());
+        List<String> stringList = sectors.orElse(Collections.emptyList());
         List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).collect(Collectors.toList());
         exhibitor.setSectors(sectorsList);
         exhibitor.setRegistrationDate(LocalDate.parse(date.orElse("2000-2-2")));
         repo.save(exhibitor);
- }
+    }
 
 
-    private static class ExhibitorNotFound extends RuntimeException {}
+    private static class ExhibitorNotFound extends RuntimeException {
+    }
 }
