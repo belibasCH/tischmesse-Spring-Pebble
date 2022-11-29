@@ -26,10 +26,7 @@ h1, h2, h3, h4, h5, h6 , li{
     font-family: 'Montserrat', sans-serif;
     font-variant: small-caps;
 }
-h1{
-    font-size: 1.2em;
-    color: var(--background-color);
-}
+
 p {
     font-family: 'Montserrat', sans-serif;
 }

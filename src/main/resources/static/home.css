@@ -1,5 +1,12 @@
-body{
 
+
+h1{
+    font-size: 1.7em;
+    color: var(--background-color);
+}
+h2{
+    font-size: 1.3em;
+    color: var(--background-color);
 }
 h3 {
     font-size: 120%;
