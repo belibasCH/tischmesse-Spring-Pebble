@@ -1,7 +1,7 @@
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content" id="sector-content">
-        <div>
+        <div id="sector-overview">
             <div class="admin-title">
                 <h2>Branche</h2>
             </div>
