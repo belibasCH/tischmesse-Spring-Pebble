@@ -101,7 +101,7 @@ li a img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: azure;
+    background-color: white;
     padding: 0 1rem;
 }
 .aussteller-card-icons {
@@ -118,6 +118,7 @@ height: 1rem;
 .admin-title{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 #aussteller-form {
@@ -264,4 +265,23 @@ input[value=Hinzufügen]{
     display: flex;
     align-items: center;
 
+}
+.overview-boxes{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.overview-boxes p{
+    margin: 0;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.warning-true {
+    color: darkred;
+}
+.warning-false {
+    color: darkgreen;
 }

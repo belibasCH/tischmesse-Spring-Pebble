@@ -89,11 +89,11 @@ public class Exhibitor {
         this.description = beschreibung;
     }
 
-    public LocalDate getAnmdeldeDatum() {
+    public LocalDate getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setAnmdeldeDatum(LocalDate anmeldeDatum) {
+    public void setRegistrationDate(LocalDate anmeldeDatum) {
         this.registrationDate = anmeldeDatum;
     }
 

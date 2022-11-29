@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,10 +64,11 @@ public class ExhibitorController {
                                @RequestParam Optional<String> url,
                                @RequestParam Optional<Boolean> paid,
                                @RequestParam Optional<Boolean> accepted,
-                               @RequestParam Optional<List<String>> sectors
-                               ) {
+                               @RequestParam Optional<List<String>> sectors,
+                               @RequestParam Optional<String> date
+                               ) throws ParseException {
 
-        exhibitorService.editExhibitor(companyName,id,  email, tel, description, plz, location, address, url, paid, accepted, sectors);
+        exhibitorService.editExhibitor(companyName,id,  email, tel, description, plz, location, address, url, paid, accepted, sectors, date);
         return "redirect:/exhibitor";
     }
 

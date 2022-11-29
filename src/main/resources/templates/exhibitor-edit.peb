@@ -20,7 +20,9 @@
                     {{ forminput("plz", "number", "PlZ",currentExhibitor.plz)}}
                     {{ forminput("location", "text", "Ort",currentExhibitor.location)}}
                     {{ forminput("address", "text", "Adresse",currentExhibitor.address)}}
-                    {{ forminput("url", "text", "Webseiten-URL",currentExhibitor.url)}}
+                    {{ forminput("url", "url", "Webseiten-URL",currentExhibitor.url)}}
+                    {{ forminput("date", "date", "Anmeldedatum",currentExhibitor.registrationDate)}}
+
                     <div class="form-block">
                         <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
                         <textarea name="beschreibung" id="beschreibung" >{{currentExhibitor.description}}</textarea>
@@ -29,6 +31,7 @@
                 <div id="aussteller-right">
 
                     <div class="checkboxes">
+                        <h2>Branchen</h2>
                             {% for entry in currentExhibitor.sectors %}
                             <div class="checkbox-div">
                                 <input type="checkbox" name="sectors" checked value={{ entry.sectorName }}>
@@ -46,12 +49,12 @@
 
 
                     </div>
-
-                    <div class="form-block">
+                    <h2>Spezifische Einstellungen</h2>
+                    <div class="checkbox-div">
                         <input type="checkbox" name="paid" id="paid" {% if currentExhibitor.paid == true %}checked{% endif %}>
                         <label for="paid" class="form-label">Bezahlt</label>
                     </div>
-                    <div class="form-block">
+                    <div class="checkbox-div">
                         <input type="checkbox" name="accepted" id="accepted" {% if currentExhibitor.accepted == true %}checked{% endif %}>
                         <label for="accepted" class="form-label">Akzeptiert</label>
                     </div>
