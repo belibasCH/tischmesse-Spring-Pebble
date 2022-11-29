@@ -21,6 +21,7 @@
                     {{ forminput("location", "text", "Ort",currentExhibitor.location)}}
                     {{ forminput("address", "text", "Adresse",currentExhibitor.address)}}
                     {{ forminput("url", "url", "Webseiten-URL",currentExhibitor.url)}}
+                    {{ forminput("url", "url", "Logo-URL",currentExhibitor.imageUrl)}}
                     {{ forminput("date", "date", "Anmeldedatum",currentExhibitor.registrationDate)}}
 
                     <div class="form-block">

@@ -20,6 +20,10 @@ public class Exhibitor {
     private String location;
     private String address;
     private String url;
+
+
+
+    private String imageUrl;
     private Boolean paid;
     private Boolean accepted;
 
@@ -159,6 +163,13 @@ public class Exhibitor {
 
     public void setSectors(List<Sector> sectors) {
         this.sectors = sectors;
+    }
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
 }

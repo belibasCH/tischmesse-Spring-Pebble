@@ -1,10 +1,11 @@
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content" id="sector-content">
-        <div>
+        <div class="sector-content-left">
             <div class="admin-title">
                 <h2>Branche</h2>
             </div>
+
             <div class="sector-view">
                     {% for entry in sectorList %}
                     <div class="sector-card">
@@ -18,7 +19,7 @@
                     {% endfor %}
             </div>
         </div>
-        <div id="add-sector-box"    >
+        <div id="add-sector-box">
             <h2>Branchen-Editor</h2>
             <form action={{ href("/sectors/add") }} method="post">
                 <label for="sectorName" class="form-label" id="sector-title">Branchenname</label>

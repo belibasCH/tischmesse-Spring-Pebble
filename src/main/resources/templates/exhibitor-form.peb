@@ -21,7 +21,8 @@
                         {{ forminput("plz", "number", "PlZ","")}}
                         {{ forminput("location", "text", "Ort","")}}
                         {{ forminput("address", "text", "Adresse","")}}
-                        {{ forminput("url", "text", "Webseiten-URL","")}}
+                        {{ forminput("url", "url", "Webseiten-URL","")}}
+                        {{ forminput("url", "url", "Logo-URL","")}}
 
 
                     </div>

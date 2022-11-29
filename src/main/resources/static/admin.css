@@ -91,6 +91,9 @@ li a img {
     flex-direction: row;
     justify-content: space-between;
 }
+.sector-content-left {
+    flex-grow: 2;
+}
 
 #aussteller-container {
     display: flex;
@@ -157,7 +160,7 @@ input, select{
 
 .sector-card{
     text-align: center;
-    background-color: azure;
+    background-color: white;
     padding: 0 1rem;
     margin: 1rem;
 }
@@ -165,8 +168,7 @@ input, select{
 .sector-view{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
-    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
-}
+   }
 
 textarea{
     border: 1px solid var(--onBackground-color);
@@ -182,8 +184,8 @@ textarea{
 
 #add-sector-box{
     background-color: darkgray;
-    width: 15em;
     padding: 1em;
+    flex-basis: 15rem;
 }
 
 

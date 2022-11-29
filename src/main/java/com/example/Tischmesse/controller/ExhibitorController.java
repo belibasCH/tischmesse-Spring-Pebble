@@ -62,13 +62,14 @@ public class ExhibitorController {
                                @RequestParam Optional<String> location,
                                @RequestParam Optional<String> address,
                                @RequestParam Optional<String> url,
+                               @RequestParam Optional<String> imageUrl,
                                @RequestParam Optional<Boolean> paid,
                                @RequestParam Optional<Boolean> accepted,
                                @RequestParam Optional<List<String>> sectors,
                                @RequestParam Optional<String> date
                                ) throws ParseException {
 
-        exhibitorService.editExhibitor(companyName,id,  email, tel, description, plz, location, address, url, paid, accepted, sectors, date);
+        exhibitorService.editExhibitor(companyName,id,  email, tel, description, plz, location, address, url,imageUrl, paid, accepted, sectors, date);
         return "redirect:/exhibitor";
     }
 

@@ -10,7 +10,8 @@
     "plz": 8224,
     "location":"Schaffhausen",
     "address": "Im Riet 6",
-    "url": "https://generis.ch/",
+    "url": "http://internetter.ch",
+    "imageUrl": "http://internetter.ch/wp-content/uploads/2017/04/Logo_web_internetter-1.png",
     "paid": true,
     "accepted": true
 
@@ -28,8 +29,9 @@
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
     "url": "https://generis.ch/",
-    "paid": false,
-    "accepted": false
+    "imageUrl": "https://duckduckgo.com/assets/logo_header.alt.v108.svg",
+    "paid": true,
+    "accepted": true
 
   },
   {
@@ -44,7 +46,8 @@
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
     "url": "https://generis.ch/",
-    "paid": false,
+    "imageUrl": "https://www.suedkurier.de/storage/image/4/1/5/5/11505514_shift-644x395-800w_1wJzds_h0jhXO.webp",
+    "paid": true,
     "accepted": true
 
   },
@@ -60,6 +63,7 @@
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
     "url": "https://generis.ch/",
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
     "paid": false,
     "accepted": true
 
@@ -76,8 +80,9 @@
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
     "url": "https://generis.ch/",
-    "paid": false,
-    "accepted": true
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
+    "paid": true,
+    "accepted": false
 
   },
   {
@@ -92,8 +97,9 @@
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
     "url": "https://generis.ch/",
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
     "paid": false,
-    "accepted": true
+    "accepted": false
 
   },
   {
@@ -108,7 +114,8 @@
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
     "url": "https://generis.ch/",
-    "paid": false,
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
+    "paid": true,
     "accepted": true
 
   },
@@ -124,7 +131,8 @@
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
     "url": "https://generis.ch/",
-    "paid": true,
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
+    "paid": false,
     "accepted": false
 
   }

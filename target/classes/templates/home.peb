@@ -10,16 +10,26 @@
     <main>
         {% for entry in exhibitorList %}
             <article>
+                <div>
+
                 <section class="card-top">
                     <h3>{{ entry.companyName }}</h3>
                     <h4>Tisch Nr. {{ entry.tableNr }}</h4>
                 </section>
+                <img src="{{ entry.imageUrl }}" alt="logo {{ entry.companyName }}" class="logo-image">
+                </div>
                 <section class="card-center" id="card-{{ entry.id }}" style="display: none">
                     <div class="icon-box">
                         <img src="{{ href("/img/location-icon.svg") }}" alt="location-icon">
                         <div>
                             <p>{{ entry.address }}</p>
                             <p>{{ entry.plz }} {{ entry.location }}</p>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <img src="{{ href("/img/web-icon.svg") }}" alt="web-icon">
+                        <div>
+                            <p>{{ entry.url }}</p>
                         </div>
                     </div>
                     <div class="icon-box">
