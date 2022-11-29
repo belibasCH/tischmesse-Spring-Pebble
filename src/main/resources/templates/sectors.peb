@@ -1,6 +1,6 @@
     {% extends "layout_admin" %}
     {% block content %}
-    <div class="content" id="sector-anordnung">
+    <div class="content" id="sector-content">
         <div>
             <div class="admin-title">
                 <h2>Branche</h2>
@@ -9,38 +9,40 @@
                     {% for entry in sectorList %}
                     <div class="sector-card">
                         <p class="form-label">
-                            <form action="{{ href("/sectors") }}" method="post">
-                                <input type="text" name="sectorTitle" value="{{ entry.sectorName}}">
-                                <input type="submit" value="Speichern">
+                            <form action="{{ href("/sectors/update") }}" class="update-form" method="post">
+                                <input type="text" name="sectorTitle" class="no-outline" value={{ entry.sectorName }}>
+                                <input type="hidden" name="id" value={{ entry.id }}>
+                                <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22px" height="22px">
                             </form>
-
                     </div>
                     {% endfor %}
             </div>
         </div>
-    </div>
-    <div id="add-sector-box">
-        <h2>Branchen-Editor</h2>
-            <form action="{{ href("/sectors") }}" method="post">
-            <label for="sectorName" class="form-label">Branchenname</label>
-            <input type="text" name="sectorName" id="sectorName">
+        <div id="add-sector-box"    >
+            <h2>Branchen-Editor</h2>
+            <form action={{ href("/sectors/add") }} method="post">
+                <label for="sectorName" class="form-label" id="sector-title">Branchenname</label>
+                <input type="text" name="sectorName" id="sectorName">
                 <input type="submit" value="Hinzufügen">
             </form>
-        {% if errorMessage != null %}
-            <p class="error-message">
-                    {{ errorMessage }}
-            </p>
-        {% endif %}
+            {% if errorMessage != null %}
+                <p class="error-message">
+                        {{ errorMessage }}
+                </p>
+            {% endif %}
             <div id="sector-uebersicht">
                 <h3>Branchen-Übersicht</h3>
-                    {% for entry in sectorList %}
-                    <form action="{{ href("/sectors/" + entry.id) }}" method="post">
+                {% for entry in sectorList %}
+                    <form action="{{ href("/sectors/delete") }}" method="post">
                         <div id="sector-delete">
                             <p class="sector-label" id="sector-name-delete">{{ entry.sectorName }}</p>
+                            <input type="hidden" name="id" value={{ entry.id }}>
                             <input type="submit" value="Delete">
                         </div>
                     </form>
-                    {% endfor %}
+                {% endfor %}
             </div>
+        </div>
     </div>
+
     {% endblock %}

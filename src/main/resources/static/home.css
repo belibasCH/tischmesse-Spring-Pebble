@@ -6,13 +6,6 @@
     gap: 20px 20px;
 }
 
-body {
-    font-family: 'Krub', sans-serif;
-    font-size: 120%;
-    margin: 0;
-    background-color: whitesmoke;
-}
-
 main {
     margin: 2em 2em 1em;
     padding: 3em 2em 2em;
