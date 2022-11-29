@@ -7,20 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class ExhibitorPage {
+public class ExhibitorAdminPage {
 
     private static final String BASE_URL = "http://localhost:";
 
-    public static ExhibitorPage create(WebDriver driver, int port) {
+    public static ExhibitorAdminPage create(WebDriver driver, int port) {
         return create(driver, port, "/exhibitor");
     }
 
-    public static ExhibitorPage create(WebDriver driver, int port, String path) {
+    public static ExhibitorAdminPage create(WebDriver driver, int port, String path) {
         driver.get(BASE_URL + port + path);
-        return PageFactory.initElements(driver, ExhibitorPage.class);
+        return PageFactory.initElements(driver, ExhibitorAdminPage.class);
     }
 
-    //@FindBy(css = "#aussteller-container")
     @FindBy(css = ".aussteller-card")
     private List<WebElement> allExhibitors;
 

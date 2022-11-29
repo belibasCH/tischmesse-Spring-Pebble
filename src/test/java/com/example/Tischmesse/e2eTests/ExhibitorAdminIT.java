@@ -1,6 +1,6 @@
 package com.example.Tischmesse.e2eTests;
 
-import com.example.Tischmesse.e2eTests.pages.ExhibitorPage;
+import com.example.Tischmesse.e2eTests.pages.ExhibitorAdminPage;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +18,7 @@ public class ExhibitorAdminIT {
 
     @Test
     public void testExhibitorsAreShownInAdminInterface(){
-        var page = ExhibitorPage.create(driver, port);
+        var page = ExhibitorAdminPage.create(driver, port);
         assertFalse(page.getAllExhibitors().isEmpty());
     }
 }
