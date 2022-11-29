@@ -23,12 +23,12 @@ public class ConstructorTests {
     @Test
     public void testExhibitorConstructor(){
         //given
-        Exhibitor exhibitorUnderTest = new Exhibitor("Test AG", "test@gmail.com", 791025487, "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
+        Exhibitor exhibitorUnderTest = new Exhibitor("Test AG", "test@gmail.com", "0791025487", "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
 
         //then
         assertEquals("Test AG", exhibitorUnderTest.getCompanyName());
         assertEquals("test@gmail.com", exhibitorUnderTest.getEmail());
-        assertEquals(791025487, exhibitorUnderTest.getTel());
+        assertEquals("0791025487", exhibitorUnderTest.getTel());
         assertEquals("Unser neues Unternehmen ist...", exhibitorUnderTest.getDescription());
         assertEquals(LocalDate.class , exhibitorUnderTest.getAnmdeldeDatum().getClass());
         assertEquals(102, exhibitorUnderTest.getTableNr());
@@ -36,14 +36,5 @@ public class ConstructorTests {
         assertEquals("Aarau", exhibitorUnderTest.getLocation());
         assertEquals("Bahnhofstrasse 4", exhibitorUnderTest.getAddress());
         assertEquals("https://www.raiffeisen.ch/", exhibitorUnderTest.getUrl());
-    }
-
-    @Test
-    public void testInvalidInputInExhibitorConstructor(){
-        //given
-        Exhibitor exhibitorUnderTest = new Exhibitor("Test AG", "test@gmail.com", 079, "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
-
-        //then
-
     }
 }

@@ -18,11 +18,11 @@ public class ActiveExhibitorTest {
     @Test
     public void testActiveExhibitorList(){
         //given
-        Exhibitor acceptedExhibitor = new Exhibitor("Accepted AG", "test@gmail.com", 791025487, "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
+        Exhibitor acceptedExhibitor = new Exhibitor("Accepted AG", "test@gmail.com", "791025487", "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
         acceptedExhibitor.setAccepted(true);
-        Exhibitor notAcceptedExhibitor = new Exhibitor("Notaccepted AG", "test@gmail.com", 791025487, "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
+        Exhibitor notAcceptedExhibitor = new Exhibitor("Notaccepted AG", "test@gmail.com", "791025487", "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
         notAcceptedExhibitor.setAccepted(false);
-        Exhibitor acceptedExhibitor2 = new Exhibitor("Secondaccepted AG", "test@gmail.com", 791025487, "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
+        Exhibitor acceptedExhibitor2 = new Exhibitor("Secondaccepted AG", "test@gmail.com", "791025487", "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
         acceptedExhibitor2.setAccepted(true);
 
         List<Exhibitor> allExhibitors = List.of(acceptedExhibitor, notAcceptedExhibitor, acceptedExhibitor2);
