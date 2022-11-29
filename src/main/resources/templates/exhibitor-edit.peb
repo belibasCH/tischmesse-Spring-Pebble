@@ -17,6 +17,7 @@
                     {{ forminput("companyName", "text", "Firmenname",currentExhibitor.companyName)}}
                     {{ forminput("email", "email", "E-Mail",currentExhibitor.email)}}
                     {{ forminput("tel", "text", "Telefon",currentExhibitor.tel)}}
+                    {{ forminput("tableNr", "number", "Tischnummer",currentExhibitor.tableNr)}}
                     {{ forminput("plz", "number", "PlZ",currentExhibitor.plz)}}
                     {{ forminput("location", "text", "Ort",currentExhibitor.location)}}
                     {{ forminput("address", "text", "Adresse",currentExhibitor.address)}}

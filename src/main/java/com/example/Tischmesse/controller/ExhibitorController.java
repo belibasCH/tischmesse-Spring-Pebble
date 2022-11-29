@@ -57,12 +57,13 @@ public class ExhibitorController {
     }
 
     @PostMapping("/exhibitor/edit")
-    public String addExhibitor(@RequestParam Integer id,
+    public String editExhibitor(@RequestParam Integer id,
                                @RequestParam String companyName,
                                @RequestParam Optional<String> email,
                                @RequestParam Optional<String> tel,
                                @RequestParam Optional<String> description,
                                @RequestParam Optional<Integer> plz,
+                                @RequestParam Optional<Integer> tableNr,
                                @RequestParam Optional<String> location,
                                @RequestParam Optional<String> address,
                                @RequestParam Optional<String> url,
@@ -73,7 +74,7 @@ public class ExhibitorController {
                                @RequestParam Optional<String> date
     ) throws ParseException {
 
-        exhibitorService.editExhibitor(companyName, id, email, tel, description, plz, location, address, url, imageUrl, paid, accepted, sectors, date);
+        exhibitorService.editExhibitor(companyName, id, email, tel, description, plz,  tableNr, location, address, url, imageUrl, paid, accepted, sectors, date);
         return "redirect:/exhibitor";
     }
 

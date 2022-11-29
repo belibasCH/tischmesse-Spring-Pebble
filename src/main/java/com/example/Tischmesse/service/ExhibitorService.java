@@ -80,6 +80,7 @@ public class ExhibitorService {
             Optional<String> tel,
             Optional<String> description,
             Optional<Integer> plz,
+            Optional<Integer> tableNr,
             Optional<String> location,
             Optional<String> address,
             Optional<String> url,
@@ -99,7 +100,7 @@ public class ExhibitorService {
         exhibitor.setAddress(address.orElse(""));
         exhibitor.setUrl(url.orElse(""));
         exhibitor.setImageUrl(imageUrl.orElse("https://www.tischmesse.sh/templates/yootheme/cache/logo_shch_farbig_wif_rgb-d74e8f7b.jpeg"));
-        exhibitor.setTableNr(0);
+        exhibitor.setTableNr(tableNr.orElse(0));
         exhibitor.setPaid(paid.orElse(false));
         exhibitor.setAccepted(accepted.orElse(false));
         List<String> stringList = sectors.orElse(Collections.emptyList());
