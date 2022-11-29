@@ -32,7 +32,7 @@
 
                         <div class="form-block">
                             <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
-                            <textarea name="beschreibung" id="beschreibung"></textarea>
+                            <textarea name="beschreibung" id="beschreibung" maxlength="700"></textarea>
                         </div>
                         <label for="sectors" class="form-label">Branche</label>
 

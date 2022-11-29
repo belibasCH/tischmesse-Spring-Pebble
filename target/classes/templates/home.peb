@@ -16,14 +16,14 @@
                 </section>
                 <section class="card-center" id="card-{{ entry.id }}" style="display: none">
                     <div class="icon-box">
-                        <img src="{{ href("/img/email-icon.svg") }}" alt="email-icon">
+                        <img src="{{ href("/img/location-icon.svg") }}" alt="location-icon">
                         <div>
                             <p>{{ entry.address }}</p>
                             <p>{{ entry.plz }} {{ entry.location }}</p>
                         </div>
                     </div>
                     <div class="icon-box">
-                        <img src="{{ href("/img/sector-icon.svg") }}" alt="email-icon">
+                        <img src="{{ href("/img/sector-icon.svg") }}" alt="sector-icon">
                         <p>
                                 {%if entry.sectors is empty %}
                                     ?
