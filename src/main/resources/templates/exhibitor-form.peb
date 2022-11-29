@@ -1,57 +1,61 @@
     {% import "macros/button" %}
         {% import "macros/forminput" %}
-    {% extends "layout_user" %}
+        {% extends "layout_user" %}
     {% block content %}
-    <div class="content">
-
-        <div id="anmeldung-title">
-            <h2>Aussteller hinzufügen</h2>
-        </div>
-        <form action="{{ href("/exhibitor/add") }}" method="post">
-            <div id="aussteller-form">
-                <div id="aussteller-left">
-                    <h3>Informationen übe Sie und Ihre Firma</h3>
-
-                    {{ forminput("companyName", "text", "Firmenname*","")}}
-                    {{ forminput("email", "email", "E-Mail","")}}
-                    {{ forminput("telefonNr", "number", "Telefon","")}}
-                    {{ forminput("plz", "number", "PlZ","")}}
-                    {{ forminput("location", "text", "Ort","")}}
-                    {{ forminput("address", "text", "Adresse","")}}
-                    {{ forminput("url", "text", "Webseiten-URL","")}}
-
-
-                </div>
-                <div id="aussteller-right">
-                    <div class="form-block">
-                        <h3>Informationen für das öffentliche Ausstellerverzeichniss</h3>
-                       </div>
-
-                    <div class="form-block">
-                        <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
-                        <textarea name="beschreibung" id="beschreibung"></textarea>
-                    </div>
-                    <label for="sectors" class="form-label">Branche</label>
-
-                    <div id="checkboxes">
-                        {% for entry in sectorList %}
-
-                          <div class="checkbox-div">
-                            <input type="checkbox" name="sectors" value={{ entry.sectorName }}>
-                              <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
-
-                          </div>
-                        {% endfor %}
-                    </div>
-
-                </div>
+        <header>
+            <div id="anmeldung-title">
+                <h2>Aussteller hinzufügen</h2>
             </div>
-            <p>
-                <input type="submit" value="weiter" class="btn">
+        </header>
+    <main>
+        <div class="content-form">
+
+            <form action="{{ href("/exhibitor/add") }}" method="post">
+                <div id="aussteller-form">
+                    <div id="aussteller-left">
+                        <h3>Informationen übe Sie und Ihre Firma</h3>
+
+                        {{ forminput("companyName", "text", "Firmenname*","")}}
+                        {{ forminput("email", "email", "E-Mail","")}}
+                        {{ forminput("telefonNr", "number", "Telefon","")}}
+                        {{ forminput("plz", "number", "PlZ","")}}
+                        {{ forminput("location", "text", "Ort","")}}
+                        {{ forminput("address", "text", "Adresse","")}}
+                        {{ forminput("url", "text", "Webseiten-URL","")}}
 
 
-            </p>
-        </form>
+                    </div>
+                    <div id="aussteller-right">
+                        <div class="form-block">
+                            <h3>Informationen für das öffentliche Ausstellerverzeichniss</h3>
+                        </div>
 
-    </div>
+                        <div class="form-block">
+                            <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
+                            <textarea name="beschreibung" id="beschreibung"></textarea>
+                        </div>
+                        <label for="sectors" class="form-label">Branche</label>
+
+                        <div id="checkboxes">
+                                {% for entry in sectorList %}
+
+                                <div class="checkbox-div">
+                                    <input type="checkbox" name="sectors" value={{ entry.sectorName }}>
+                                    <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
+
+                                </div>
+                                {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-bottom">
+                    <input type="submit" value="weiter" class="btn">
+
+
+                </div>
+            </form>
+        </div>
+    </main>
     {% endblock %}

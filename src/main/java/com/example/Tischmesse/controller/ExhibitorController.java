@@ -23,7 +23,7 @@ public class ExhibitorController {
 
     @GetMapping("/")
     public String home(Model model){
-        model.addAttribute("exhibitorList", exhibitorService.getExhibitorList());
+        model.addAttribute("exhibitorList", exhibitorService.getActiveExhibitorList());
         return "/home";}
     @GetMapping("/exhibitor")
     public String showExhibitor(Model model) {

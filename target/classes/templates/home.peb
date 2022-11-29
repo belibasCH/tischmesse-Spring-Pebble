@@ -2,16 +2,59 @@
         {% import "macros/button" %}
 
     {% block content %}
+    <header>
+        <h1>Schaffhauser Tischmesse 2023</h1>
+        <h2>Firmenverzeichniss</h2>
+        {{ button("/exhibitor/add", "Anmeldung", "/img/plus-icon.svg","Jetzt Anmelden" )}}
+    </header>
     <main>
-        <div class="user-title">Ausstellerliste 2022</div>
-        <div>
-            {% for entry in exhibitorList %}
-                <div class="article-box">
-                    <p class="form-label">{{ entry }}</p>
-                </div>
-            {% endfor %}
-            {{ button("/exhibitor/add", "Anmeldung", "/img/plus-icon.svg","Jetzt Anmelden" )}}
-            {{ button("/admin", "Admin", "/img/edit-icon.svg","Admin" )}}
-        </div>
-    </main>
+        {% for entry in exhibitorList %}
+            <article>
+                <section class="card-top">
+                    <h3>{{ entry.companyName }}</h3>
+                    <h4>Tisch Nr. {{ entry.tableNr }}</h4>
+                </section>
+                <section class="card-center" id="card-{{ entry.id }}" style="display: none">
+                    <div class="icon-box">
+                        <img src="{{ href("/img/email-icon.svg") }}" alt="email-icon">
+                        <div>
+                            <p>{{ entry.address }}</p>
+                            <p>{{ entry.plz }} {{ entry.location }}</p>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <img src="{{ href("/img/sector-icon.svg") }}" alt="email-icon">
+                        <p>
+                                {%if entry.sectors is empty %}
+                                    ?
+                                {%endif%}
+                                {%for sector in entry.sectors %}
+                                    {{ sector.sectorName }},
+                                {%endfor%}</p>
+                    </div>
+                    <p>{{ entry.description }}</p>
+
+                </section>
+                <section class="card-bottom">
+                    <div>
+                        <div class="icon-box">
+                            <img src="{{ href("/img/tel-icon.svg") }}" alt="telefon-icon">
+                            <p>{{ entry.tel }}</p>
+                        </div>
+
+
+                        <div class="icon-box">
+                            <img src="{{ href("/img/email-icon.svg") }}" alt="email-icon">
+                            <p>{{ entry.email }}</p>
+                        </div>
+                    </div>
+                    <img src="{{ href("/img/plusRound-icon.svg") }}" alt="plus-button" onclick="{changeCard({{ entry.id }})}" id="button-{{ entry.id }}">
+
+
+                </section>
+
+            </article>
+        {% endfor %}
+          </main>
+
     {% endblock %}
