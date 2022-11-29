@@ -25,7 +25,6 @@ public class ConstructorTests {
         //given
         Exhibitor exhibitorUnderTest = new Exhibitor("Test AG", "test@gmail.com", 791025487, "Unser neues Unternehmen ist...", LocalDate.now(), 102, 5000, "Aarau", "Bahnhofstrasse 4", "https://www.raiffeisen.ch/");
 
-
         //then
         assertEquals("Test AG", exhibitorUnderTest.getCompanyName());
         assertEquals("test@gmail.com", exhibitorUnderTest.getEmail());
