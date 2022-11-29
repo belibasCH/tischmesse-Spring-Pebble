@@ -1,4 +1,5 @@
     {% import "macros/button" %}
+        {% import "macros/forminput" %}
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
@@ -12,65 +13,52 @@
             <input type="hidden"  name="id" value={{ currentExhibitor.id}}>
             <div id="aussteller-form">
                 <div id="aussteller-left">
-                    <div class="form-block">
-                        <h3>{{currentExhibitor.companyName}}</h3>
-                    </div>
-                    <div class="form-block">
-                        <label for="firmenname" class="form-label">Firmenname*</label>
-                        <input type="text" name="firmenname" id="firmenname" value={{currentExhibitor.companyName}}>
-                    </div>
 
-                    <div class="form-block">
-                        <label for="email" class="form-label">E-Mail</label>
-                        <input type="email" name="email" id="email" value={{currentExhibitor.email}}>
-                    </div>
-
-                    <div class="form-block">
-                        <label for="telefonNr" class="form-label">Telefon</label>
-                        <input type="number" name="telefonNr" id="telefonNr" value={{currentExhibitor.tel}}>
-                    </div>
-
-                    <div class="form-block">
-                        <label for="plz" class="form-label">PlZ</label>
-                        <input type="number" name="plz" id="plz" value={{currentExhibitor.plz}}>
-                    </div>
-
-                    <div class="form-block">
-                        <label for="ort" class="form-label">Ort</label>
-                        <input type="text" name="ort" id="ort" value={{currentExhibitor.location}}>
-                    </div>
-
-                    <div class="form-block">
-                        <label for="adresse" class="form-label">Adresse</label>
-                        <input type="text" name="adresse" id="adresse" value={{currentExhibitor.address}}>
-                    </div>
-
-                </div>
-                <div id="aussteller-right">
-
-                    <div class="form-block">
-                        <label for="sectors[]" class="form-label">Branchen</label>
-                        {% for entry in branchenListe%}
-                            <checkbox name="sectors[]" id="sectors" >{{entry.branchenName}}</checkbox>
-                        {% endfor%}
-
-                    </div>
-
+                    {{ forminput("companyName", "text", "Firmenname",currentExhibitor.companyName)}}
+                    {{ forminput("email", "email", "E-Mail",currentExhibitor.email)}}
+                    {{ forminput("tel", "number", "Telefon",currentExhibitor.tel)}}
+                    {{ forminput("plz", "number", "PlZ",currentExhibitor.plz)}}
+                    {{ forminput("location", "text", "Ort",currentExhibitor.location)}}
+                    {{ forminput("address", "text", "Adresse",currentExhibitor.address)}}
+                    {{ forminput("url", "text", "Webseiten-URL",currentExhibitor.url)}}
                     <div class="form-block">
                         <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
                         <textarea name="beschreibung" id="beschreibung" >{{currentExhibitor.description}}</textarea>
                     </div>
+                </div>
+                <div id="aussteller-right">
+
+                    <div class="checkboxes">
+                            {% for entry in currentExhibitor.sectors %}
+                            <div class="checkbox-div">
+                                <input type="checkbox" name="sectors" checked value={{ entry.sectorName }}>
+                                <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
+
+                            </div>
+                            {% endfor %}
+                        {% for entry in sectorList %}
+                            <div class="checkbox-div">
+                                <input type="checkbox" name="sectors" value={{ entry.sectorName }}>
+                                <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
+
+                            </div>
+                        {% endfor %}
 
 
-                    <div class="form-block">
-                        <label for="url" class="form-label">Website-Url</label>
-                        <input type="text" name="url" id="url" placeholder="https://standort-sh.ch" value={{currentExhibitor.url}}>
                     </div>
 
+                    <div class="form-block">
+                        <input type="checkbox" name="paid" id="paid" {% if currentExhibitor.paid == true %}checked{% endif %}>
+                        <label for="paid" class="form-label">Bezahlt</label>
+                    </div>
+                    <div class="form-block">
+                        <input type="checkbox" name="accepted" id="accepted" {% if currentExhibitor.accepted == true %}checked{% endif %}>
+                        <label for="accepted" class="form-label">Akzeptiert</label>
+                    </div>
                 </div>
             </div>
             <p>
-                <input type="submit" value="Hinzufügen">
+                <input type="submit" value="speichern" class="btn">
 
 
             </p>

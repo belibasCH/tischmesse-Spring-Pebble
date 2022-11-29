@@ -65,10 +65,14 @@
                 <p>{{currentExhibitor.url}}</p>
             </div>
 
+
+
+
             <div>
-                <h3>Branche
-                </h3>
-                <p>{{currentExhibitor.branche.BranchenName}}</p>
+                <h3>Branche</h3>
+                {% for entry in currentExhibitor.sectors %}
+                    <p>{{ entry.sectorName }}</p>
+                {% endfor %}
             </div>
 
         </div>

@@ -36,6 +36,6 @@ public class Sector {
     }
 
     public void setSectorName(String newSectorName){
-        sectorName = newSectorName;
+        this.sectorName = newSectorName;
     }
 }

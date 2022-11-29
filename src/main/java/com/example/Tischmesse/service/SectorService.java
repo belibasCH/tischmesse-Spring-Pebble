@@ -2,11 +2,11 @@ package com.example.Tischmesse.service;
 
 import com.example.Tischmesse.model.Sector;
 import com.example.Tischmesse.repository.SectorRepository;
-import com.example.Tischmesse.repository.ExhibitorRepository;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class SectorService {
@@ -15,10 +15,12 @@ public class SectorService {
 
     public SectorService(SectorRepository repo){ this.repo = repo;}
 
-    private List<Sector> sectorList = new ArrayList<>();
-
     public List<Sector> getSectorList(){
         return repo.findAll();
+    }
+    public List<Sector> getSectorListWithoutActive(List<Sector> mysectors){
+        List<Sector> allSectors = repo.findAll();
+        return allSectors.stream().filter(item -> !mysectors.contains(item)).collect(Collectors.toList());
     }
 
     public List<Sector> addSector(String sector){
@@ -40,5 +42,8 @@ public class SectorService {
         currentSector.setSectorName(newSectorName);
         repo.save(currentSector);
         return repo.findAll();
+    }
+    public Sector add(Sector sector) {
+        return repo.save(sector);
     }
 }

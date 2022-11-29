@@ -1,0 +1,6 @@
+{% macro forminput(name, type, label, placeholder) %}
+<div class="form-block">
+    <label for={{ name }} class="form-label">{{ label }}</label>
+    <input type={{ type }} name={{ name }} id={{ name }} value={{ placeholder }}>
+</div>
+{% endmacro %}

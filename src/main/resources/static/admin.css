@@ -165,7 +165,6 @@ textarea{
     background-color: darkgray;
     width: 15em;
     padding: 1em;
-
 }
 
 
@@ -236,4 +235,15 @@ input[value=Hinzufügen]{
     font-size: 0.9rem;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+}
+
+#checkboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-div {
+    display: flex;
+    align-items: center;
+
 }

@@ -25,7 +25,7 @@ public class Exhibitor {
 
     //Listen mit Branchen
     @OneToMany
-    private List<Sector> branchen;
+    private List<Sector> sectors;
 
     //Liste mit Personen
 
@@ -153,12 +153,12 @@ public class Exhibitor {
         this.accepted = akzeptiert;
     }
 
-    public List<Sector> getBranchen() {
-        return branchen;
+    public List<Sector> getSectors() {
+        return sectors;
     }
 
-    public void setBranchen(List<Sector> branchen) {
-        this.branchen = branchen;
+    public void setSectors(List<Sector> sectors) {
+        this.sectors = sectors;
     }
 
 }
