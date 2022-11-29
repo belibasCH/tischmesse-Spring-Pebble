@@ -1,4 +1,4 @@
-package com.example.Tischmesse.e2eTests.pages;
+package com.example.Tischmesse.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,5 +23,16 @@ public class SectorAdminPage {
     @FindBy(css = ".sector-card")
     private List<WebElement> allSectors;
 
+    @FindBy(css = "#sectorName")
+    private WebElement createSectorInputField;
+
+    @FindBy(css = "#sector-add-button")
+    private WebElement createSectorSubmitButton;
+
     public List<WebElement> getAllSectors(){ return allSectors;}
+
+    public WebElement getInputField(){ return createSectorInputField; }
+
+    public WebElement getSubmitButton(){ return createSectorSubmitButton; }
+
 }

@@ -23,7 +23,7 @@
             <form action={{ href("/sectors/add") }} method="post">
                 <label for="sectorName" class="form-label" id="sector-title">Branchenname</label>
                 <input type="text" name="sectorName" id="sectorName">
-                <input type="submit" value="Hinzufügen">
+                <input type="submit" value="Hinzufügen" id="sector-add-button">
             </form>
             {% if errorMessage != null %}
                 <p class="error-message">

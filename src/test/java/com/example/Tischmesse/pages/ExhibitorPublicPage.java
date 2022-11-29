@@ -1,4 +1,4 @@
-package com.example.Tischmesse.e2eTests.pages;
+package com.example.Tischmesse.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

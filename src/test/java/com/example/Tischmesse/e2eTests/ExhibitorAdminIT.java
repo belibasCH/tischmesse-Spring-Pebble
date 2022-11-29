@@ -1,6 +1,6 @@
 package com.example.Tischmesse.e2eTests;
 
-import com.example.Tischmesse.e2eTests.pages.ExhibitorAdminPage;
+import com.example.Tischmesse.pages.ExhibitorAdminPage;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.springframework.beans.factory.annotation.Value;
