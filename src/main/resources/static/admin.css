@@ -72,8 +72,8 @@ a {
 }
 
 li a img {
-    width: 30px;
-    height: 30px;
+    width: 21px;
+    height: 21px;
 }
 #navigation-bottom {
     background-color: var(--primary-color);
@@ -183,9 +183,9 @@ textarea{
 }
 
 #add-sector-box{
-    background-color: darkgray;
-    padding: 1em;
-    flex-basis: 15rem;
+    padding-left: 1em;
+    flex-basis: 18rem;
+    border-left: 3px solid grey;
 }
 
 
