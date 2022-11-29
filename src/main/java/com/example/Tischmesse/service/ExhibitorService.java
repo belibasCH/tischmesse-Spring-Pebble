@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class ExhibitorService {
@@ -94,7 +95,7 @@ public class ExhibitorService {
         exhibitor.setPaid(paid.orElse(false));
         exhibitor.setPaid(accepted.orElse(false));
         List<String> stringList= sectors.orElse(Collections.emptyList());
-        List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).toList();
+        List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).collect(Collectors.toList());
         exhibitor.setSectors(sectorsList);
         repo.save(exhibitor);
  }

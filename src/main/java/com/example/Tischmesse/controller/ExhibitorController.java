@@ -1,5 +1,6 @@
 package com.example.Tischmesse.controller;
 
+import com.example.Tischmesse.model.Exhibitor;
 import com.example.Tischmesse.service.ExhibitorService;
 import com.example.Tischmesse.service.SectorService;
 import org.springframework.stereotype.Controller;
@@ -82,8 +83,9 @@ public class ExhibitorController {
     }
     @GetMapping("/exhibitor/{id}/edit")
     public String editExhibitor(@PathVariable int id, Model model)                      {
-        model.addAttribute("currentExhibitor", exhibitorService.findExhibitorById(id).orElseThrow(ExhibitorNotFound::new));
-        model.addAttribute("sectorList", sectorService.getSectorList());
+        Exhibitor current = exhibitorService.findExhibitorById(id).orElseThrow(ExhibitorNotFound::new);
+        model.addAttribute("currentExhibitor", current);
+        model.addAttribute("sectorList", sectorService.getSectorListWithoutActive(current.getSectors()));
         return "/exhibitor-edit";
     }
 

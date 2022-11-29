@@ -29,14 +29,20 @@
                 <div id="aussteller-right">
 
                     <div class="checkboxes">
-                            {% for entry in sectorList %}
-
+                            {% for entry in currentExhibitor.sectors %}
                             <div class="checkbox-div">
-                                <input type="checkbox" name="sectors"  checked value={{ entry.sectorName }}>
+                                <input type="checkbox" name="sectors" checked value={{ entry.sectorName }}>
                                 <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
 
                             </div>
                             {% endfor %}
+                        {% for entry in sectorList %}
+                            <div class="checkbox-div">
+                                <input type="checkbox" name="sectors" value={{ entry.sectorName }}>
+                                <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
+
+                            </div>
+                        {% endfor %}
 
 
                     </div>
@@ -44,6 +50,10 @@
                     <div class="form-block">
                         <input type="checkbox" name="paid" id="paid" {% if currentExhibitor.paid == true %}checked{% endif %}>
                         <label for="paid" class="form-label">Bezahlt</label>
+                    </div>
+                    <div class="form-block">
+                        <input type="checkbox" name="accepted" id="accepted" {% if currentExhibitor.accepted == true %}checked{% endif %}>
+                        <label for="accepted" class="form-label">Akzeptiert</label>
                     </div>
                 </div>
             </div>
