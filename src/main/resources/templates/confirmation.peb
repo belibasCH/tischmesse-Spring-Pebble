@@ -2,11 +2,15 @@
 
     {% extends "layout_user" %}
     {% block content %}
-    <div class="content">
 
+    <header>
         <div id="anmeldung-title">
             <h2>Besten Dank für Ihre Anmeldung</h2>
-            {{ button("/", "Home", "/img/aussteller-icon.svg","zum Firmenverzeichnis" )}}
         </div>
-    </div>
+        {{ button("/", "Home", "/img/aussteller-icon.svg","zum Firmenverzeichnis" )}}
+
+    </header>
+
+
+
     {% endblock %}

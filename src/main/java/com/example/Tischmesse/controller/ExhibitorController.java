@@ -39,7 +39,7 @@ public class ExhibitorController {
     @PostMapping("/exhibitor/add")
     public String addExhibitor(@RequestParam String companyName,
                                @RequestParam Optional<String> email,
-                               @RequestParam Optional<Integer> tel,
+                               @RequestParam Optional<String> tel,
                                @RequestParam Optional<String> description,
                                @RequestParam Optional<Integer> plz,
                                @RequestParam Optional<String> location,
@@ -54,7 +54,7 @@ public class ExhibitorController {
     public String addExhibitor(@RequestParam Integer id,
                                @RequestParam String companyName,
                                @RequestParam Optional<String> email,
-                               @RequestParam Optional<Integer> tel,
+                               @RequestParam Optional<String> tel,
                                @RequestParam Optional<String> description,
                                @RequestParam Optional<Integer> plz,
                                @RequestParam Optional<String> location,

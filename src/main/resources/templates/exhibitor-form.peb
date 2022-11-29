@@ -4,7 +4,7 @@
     {% block content %}
         <header>
             <div id="anmeldung-title">
-                <h2>Aussteller hinzufügen</h2>
+                <h2>Anmeldung</h2>
             </div>
         </header>
     <main>
@@ -17,7 +17,7 @@
 
                         {{ forminput("companyName", "text", "Firmenname*","")}}
                         {{ forminput("email", "email", "E-Mail","")}}
-                        {{ forminput("telefonNr", "number", "Telefon","")}}
+                        {{ forminput("telefonNr", "text", "Telefon","")}}
                         {{ forminput("plz", "number", "PlZ","")}}
                         {{ forminput("location", "text", "Ort","")}}
                         {{ forminput("address", "text", "Adresse","")}}
