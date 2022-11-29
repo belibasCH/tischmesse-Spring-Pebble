@@ -12,7 +12,7 @@
 <body>
 <div id="container">
     <header>
-        <h1>Tischmesse - Admin</h1>
+        <a href={{ href("/admin") }}><h1>Tischmesse - Admin</h1></a>
         <div id="user">
             <img src="{{ href("/img/single-user-icon.svg") }}" alt="Single-User-icon">
         <p>Elias Braem</p>
@@ -25,9 +25,7 @@
                 <li><a href="{{ href("/sectors") }}"><img src="{{ href("/img/branchen-icon.svg") }}" alt="Branchen-icon"> Branchen</a></li>
                 <li><a href="{{ href("/user") }}"><img src="{{ href("/img/user-icon.svg") }}" alt="User-icon"> User </a></li>
             </ul>
-            <div id="navigation-bottom">
-                <p>About</p>
-            </div>
+
         </nav>
 
         {% block content %}{% endblock %}

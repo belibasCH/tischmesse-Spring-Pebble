@@ -38,7 +38,7 @@
                         <div id="sector-delete">
                             <p class="sector-label" id="sector-name-delete">{{ entry.sectorName }}</p>
                             <input type="hidden" name="id" value={{ entry.id }}>
-                            <input type="submit" value="Delete">
+                            <input type="image" class="no-outline" alt="Submit" src="/img/del-icon.svg" width="22px" height="22px">
                         </div>
                     </form>
                 {% endfor %}

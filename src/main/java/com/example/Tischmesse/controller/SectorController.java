@@ -31,6 +31,10 @@ public class SectorController {
             model.addAttribute("sectorList", sectorService.getSectorList());
             return "/sectors";
     }
+    @GetMapping("/sectors/add")
+    public String addSectorRedirect(){
+        return "redirect:/sectors";
+    }
 
 
     @PostMapping("/sectors/delete")
@@ -38,6 +42,10 @@ public class SectorController {
         model.addAttribute("sectorList", sectorService.removeSector(id));
         model.addAttribute("sectorList", sectorService.getSectorList());
         return "/sectors";
+    }
+    @GetMapping("/sectors/delete")
+    public String deleteSectorRedirect(){
+        return "redirect:/sectors";
     }
 
     @PostMapping("/sectors/update")
@@ -47,6 +55,10 @@ public class SectorController {
         return "/sectors";
     }
 
+    @GetMapping("/sectors/update")
+    public String updateSectorRedirect(){
+        return "redirect:/sectors";
+    }
 
     private void checkSectorName(String sectorName){
         if(sectorName == null || sectorName.length() < 2 || sectorName.length() > 50){
