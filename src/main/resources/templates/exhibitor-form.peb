@@ -4,7 +4,7 @@
     {% block content %}
         <header>
             <div id="anmeldung-title">
-                <h2>Aussteller hinzufügen</h2>
+                <h2>Anmeldung</h2>
             </div>
         </header>
     <main>
