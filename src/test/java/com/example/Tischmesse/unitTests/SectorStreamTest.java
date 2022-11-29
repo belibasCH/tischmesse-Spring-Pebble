@@ -16,7 +16,6 @@ public class SectorStreamTest {
     @Test
     public void testUntickedSectorsMethod(){
         //given
-
         Sector branche1 = new Sector("branche1");
         Sector branche2 = new Sector("branche2");
         Sector branche3 = new Sector("branche3");
@@ -31,7 +30,6 @@ public class SectorStreamTest {
         //when
         when(sectorRepositoryMock.findAll()).thenReturn(allSectors);
         List<Sector> untickedSectors = sectorService.getSectorListWithoutActive(tickedSectors);
-
 
         //then
         assertEquals(2 , untickedSectors.size());
