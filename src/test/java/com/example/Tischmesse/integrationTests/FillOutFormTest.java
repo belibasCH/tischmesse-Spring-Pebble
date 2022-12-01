@@ -19,7 +19,6 @@ public class FillOutFormTest {
     int port;
 
     HtmlUnitDriver driver = new HtmlUnitDriver();
-    HtmlUnitDriver secondDriver = new HtmlUnitDriver();
 
 
     @Test
@@ -44,19 +43,44 @@ public class FillOutFormTest {
 
     @Test
     public void testFillOutExhibitorFormWithValidEntry(){
-        var pageExhibitorList = ExhibitorAdminPage.create(secondDriver, port);
-        var pageForm = ExhibitorFormPage.create(driver, port);
+        var pageExhibitorList = ExhibitorAdminPage.create(driver, port);
         int startExhibitorCount = pageExhibitorList.getAllExhibitors().size();
+        var pageForm = ExhibitorFormPage.create(driver, port);
         pageForm.getCompanyNameInputField().sendKeys("Elias AG");
-        pageForm.getEmailInputField().sendKeys("elias@gmail.com");
-        pageForm.getTelefonNrInputField().sendKeys("0791112223548");
-        pageForm.getPlzInputField().sendKeys("5000");
-        pageForm.getLocationInputField().sendKeys("Aarau");
-        pageForm.getAddressInputField().sendKeys("Bahnhofstrasse 5");
-        pageForm.getUrlInputField().sendKeys("www.google.ch");
-        pageForm.getBeschreibungInputField().sendKeys("Nothing to add");
+//        pageForm.getEmailInputField().sendKeys("elias@gmail.com");
+//        pageForm.getTelefonNrInputField().sendKeys("0791112223548");
+//        pageForm.getPlzInputField().sendKeys("5000");
+//        pageForm.getLocationInputField().sendKeys("Aarau");
+//        pageForm.getAddressInputField().sendKeys("Bahnhofstrasse 5");
+//        pageForm.getUrlInputField().sendKeys("www.google.ch");
+//        pageForm.getBeschreibungInputField().sendKeys("Nothing to add");
         pageForm.getFormEntryButton().click();
+        var pageExhibitorListAfter = ExhibitorAdminPage.create(driver, port);
         int allExhibitors = pageExhibitorList.getAllExhibitors().size();
         assertTrue(startExhibitorCount < allExhibitors);
+    }
+
+    @Test
+    public void testFillOutExhibitorFormWithValidExhibitorName(){
+        var pageExhibitorList = ExhibitorAdminPage.create(driver, port);
+        int startExhibitorCount = pageExhibitorList.getAllExhibitors().size();
+        var pageForm = ExhibitorFormPage.create(driver, port);
+        pageForm.getCompanyNameInputField().sendKeys("Elias AG");
+        pageForm.getFormEntryButton().click();
+        var pageExhibitorListAfter = ExhibitorAdminPage.create(driver, port);
+        int allExhibitors = pageExhibitorList.getAllExhibitors().size();
+        assertTrue(startExhibitorCount < allExhibitors);
+    }
+
+    @Test
+    public void testFillOutExhibitorFormWithEmptyExhibitorName(){
+        var pageExhibitorList = ExhibitorAdminPage.create(driver, port);
+        int startExhibitorCount = pageExhibitorList.getAllExhibitors().size();
+        var pageForm = ExhibitorFormPage.create(driver, port);
+        pageForm.getCompanyNameInputField().sendKeys("");
+        pageForm.getFormEntryButton().click();
+        var pageExhibitorListAfter = ExhibitorAdminPage.create(driver, port);
+        int allExhibitors = pageExhibitorList.getAllExhibitors().size();
+        assertTrue(startExhibitorCount == allExhibitors);
     }
 }
