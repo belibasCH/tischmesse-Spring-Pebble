@@ -34,6 +34,7 @@
             {{ articleSingleView("Adresse", href("/img/adress-icon.svg"), "adress-icon", currentExhibitor.address) }}
             {{ articleSingleView("E-Mail", href("/img/date-icon.svg"), "date-icon", currentExhibitor.registrationDate) }}
             {{ articleSingleView("Website", href("/img/web-icon.svg"), "web-icon", currentExhibitor.url) }}
+            {{ articleSingleView("Beschreibung", href("/img/edit-icon.svg"), "edit-icon", currentExhibitor.description) }}
 
 
             <article>

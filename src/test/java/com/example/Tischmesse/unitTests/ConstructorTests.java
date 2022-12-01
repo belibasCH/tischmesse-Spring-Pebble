@@ -30,7 +30,7 @@ public class ConstructorTests {
         assertEquals("test@gmail.com", exhibitorUnderTest.getEmail());
         assertEquals("0791025487", exhibitorUnderTest.getTel());
         assertEquals("Unser neues Unternehmen ist...", exhibitorUnderTest.getDescription());
-        assertEquals(LocalDate.class , exhibitorUnderTest.getAnmdeldeDatum().getClass());
+        assertEquals(LocalDate.class , exhibitorUnderTest.getRegistrationDate().getClass());
         assertEquals(102, exhibitorUnderTest.getTableNr());
         assertEquals(5000, exhibitorUnderTest.getPLZ());
         assertEquals("Aarau", exhibitorUnderTest.getLocation());

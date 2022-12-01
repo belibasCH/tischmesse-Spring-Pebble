@@ -50,8 +50,9 @@ public class ExhibitorController {
                                @RequestParam Optional<String> location,
                                @RequestParam Optional<String> address,
                                @RequestParam Optional<String> url,
+                               @RequestParam Optional<String> imageUrl,
                                @RequestParam Optional<List<String>> sectors) {
-        exhibitorService.addExhibitor(companyName, email, tel, description, plz, location, address, url, sectors);
+        exhibitorService.addExhibitor(companyName, email, tel, description, plz, location, address, url, imageUrl, sectors);
 
         return "redirect:/confirmation";
     }
@@ -73,7 +74,6 @@ public class ExhibitorController {
                                @RequestParam Optional<List<String>> sectors,
                                @RequestParam Optional<String> date
     ) throws ParseException {
-
         exhibitorService.editExhibitor(companyName, id, email, tel, description, plz,  tableNr, location, address, url, imageUrl, paid, accepted, sectors, date);
         return "redirect:/exhibitor";
     }
@@ -87,7 +87,7 @@ public class ExhibitorController {
     }
 
     @GetMapping("/exhibitor/{id}/delete")
-    public String addExhibitor(@PathVariable int id) {
+    public String deleteExhibitor(@PathVariable int id) {
         exhibitorService.deleteExhibitor(id);
         return "redirect:/exhibitor";
     }

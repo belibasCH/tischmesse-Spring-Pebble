@@ -12,7 +12,6 @@
             {% for entry in exhibitorList%}
                 <div class="aussteller-card">
                     <p> <strong>{{ entry.companyName }}</strong></p>
-
                     <div class="aussteller-card-icons">
                     <div class="overview-boxes">
                         <p> bezahlt  {% if entry.paid %}<img  src="/img/check-icon.svg" alt="check-icon"> {% else%}<img src="/img/missing-icon.svg" alt="missing-icon">{% endif%}</p>

@@ -5,8 +5,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ href("/styles.css") }}">
-    <link rel="stylesheet" href="{{ href("/home.css") }}">
+    <link rel="stylesheet" href="{{ href("/css/styles.css") }}">
+    <link rel="stylesheet" href="{{ href("/css/home.css") }}">
     <meta name="viewport"
           content="width=device-width,initial-scale=1">
     <title>Tischmesse SH</title>
@@ -40,7 +40,7 @@
 
 
 </footer>
-    <script src="{{ href("/cardScript.js") }}"></script>
+    <script src="{{ href("/js/cardScript.js") }}"></script>
 </body>
 </html>
 </html>

@@ -172,4 +172,7 @@ public class Exhibitor {
         this.imageUrl = imageUrl;
     }
 
+    public void addSectors(List<Sector> sectorsList) {
+        this.sectors.addAll(sectorsList);
+    }
 }

@@ -48,6 +48,7 @@ public class ExhibitorService {
                              Optional<String> ort,
                              Optional<String> adresse,
                              Optional<String> url,
+                             Optional<String> imageUrl,
                              Optional<List<String>> sectors) {
         var exhibitor = new Exhibitor();
         exhibitor.setCompanyName(firmenname);
@@ -58,6 +59,7 @@ public class ExhibitorService {
         exhibitor.setLocation(ort.orElse(""));
         exhibitor.setAddress(adresse.orElse(""));
         exhibitor.setUrl(url.orElse(""));
+        exhibitor.setImageUrl(imageUrl.orElse(""));
         exhibitor.setAccepted(false);
         exhibitor.setPaid(false);
         exhibitor.setTableNr(0);
@@ -105,7 +107,7 @@ public class ExhibitorService {
         exhibitor.setAccepted(accepted.orElse(false));
         List<String> stringList = sectors.orElse(Collections.emptyList());
         List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).collect(Collectors.toList());
-        exhibitor.setSectors(sectorsList);
+        exhibitor.addSectors(sectorsList);
         exhibitor.setRegistrationDate(LocalDate.parse(date.orElse("2000-2-2")));
         repo.save(exhibitor);
     }
