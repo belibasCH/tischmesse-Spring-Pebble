@@ -16,11 +16,37 @@ import static javax.persistence.FetchType.EAGER;
 @Entity
 public class User implements UserDetails {
 
+
+
     @Id
     @GeneratedValue
     private Integer id;
     private String username;
     private String password;
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Set<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
+    }
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @ElementCollection(fetch = EAGER)
     private Set<String> roles;
 

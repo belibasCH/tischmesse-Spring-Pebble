@@ -41,8 +41,8 @@ public class InitialUsersAdder implements CommandLineRunner {
                 adminPW = generatePassword();
                 System.out.println("Password for 'administrator': " + adminPW);
             }
-            var editor = new User("administrator", encoder.encode(adminPW), Set.of("ADMINISTRATOR"));
-            userRepo.save(editor);
+            var admin = new User("administrator", encoder.encode(adminPW), Set.of("ADMINISTRATOR"));
+            userRepo.save(admin);
         }
     }
 

@@ -8,7 +8,7 @@
             {{ button("/exhibitor/add", "Button hinzufuegen", "/img/plus-icon.svg","Hinzufuegen" )}}
         </div>
 
-        <div id="aussteller-container">
+        <div class="flexcontainer">
             {% for entry in exhibitorList%}
                 <div class="aussteller-card">
                     <p> <strong>{{ entry.companyName }}</strong></p>
