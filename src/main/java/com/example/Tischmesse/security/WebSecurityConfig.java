@@ -11,12 +11,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception { http
             .authorizeRequests()
             .antMatchers("/").permitAll()
+            .antMatchers("/h2-console/**").permitAll()
             .antMatchers("/exhibitor/add").permitAll()
             .antMatchers("/confirmation").permitAll()
             .antMatchers("/css/**").permitAll()
             .antMatchers("/img/**").permitAll()
-            .anyRequest()
-            .authenticated()
+            .antMatchers("/exhibitor").permitAll()
+            .anyRequest().hasRole("ADMINISTRATOR")
             .and()
-            .formLogin(Customizer.withDefaults()); }
+            .formLogin()
+            .loginPage("/login").permitAll()
+            .and()
+            .csrf()
+            .ignoringAntMatchers("/h2-console/**")
+            .and()
+            .headers()
+            .frameOptions().sameOrigin(); }
 }

@@ -1,0 +1,20 @@
+    {% import "macros/button" %}
+        {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+
+        <div class="admin-title">
+            <h2>Benutzer</h2>
+            {{ button("/user/add", "Button hinzufuegen", "/img/plus-icon.svg","Hinzufuegen" )}}
+
+        </div>
+        {% for user in userList %}
+            <p>{{  user.username}}</p>
+            {% for role in user.roles %}
+            <p>{{  role }}</p>
+            {% endfor %}
+        {% endfor %}
+
+
+    </div>
+    {% endblock %}
