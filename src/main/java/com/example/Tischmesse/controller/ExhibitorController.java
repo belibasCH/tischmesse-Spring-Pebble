@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,14 +24,17 @@ public class ExhibitorController {
     }
 
     @GetMapping("/")
-    public String home(Model model){
+    public String home(Model model) {
         model.addAttribute("exhibitorList", exhibitorService.getActiveExhibitorList());
-        return "/home";}
+        return "/home";
+    }
+
     @GetMapping("/exhibitor")
     public String showExhibitor(Model model) {
         model.addAttribute("exhibitorList", exhibitorService.getExhibitorList());
         return "/exhibitor";
     }
+
     @GetMapping("/exhibitor/add")
     public String findExhibitor(Model model) {
         model.addAttribute("sectorList", sectorService.getSectorList());
@@ -45,27 +50,31 @@ public class ExhibitorController {
                                @RequestParam Optional<String> location,
                                @RequestParam Optional<String> address,
                                @RequestParam Optional<String> url,
+                               @RequestParam Optional<String> imageUrl,
                                @RequestParam Optional<List<String>> sectors) {
-       exhibitorService.addExhibitor(companyName, email, tel, description, plz, location, address, url, sectors);
+        exhibitorService.addExhibitor(companyName, email, tel, description, plz, location, address, url, imageUrl, sectors);
 
         return "redirect:/confirmation";
     }
+
     @PostMapping("/exhibitor/edit")
-    public String addExhibitor(@RequestParam Integer id,
+    public String editExhibitor(@RequestParam Integer id,
                                @RequestParam String companyName,
                                @RequestParam Optional<String> email,
                                @RequestParam Optional<String> tel,
                                @RequestParam Optional<String> description,
                                @RequestParam Optional<Integer> plz,
+                                @RequestParam Optional<Integer> tableNr,
                                @RequestParam Optional<String> location,
                                @RequestParam Optional<String> address,
                                @RequestParam Optional<String> url,
+                               @RequestParam Optional<String> imageUrl,
                                @RequestParam Optional<Boolean> paid,
                                @RequestParam Optional<Boolean> accepted,
-                               @RequestParam Optional<List<String>> sectors
-                               ) {
-
-        exhibitorService.editExhibitor(companyName,id,  email, tel, description, plz, location, address, url, paid, accepted, sectors);
+                               @RequestParam Optional<List<String>> sectors,
+                               @RequestParam Optional<String> date
+    ) throws ParseException {
+        exhibitorService.editExhibitor(companyName, id, email, tel, description, plz,  tableNr, location, address, url, imageUrl, paid, accepted, sectors, date);
         return "redirect:/exhibitor";
     }
 
@@ -78,22 +87,25 @@ public class ExhibitorController {
     }
 
     @GetMapping("/exhibitor/{id}/delete")
-    public String addExhibitor(@PathVariable int id)                      {
+    public String deleteExhibitor(@PathVariable int id) {
         exhibitorService.deleteExhibitor(id);
         return "redirect:/exhibitor";
     }
+
     @GetMapping("/confirmation")
-    public String showConfirmation(){
+    public String showConfirmation() {
         return "confirmation";
     }
+
     @GetMapping("/exhibitor/{id}/edit")
-    public String editExhibitor(@PathVariable int id, Model model)                      {
+    public String editExhibitor(@PathVariable int id, Model model) {
         Exhibitor current = exhibitorService.findExhibitorById(id).orElseThrow(ExhibitorNotFound::new);
         model.addAttribute("currentExhibitor", current);
         model.addAttribute("sectorList", sectorService.getSectorListWithoutActive(current.getSectors()));
         return "/exhibitor-edit";
     }
 
-    private static class ExhibitorNotFound extends RuntimeException {}
+    private static class ExhibitorNotFound extends RuntimeException {
+    }
 
 }

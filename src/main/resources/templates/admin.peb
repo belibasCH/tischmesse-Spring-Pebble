@@ -2,8 +2,17 @@
     {% block content %}
     <div class="content">
         <h2>admin</h2>
-        <div class="inhalt">
-            <p>inhalt</p>
+        <div class="article-container">
+            <article>
+                <a href={{ href("/exhibitor") }}><h2>Aussteller</h2></a>
+            </article>
+            <article>
+                <a href={{ href("/sectors") }}><h2>Branchen</h2></a>
+            </article>
+            <article>
+                <a href={{ href("/user") }}><h2>User</h2></a>
+            </article>
+
         </div>
 
     </div>

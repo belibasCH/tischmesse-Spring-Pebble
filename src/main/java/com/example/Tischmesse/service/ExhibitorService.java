@@ -7,6 +7,8 @@ import com.example.Tischmesse.repository.ExhibitorRepository;
 import com.example.Tischmesse.repository.SectorRepository;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -22,15 +24,16 @@ public class ExhibitorService {
         this.sectorRepo = sectorRepo;
     }
 
- public List<Exhibitor> getExhibitorList() {
-     return repo.findAll();
- }
+    public List<Exhibitor> getExhibitorList() {
+        return repo.findAll();
+    }
+
     public List<Exhibitor> getActiveExhibitorList() {
         return repo.findAll().stream().filter(e -> e.getAccepted()).collect(Collectors.toList());
     }
 
     public Optional<Exhibitor> findExhibitorById(int id) {
-            return repo.findById(id);
+        return repo.findById(id);
     }
 
     public void deleteExhibitor(int id) {
@@ -45,7 +48,8 @@ public class ExhibitorService {
                              Optional<String> ort,
                              Optional<String> adresse,
                              Optional<String> url,
-                             Optional<List<String>> sectors ){
+                             Optional<String> imageUrl,
+                             Optional<List<String>> sectors) {
         var exhibitor = new Exhibitor();
         exhibitor.setCompanyName(firmenname);
         exhibitor.setEmail(email.orElse(""));
@@ -55,11 +59,12 @@ public class ExhibitorService {
         exhibitor.setLocation(ort.orElse(""));
         exhibitor.setAddress(adresse.orElse(""));
         exhibitor.setUrl(url.orElse(""));
+        exhibitor.setImageUrl(imageUrl.orElse(""));
         exhibitor.setAccepted(false);
         exhibitor.setPaid(false);
         exhibitor.setTableNr(0);
-        exhibitor.setAnmdeldeDatum(LocalDate.now());
-        List<String> stringList= sectors.orElse(Collections.emptyList());
+        exhibitor.setRegistrationDate(LocalDate.now());
+        List<String> stringList = sectors.orElse(Collections.emptyList());
         List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).toList();
         exhibitor.setSectors(sectorsList);
         repo.save(exhibitor);
@@ -77,12 +82,16 @@ public class ExhibitorService {
             Optional<String> tel,
             Optional<String> description,
             Optional<Integer> plz,
+            Optional<Integer> tableNr,
             Optional<String> location,
             Optional<String> address,
             Optional<String> url,
+            Optional<String> imageUrl,
             Optional<Boolean> paid,
             Optional<Boolean> accepted,
-            Optional<List<String>> sectors) {
+            Optional<List<String>> sectors,
+            Optional<String> date) throws ParseException {
+
         var exhibitor = findExhibitorById(id).orElseThrow(ExhibitorNotFound::new);
         exhibitor.setCompanyName(companyName);
         exhibitor.setEmail(email.orElse(""));
@@ -92,15 +101,18 @@ public class ExhibitorService {
         exhibitor.setLocation(location.orElse(""));
         exhibitor.setAddress(address.orElse(""));
         exhibitor.setUrl(url.orElse(""));
-        exhibitor.setAccepted(false);
-        exhibitor.setPaid(false);
-        exhibitor.setTableNr(0);
+        exhibitor.setImageUrl(imageUrl.orElse("https://www.tischmesse.sh/templates/yootheme/cache/logo_shch_farbig_wif_rgb-d74e8f7b.jpeg"));
+        exhibitor.setTableNr(tableNr.orElse(0));
         exhibitor.setPaid(paid.orElse(false));
-        exhibitor.setPaid(accepted.orElse(false));
-        List<String> stringList= sectors.orElse(Collections.emptyList());
+        exhibitor.setAccepted(accepted.orElse(false));
+        List<String> stringList = sectors.orElse(Collections.emptyList());
         List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).collect(Collectors.toList());
-        exhibitor.setSectors(sectorsList);
+        exhibitor.addSectors(sectorsList);
+        exhibitor.setRegistrationDate(LocalDate.parse(date.orElse("2000-2-2")));
         repo.save(exhibitor);
- }
-    private static class ExhibitorNotFound extends RuntimeException {}
+    }
+
+
+    private static class ExhibitorNotFound extends RuntimeException {
+    }
 }

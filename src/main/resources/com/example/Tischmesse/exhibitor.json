@@ -5,12 +5,13 @@
     "email": "elias@braem.ch",
     "tel": "078 826 31 08",
     "description": "Radio Munot informiert täglich rund 40'000 HörerinnUnser Verkaufsteam realisiert mit Ihnen zusammen einen prägnanten Radiospot und plant kompetent Ihre Werbekampagne bei Radio Munot.",
-    "registrationDate":"",
+    "registrationDate":"2019-10-11",
     "tableNr": 22,
     "plz": 8224,
     "location":"Schaffhausen",
     "address": "Im Riet 6",
-    "url": "www.generis.ch",
+    "url": "http://internetter.ch",
+    "imageUrl": "http://internetter.ch/wp-content/uploads/2017/04/Logo_web_internetter-1.png",
     "paid": true,
     "accepted": true
 
@@ -22,14 +23,15 @@
     "email": "joel@finger.ch",
     "tel": "078 826 31 08",
     "description": "Radio Munot informiert täglich rund 40'000 HörerinnUnser Verkaufsteam realisiert mit Ihnen zusammen einen prägnanten Radiospot und plant kompetent Ihre Werbekampagne bei Radio Munot.",
-    "registrationDate":"",
+    "registrationDate":"2022-10-11",
     "tableNr": 3,
     "plz": 8224,
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
-    "url": "www.generis.ch",
-    "paid": false,
-    "accepted": false
+    "url": "https://generis.ch/",
+    "imageUrl": "https://duckduckgo.com/assets/logo_header.alt.v108.svg",
+    "paid": true,
+    "accepted": true
 
   },
   {
@@ -38,13 +40,14 @@
     "email": "francesco@lucia.ch",
     "tel": "078 826 31 08",
     "description": "Radio Munot informiert täglich rund 40'000 HörerinnUnser Verkaufsteam realisiert mit Ihnen zusammen einen prägnanten Radiospot und plant kompetent Ihre Werbekampagne bei Radio Munot.",
-    "registrationDate":"",
+    "registrationDate":"2019-10-11",
     "tableNr": 100,
     "plz": 8224,
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
-    "url": "www.generis.ch",
-    "paid": false,
+    "url": "https://generis.ch/",
+    "imageUrl": "https://www.suedkurier.de/storage/image/4/1/5/5/11505514_shift-644x395-800w_1wJzds_h0jhXO.webp",
+    "paid": true,
     "accepted": true
 
   },
@@ -54,12 +57,13 @@
     "email": "francesco@lucia.ch",
     "tel": "078 826 31 08",
     "description": "Radio Munot informiert täglich rund 40'000 HörerinnUnser Verkaufsteam realisiert mit Ihnen zusammen einen prägnanten Radiospot und plant kompetent Ihre Werbekampagne bei Radio Munot.",
-    "registrationDate":"",
+    "registrationDate":"2019-10-11",
     "tableNr": 120,
     "plz": 8224,
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
-    "url": "www.generis.ch",
+    "url": "https://generis.ch/",
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
     "paid": false,
     "accepted": true
 
@@ -70,14 +74,15 @@
     "email": "francesco@lucia.ch",
     "tel": "078 826 31 08",
     "description": "Radio Munot informiert täglich rund 40'000 HörerinnUnser Verkaufsteam realisiert mit Ihnen zusammen einen prägnanten Radiospot und plant kompetent Ihre Werbekampagne bei Radio Munot.",
-    "registrationDate":"",
+    "registrationDate":"2019-10-11",
     "tableNr": 12,
     "plz": 8224,
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
-    "url": "www.generis.ch",
-    "paid": false,
-    "accepted": true
+    "url": "https://generis.ch/",
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
+    "paid": true,
+    "accepted": false
 
   },
   {
@@ -86,14 +91,15 @@
     "email": "francesco@lucia.ch",
     "tel": "+4978 826 31 08",
     "description": "Radio Munot informiert täglich rund 40'000 HörerinnUnser Verkaufsteam realisiert mit Ihnen zusammen einen prägnanten Radiospot und plant kompetent Ihre Werbekampagne bei Radio Munot.",
-    "registrationDate":"",
+    "registrationDate":"2019-10-11",
     "tableNr": 2,
     "plz": 8224,
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
-    "url": "www.generis.ch",
+    "url": "https://generis.ch/",
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
     "paid": false,
-    "accepted": true
+    "accepted": false
 
   },
   {
@@ -102,13 +108,14 @@
     "email": "francesco@lucia.ch",
     "tel": "078 826 31 08",
     "description": "Radio Munot informiert täglich rund 40'000 HörerinnUnser Verkaufsteam realisiert mit Ihnen zusammen einen prägnanten Radiospot und plant kompetent Ihre Werbekampagne bei Radio Munot.",
-    "registrationDate":"",
+    "registrationDate":"2019-10-11",
     "tableNr": 9,
     "plz": 8224,
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
-    "url": "www.generis.ch",
-    "paid": false,
+    "url": "https://generis.ch/",
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
+    "paid": true,
     "accepted": true
 
   },
@@ -118,13 +125,14 @@
     "email": "michael@faes.ch",
     "tel": "078 826 31 08",
     "description": "Radio Munot informiert täglich rund 40'000 HörerinnUnser Verkaufsteam realisiert mit Ihnen zusammen einen prägnanten Radiospot und plant kompetent Ihre Werbekampagne bei Radio Munot.",
-    "registrationDate":"",
+    "registrationDate":"2019-10-11",
     "tableNr": 4,
     "plz": 8224,
     "location":"Hunzenschwil",
     "address": "Im Riet 6",
-    "url": "www.generis.ch",
-    "paid": true,
+    "url": "https://generis.ch/",
+    "imageUrl": "https://www.tischmesse.sh/templates/yootheme/cache/sn_schriftzug_schwarz-3eb9ff27.png",
+    "paid": false,
     "accepted": false
 
   }

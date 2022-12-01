@@ -1,7 +1,7 @@
     {% extends "layout_admin" %}
     {% block content %}
     <div class="content" id="sector-content">
-        <div id="sector-overview">
+        <div class="sector-content-left">
             <div class="admin-title">
                 <h2>Branche</h2>
             </div>
@@ -18,9 +18,11 @@
                     {% endfor %}
             </div>
         </div>
-        <div id="add-sector-box"    >
+        <div id="add-sector-box">
             <h2>Branchen-Editor</h2>
             <form action={{ href("/sectors/add") }} method="post">
+                <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
+                       value="{{ request.getAttribute("_csrf").token }}">
                 <label for="sectorName" class="form-label" id="sector-title">Branchenname</label>
                 <input type="text" name="sectorName" id="sectorName">
                 <input type="submit" value="Hinzufügen" id="sector-add-button">
@@ -34,10 +36,12 @@
                 <h3>Branchen-Übersicht</h3>
                 {% for entry in sectorList %}
                     <form action="{{ href("/sectors/delete") }}" method="post">
+                        <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
+                               value="{{ request.getAttribute("_csrf").token }}">
                         <div id="sector-delete">
                             <p class="sector-label" id="sector-name-delete">{{ entry.sectorName }}</p>
                             <input type="hidden" name="id" value={{ entry.id }}>
-                            <input type="submit" value="Delete">
+                            <input type="image" class="no-outline" alt="Submit" src="/img/del-icon.svg" width="22px" height="22px">
                         </div>
                     </form>
                 {% endfor %}

@@ -5,7 +5,12 @@
 
     <header>
         <div id="anmeldung-title">
-            <h2>Besten Dank für Ihre Anmeldung</h2>
+            <h2>Besten Dank für Ihre Anmeldung</h2><br><br>
+            <p>Bitte bezahlen sie die Anmeldegebüht fristgerecht.</p><br>
+            <p>Sobald wir Ihre Zahlung erhalten und Ihre Angaben überprüft haben, <br>werden wir Ihre Firma auf dem Firmenverzeichnis aufschalten.
+            </p><br><br><br>
+            <p> Besten Dank und freundliche Grüsse </p><br>
+            <p>Das Tischmesse Team</p><br><br>
         </div>
         {{ button("/", "Home", "/img/aussteller-icon.svg","zum Firmenverzeichnis" )}}
 

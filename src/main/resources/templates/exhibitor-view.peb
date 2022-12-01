@@ -1,79 +1,48 @@
     {% import "macros/button" %}
+        {% import "macros/articleSingleView" %}
         {% extends "layout_admin" %}
     {% block content %}
     <div class="content">
 
-        <div class="admin-title">
+        <div class="admin-title-single">
             <h2>{{ currentExhibitor.companyName}}</h2>
-            <div class="aussteller-status">
-                <h4>Anmeldedatum: {{ currentExhibitor.registrationDate}}</h4>
-            <div>
+            <div class="checkbox-div">
                 <h3>Akzepiert
                 </h3>
-                <p>{{currentExhibitor.accepted}}</p>
+                {% if currentExhibitor.paid %}<img src="/img/check-icon.svg" alt="check-icon"> {% else%}<img
+                        src="/img/missing-icon.svg" alt="missing-icon">{% endif%}
+
             </div>
 
-            <div>
+            <div class="checkbox-div">
                 <h3>Bezahlt
                 </h3>
-                <p>{{currentExhibitor.paid}}</p>
+                {% if currentExhibitor.accepted %}<img src="/img/check-icon.svg" alt="check-icon"> {% else%}<img
+                        src="/img/missing-icon.svg" alt="missing-icon">{% endif%}
+
             </div>
-            </div>
+
             {{ button("/exhibitor/"+currentExhibitor.id +"/edit", "Button edit", "/img/plus-icon.svg","Bearbeiten" )}}
         </div>
 
-        <div id="ausstellerEinzeln-container">
-            <div>
-                <h3>E-Mail
-                </h3>
-                <p>{{currentExhibitor.email}}</p>
-            </div>
-
-            <div>
-                <h3>Telefon
-                </h3>
-                <p>{{currentExhibitor.tel}}</p>
-            </div>
-
-            <div>
-                <h3>tischnummer
-                </h3>
-                <p>{{currentExhibitor.tableNr}}</p>
-            </div>
-
-            <div>
-                <h3>Plz
-                </h3>
-                <p>{{currentExhibitor.plz}}</p>
-            </div>
-
-            <div>
-                <h3>Ort
-                </h3>
-                <p>{{currentExhibitor.location}}</p>
-            </div>
-
-            <div>
-                <h3>Adresse
-                </h3>
-                <p>{{currentExhibitor.address}}</p>
-            </div>
-
-            <div>
-                <h3>Url
-                </h3>
-                <p>{{currentExhibitor.url}}</p>
-            </div>
+        <div class="article-container">
+            {{ articleSingleView("Logo", currentExhibitor.imageUrl, "logo", "") }}
+            {{ articleSingleView("E-Mail", href("/img/email-icon.svg"), "email-icon", currentExhibitor.email) }}
+            {{ articleSingleView("Telefon", href("/img/tel-icon.svg"), "tel-icon", currentExhibitor.tel) }}
+            {{ articleSingleView("Tischnummer", href("/img/table-icon.svg"), "table-icon", currentExhibitor.tableNr) }}
+            {{ articleSingleView("Ort", href("/img/location-icon.svg"), "location-icon", currentExhibitor.location) }}
+            {{ articleSingleView("Adresse", href("/img/adress-icon.svg"), "adress-icon", currentExhibitor.address) }}
+            {{ articleSingleView("E-Mail", href("/img/date-icon.svg"), "date-icon", currentExhibitor.registrationDate) }}
+            {{ articleSingleView("Website", href("/img/web-icon.svg"), "web-icon", currentExhibitor.url) }}
+            {{ articleSingleView("Beschreibung", href("/img/edit-icon.svg"), "edit-icon", currentExhibitor.description) }}
 
 
-
-
-            <div>
+            <article>
                 <h3>Branche</h3>
                 {% for entry in currentExhibitor.sectors %}
                     <p>{{ entry.sectorName }}</p>
                 {% endfor %}
-            </div>
+            </article>
 
         </div>
 

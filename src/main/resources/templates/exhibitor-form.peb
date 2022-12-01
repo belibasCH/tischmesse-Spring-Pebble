@@ -11,17 +11,21 @@
         <div class="content-form">
 
             <form action="{{ href("/exhibitor/add") }}" method="post">
+                <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
+                       value="{{ request.getAttribute("_csrf").token }}">
+
                 <div id="aussteller-form">
                     <div id="aussteller-left">
                         <h3>Informationen übe Sie und Ihre Firma</h3>
 
                         {{ forminput("companyName", "text", "Firmenname*","")}}
                         {{ forminput("email", "email", "E-Mail","")}}
-                        {{ forminput("telefonNr", "text", "Telefon","")}}
+                        {{ forminput("tel", "text", "Telefon","")}}
                         {{ forminput("plz", "number", "PlZ","")}}
                         {{ forminput("location", "text", "Ort","")}}
                         {{ forminput("address", "text", "Adresse","")}}
                         {{ forminput("url", "text", "Webseiten-URL","")}}
+                        {{ forminput("imageUrl", "url", "Logo-URL","")}}
 
 
                     </div>
@@ -31,8 +35,8 @@
                         </div>
 
                         <div class="form-block">
-                            <label for="beschreibung" class="form-label">Beschreibung (max 700 Zeichen)</label>
-                            <textarea name="beschreibung" id="beschreibung" maxlength="700"></textarea>
+                            <label for="description" class="form-label">Beschreibung (max 700 Zeichen)</label>
+                            <textarea name="description" id="description" maxlength="700"></textarea>
                         </div>
                         <label for="sectors" class="form-label">Branche</label>
 

@@ -47,7 +47,6 @@ nav {
     justify-content: space-between;
     background-color: var(--onBackground-color);
     min-width: 200px;
-    min-height: 100%;
 }
 
 ul{
@@ -72,8 +71,8 @@ a {
 }
 
 li a img {
-    width: 30px;
-    height: 30px;
+    width: 21px;
+    height: 21px;
 }
 #navigation-bottom {
     background-color: var(--primary-color);
@@ -85,11 +84,15 @@ li a img {
   flex-direction: column;
     background-color: var(--background-color);
     padding: 1rem;
+    gap: 1rem;
 
 }
 #sector-content {
     flex-direction: row;
     justify-content: space-between;
+}
+.sector-content-left {
+    flex-grow: 2;
 }
 
 #aussteller-container {
@@ -97,12 +100,33 @@ li a img {
     flex-direction: column;
     gap: 1rem;
 }
+
+.article-container{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+
+}
+article{
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 3px 4px 5px 0px #bbbbbb;
+}
+article img{
+    max-height: 75px;
+    max-width: 170px;
+}
 .aussteller-card {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: azure;
+    background-color: white;
     padding: 0 1rem;
+    box-shadow: 3px 4px 5px 0px #bbbbbb;
 }
 .aussteller-card-icons {
     display: flex;
@@ -118,6 +142,8 @@ height: 1rem;
 .admin-title{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
 }
 
 #aussteller-form {
@@ -156,7 +182,7 @@ input, select{
 
 .sector-card{
     text-align: center;
-    background-color: azure;
+    background-color: white;
     padding: 0 1rem;
     margin: 1rem;
 }
@@ -164,8 +190,7 @@ input, select{
 .sector-view{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
-    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
-}
+   }
 
 textarea{
     border: 1px solid var(--onBackground-color);
@@ -180,9 +205,9 @@ textarea{
 }
 
 #add-sector-box{
-    background-color: darkgray;
-    width: 15em;
-    padding: 1em;
+    padding-left: 1em;
+    flex-basis: 18rem;
+    border-left: 3px solid grey;
 }
 
 
@@ -263,5 +288,33 @@ input[value=Hinzufügen]{
 .checkbox-div {
     display: flex;
     align-items: center;
+    gap: 5px;
+}
+.overview-boxes{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.overview-boxes p{
+    margin: 0;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.warning-true {
+    color: darkred;
+}
+.warning-false {
+    color: darkgreen;
+}
 
+.admin-title-single {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    box-shadow: 3px 4px 5px 0px #bbbbbb;
 }

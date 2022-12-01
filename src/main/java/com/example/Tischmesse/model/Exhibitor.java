@@ -20,6 +20,10 @@ public class Exhibitor {
     private String location;
     private String address;
     private String url;
+
+
+
+    private String imageUrl;
     private Boolean paid;
     private Boolean accepted;
 
@@ -89,11 +93,11 @@ public class Exhibitor {
         this.description = beschreibung;
     }
 
-    public LocalDate getAnmdeldeDatum() {
+    public LocalDate getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setAnmdeldeDatum(LocalDate anmeldeDatum) {
+    public void setRegistrationDate(LocalDate anmeldeDatum) {
         this.registrationDate = anmeldeDatum;
     }
 
@@ -160,5 +164,15 @@ public class Exhibitor {
     public void setSectors(List<Sector> sectors) {
         this.sectors = sectors;
     }
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void addSectors(List<Sector> sectorsList) {
+        this.sectors.addAll(sectorsList);
+    }
 }
