@@ -101,15 +101,20 @@ public class ExhibitorService {
         exhibitor.setLocation(location.orElse(""));
         exhibitor.setAddress(address.orElse(""));
         exhibitor.setUrl(url.orElse(""));
-        exhibitor.setImageUrl(imageUrl.orElse("https://www.tischmesse.sh/templates/yootheme/cache/logo_shch_farbig_wif_rgb-d74e8f7b.jpeg"));
+        exhibitor.setImageUrl(imageUrl.orElse("keine URL"));
         exhibitor.setTableNr(tableNr.orElse(0));
         exhibitor.setPaid(paid.orElse(false));
         exhibitor.setAccepted(accepted.orElse(false));
-        List<String> stringList = sectors.orElse(Collections.emptyList());
-        List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).collect(Collectors.toList());
-        exhibitor.addSectors(sectorsList);
+
+        exhibitor.setSectors(createSectors(sectors));
         exhibitor.setRegistrationDate(LocalDate.parse(date.orElse("2000-2-2")));
         repo.save(exhibitor);
+    }
+
+    private List<Sector> createSectors(Optional<List<String>> sectors) {
+        List<String> stringList = sectors.orElse(Collections.emptyList());
+        List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).collect(Collectors.toList());
+        return sectorsList;
     }
 
 
