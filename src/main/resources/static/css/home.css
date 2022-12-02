@@ -83,9 +83,19 @@ article {
     justify-content: end;
 }
 
-
 .logo-image {
     max-height: 85px;
     max-width: 175px;
+}
+
+#about-page-overview{
+    color: white;
+    font-size: 1.1rem;
+    padding: 5%;
+}
+
+#project-name{
+    font-size: 2rem;
+    text-align: center;
 }
 

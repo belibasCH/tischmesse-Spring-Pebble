@@ -22,6 +22,9 @@ public class TischmesseController {
         return "/admin";
     }
 
+    @GetMapping("/about")
+    public String getAboutPage(){ return "/about";}
+
 
     @ExceptionHandler(NoSuchElementException.class)
     @ResponseStatus(NOT_FOUND)

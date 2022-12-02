@@ -1,0 +1,37 @@
+{% extends "layout_user" %}
+
+{% block content %}
+
+    <div id="about-page-overview">
+
+        <h4 id="project-name">Projekt Tischmesse</h4>
+        <p>Seit 1997 organisiert die Generis AG alle zwei Jahre die Schaffhauser Tischmesse.
+            Firmen können dabei als Austeller an einem Tisch ihre Produkte bewerben.
+            Doch es steckt viel mehr dahinter. Es geht nämlich vor allem auch um die
+            Kontaktknüpfung zu anderen Unternehmen oder zu den Kunden. Das geniale dabei ist,
+            dass dadurch auch kleine, junge Unternehmen Zugang zu einer grossen Menge potentieller Kunden hat.</p>
+        <br>
+        <p>Die Generis AG selbst hat dafür bis Heute stets Flyer ausgedruckt, um für diesen
+            Event zu werben. Für unser Web-Engineering-Projekt haben wir uns jedoch gedacht,
+            dass das besser geht. Nicht nur haben wir auf unserer öffentlichen Webpage Platz,
+            um alle Aussteller anzuzeigen, wir haben hauptsächlich auch ein Admin-Interface
+            entwickelt, wodurch den Organisatoren der Generis AG das Organisieren und Planen
+            des Events erheblich vereinfacht wird.</p>
+        <br>
+        <p>In unser Projekt haben wir verschiedene Features eingebaut. Im Admin-Interface
+            kann man eine Liste aller Aussteller betrachen. Dazu sieht der Admin sofort, wer
+            der Aussteller bereits bezahlt hat und wer bereits akzeptiert ist. Es können
+            einzelne Aussteller angezeigt, bearbeitet, gelöscht oder hinzugefügt werden.
+            Unter der Branchenansicht können alle vertretenen Branchen und die jeweils
+            zugehörigen Aussteller angezeigt werden. Ebenfalls kann man hier Branchen
+            hinzufügen oder löschen. [...User...]. </p>
+        <br>
+
+            <li>Responsive design für die Seite, die Sinn macht: Homepage</li>
+            <li>Rich-Client mit JavaScript auf der Homepage</li>
+            <li>Authentication & Authorization für den Admin-Bereich</li>
+
+    </div>
+
+
+{% endblock %}
