@@ -1,5 +1,6 @@
 package com.example.Tischmesse.controller;
 
+import com.example.Tischmesse.service.ExhibitorService;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,5 +38,6 @@ public class TischmesseController {
     public String badRequest(Model model) {
         return "/404";
     }
+
 
 }

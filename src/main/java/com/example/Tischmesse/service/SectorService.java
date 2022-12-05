@@ -3,9 +3,12 @@ package com.example.Tischmesse.service;
 import com.example.Tischmesse.model.Exhibitor;
 import com.example.Tischmesse.model.Sector;
 import com.example.Tischmesse.repository.SectorRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -56,12 +59,12 @@ public class SectorService {
 
 
     public Map<Sector, List<Exhibitor>> getMatchingExhibitorList() {
-        Map<Sector, List<Exhibitor>> mapOfExhibitors = new HashMap<>();
+        Map<Sector, List<Exhibitor>> mapOfExhibitors = new LinkedHashMap<>();
         for(int i = 0; i < repo.findAll().size(); i++){
             int helperVariable = i;
             Sector currentSector = repo.findAll().get(i);
             mapOfExhibitors.put(currentSector,
-                exhibitorService.getExhibitorList().stream().filter(e -> e.getSectors().contains(currentSector)).toList());
+                exhibitorService.getExhibitorList().stream().filter(e -> e.getSectors().contains(currentSector)).sorted(Comparator.comparing(Exhibitor::getCompanyName)).toList());
         }
 
         return mapOfExhibitors;

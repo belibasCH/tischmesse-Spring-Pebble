@@ -1,5 +1,5 @@
     {% extends "layout_user" %}
-    {% block main%}
+    {% block content%}
     <main>
         <h1>Not found</h1>
         <p>This is not the page you're looking for...</p>
