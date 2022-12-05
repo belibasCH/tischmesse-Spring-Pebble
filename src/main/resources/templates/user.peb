@@ -1,0 +1,27 @@
+    {% import "macros/button" %}
+        {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+
+        <div class="admin-title">
+            <h2>Benutzer</h2>
+            {{ button("/user/add", "Button hinzufuegen", "/img/plus-icon.svg","Hinzufuegen" )}}
+
+        </div>
+
+       <div class="flexcontainer">
+        {% for user in userList %}
+            <div class="aussteller-card">
+                <p>{{ user.username}}</p>
+                <div class="aussteller-card-icons">
+                    <a href=" {{ href("/user/"+user.id+"/edit") }}"title="Bearbeiten"><img src="/img/edit-icon.svg" alt="edit icon"/></a>
+                    <a href=" {{ href("/user/"+user.id+"/delete") }}"title="Löschen"><img src="/img/del-icon.svg" alt="delete icon"/></a>
+
+                </div>
+            </div>
+
+        {% endfor %}
+       </div>
+
+    </div>
+    {% endblock %}

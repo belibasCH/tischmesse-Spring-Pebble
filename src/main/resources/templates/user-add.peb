@@ -1,0 +1,32 @@
+    {% import "macros/button" %}
+        {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+
+        <div class="admin-title">
+            <h2>Benutzer hinzufügen</h2>
+            {{ button("/user/add", "Button zurück", "/img/back-icon.svg","zurück" )}}
+
+        </div>
+        <form action="{{ href("/user/add") }}" method="post">
+            <p>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </p>
+            <p>
+                <button type="submit" class="delete">Register</button>
+                <a class="button" href="/">Back</a>
+            </p>
+            <input type="hidden"
+                   name="{{ request.getAttribute("_csrf").parameterName }}"
+                   value="{{ request.getAttribute("_csrf").token }}">
+        </form>
+
+
+
+    </div>
+    {% endblock %}

@@ -28,8 +28,11 @@ public class Exhibitor {
     private Boolean accepted;
 
     //Listen mit Branchen
-    @OneToMany
+    @ManyToMany
     private List<Sector> sectors;
+
+    @OneToMany
+    private List<User> users;
 
     //Liste mit Personen
 
@@ -166,6 +169,23 @@ public class Exhibitor {
     }
     public String getImageUrl() {
         return imageUrl;
+    }
+
+
+    public void setPlz(Integer plz) {
+        this.plz = plz;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public void setTableNr(Integer tableNr) {
+        this.tableNr = tableNr;
     }
 
     public void setImageUrl(String imageUrl) {
