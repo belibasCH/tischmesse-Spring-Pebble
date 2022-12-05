@@ -28,7 +28,7 @@ public class Exhibitor {
     private Boolean accepted;
 
     //Listen mit Branchen
-    @OneToMany
+    @ManyToMany
     private List<Sector> sectors;
 
     @OneToMany
