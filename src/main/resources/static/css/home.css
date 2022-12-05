@@ -99,3 +99,27 @@ article {
     text-align: center;
 }
 
+#container404{
+    display: flex;
+    width: 90%;
+    height: 60%;
+    padding: 50px;
+}
+
+#error-icon{
+    height: 200px;
+}
+
+#text404{
+    color: white;
+    font-size: 2rem;
+    padding: 20px;
+}
+
+#center404{
+    display: flex;
+    justify-items: center;
+    margin: auto;
+    flex-direction: column;
+}
+

@@ -1,8 +1,9 @@
     {% extends "layout_user" %}
     {% block content%}
-    <main>
-        <h1>Not found</h1>
-        <p>This is not the page you're looking for...</p>
-        <p><a href="{{ href("/") }}">Back</a></p>
+    <main id="container404">
+        <div id="center404">
+            <img src="/img/error-icon.svg" id="error-icon">
+            <p id="text404">Diese Seite konnte leider nicht gefunden werden.</p>
+        </div>
     </main>
     {% endblock %}
