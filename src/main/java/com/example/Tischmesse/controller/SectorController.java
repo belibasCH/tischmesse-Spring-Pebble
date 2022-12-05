@@ -1,12 +1,12 @@
 package com.example.Tischmesse.controller;
 
+import com.example.Tischmesse.service.ExhibitorService;
 import com.example.Tischmesse.service.SectorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -16,11 +16,17 @@ public class SectorController {
 
     private final SectorService sectorService;
 
-    public SectorController(SectorService sectorService) {this.sectorService = sectorService;}
+    private final ExhibitorService exhibitorService;
+
+    public SectorController(SectorService sectorService, ExhibitorService exhibitorService) {
+        this.sectorService = sectorService;
+        this.exhibitorService = exhibitorService;
+    }
 
     @GetMapping("/sectors")
     public String showSector(Model model){
-        model.addAttribute("sectorList", sectorService.getSectorList());
+        //model.addAttribute("sectorList", sectorService.getSectorList());
+        model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
         return "/sectors";
     }
 

@@ -6,16 +6,36 @@
                 <h2>Branche</h2>
             </div>
             <div class="sector-view">
-                    {% for entry in sectorList %}
+{#                    {% for entry in sectorList %}#}
+{#                    <div class="sector-card">#}
+{#                        <p class="form-label">#}
+{#                            <form action="{{ href("/sectors/update") }}" class="update-form" method="post">#}
+{#                                <input type="text" name="sectorTitle" class="no-outline" value={{ entry.sectorName }}>#}
+{#                                <input type="hidden" name="id" value={{ entry.id }}>#}
+{#                                <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22px" height="22px">#}
+{#                            </form>#}
+{#                    </div>#}
+{#                    {% endfor %}#}
+                {% for entry in sectorList %}
                     <div class="sector-card">
                         <p class="form-label">
-                            <form action="{{ href("/sectors/update") }}" class="update-form" method="post">
-                                <input type="text" name="sectorTitle" class="no-outline" value={{ entry.sectorName }}>
-                                <input type="hidden" name="id" value={{ entry.id }}>
-                                <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22px" height="22px">
-                            </form>
+                        <form action="{{ href("/sectors/update") }}" class="update-form" method="post">
+                            <input type="text" name="sectorTitle" class="no-outline" value={{ entry.getKey().sectorName }}>
+                            <input type="hidden" name="id" value={{ entry.getKey().id }}>
+                            <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22px" height="22px">
+                        </form>
+                        <div class="matching-exhibitor-list">
+                            <p>list</p>
+{#                            {% for listEntry in entry.getValue() %}#}
+{#                                <p>Chello</p>#}
+{#                            {% endfor %}#}
+                            {% for listEntry in entry.getValue()%}
+                                <p>{{ listEntry.companyName }}</p>
+                            {% endfor %}
+
+                        </div>
                     </div>
-                    {% endfor %}
+                {% endfor %}
             </div>
         </div>
         <div id="add-sector-box">
