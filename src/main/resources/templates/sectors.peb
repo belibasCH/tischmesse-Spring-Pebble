@@ -25,14 +25,16 @@
                             <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22px" height="22px">
                         </form>
                         <div class="matching-exhibitor-list">
-                            <p>list</p>
-{#                            {% for listEntry in entry.getValue() %}#}
-{#                                <p>Chello</p>#}
-{#                            {% endfor %}#}
-                            {% for listEntry in entry.getValue()%}
-                                <p>{{ listEntry.companyName }}</p>
-                            {% endfor %}
 
+                            {% if entry.getValue().size > 0 %}
+                                <p>Liste der Aussteller:</p>
+                                {% for listEntry in entry.getValue()%}
+                                    <li>{{ listEntry.companyName }}</li>
+
+                                {% endfor %}
+                                {% else %}
+                                <p class="no-items-present">No list-items</p>
+                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}
@@ -59,8 +61,8 @@
                         <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
                                value="{{ request.getAttribute("_csrf").token }}">
                         <div id="sector-delete">
-                            <p class="sector-label" id="sector-name-delete">{{ entry.sectorName }}</p>
-                            <input type="hidden" name="id" value={{ entry.id }}>
+                            <p class="sector-label" id="sector-name-delete">{{ entry.getKey().sectorName }}</p>
+                            <input type="hidden" name="id" value={{ entry.getKey().id }}>
                             <input type="image" class="no-outline" alt="Submit" src="/img/del-icon.svg" width="22px" height="22px">
                         </div>
                     </form>

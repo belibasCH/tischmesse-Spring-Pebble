@@ -57,7 +57,6 @@ public class SectorService {
 
     public Map<Sector, List<Exhibitor>> getMatchingExhibitorList() {
         Map<Sector, List<Exhibitor>> mapOfExhibitors = new HashMap<>();
-        //int test = repo.findAll().size();
         for(int i = 0; i < repo.findAll().size(); i++){
             int helperVariable = i;
             Sector currentSector = repo.findAll().get(i);

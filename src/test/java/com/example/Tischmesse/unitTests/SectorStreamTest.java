@@ -1,7 +1,9 @@
 package com.example.Tischmesse.unitTests;
 
 import com.example.Tischmesse.model.Sector;
+import com.example.Tischmesse.repository.ExhibitorRepository;
 import com.example.Tischmesse.repository.SectorRepository;
+import com.example.Tischmesse.service.ExhibitorService;
 import com.example.Tischmesse.service.SectorService;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +25,8 @@ public class SectorStreamTest {
         Sector branche5 = new Sector("branche5");
 
         SectorRepository sectorRepositoryMock = mock(SectorRepository.class);
-        SectorService sectorService = new SectorService(sectorRepositoryMock);
+        ExhibitorService exhibitorService = mock(ExhibitorService.class);
+        SectorService sectorService = new SectorService(sectorRepositoryMock, exhibitorService);
         List<Sector> tickedSectors = List.of(branche1, branche2, branche3);
         List<Sector> allSectors = List.of(branche1, branche2, branche3, branche4, branche5);
 

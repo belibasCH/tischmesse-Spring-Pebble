@@ -25,7 +25,6 @@ public class SectorController {
 
     @GetMapping("/sectors")
     public String showSector(Model model){
-        //model.addAttribute("sectorList", sectorService.getSectorList());
         model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
         return "/sectors";
     }
@@ -34,7 +33,7 @@ public class SectorController {
     public String addSector(@RequestParam String sectorName, Model model){
             checkSectorName(sectorName);
             model.addAttribute("sectorList", sectorService.addSector(sectorName));
-            model.addAttribute("sectorList", sectorService.getSectorList());
+            model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
             return "/sectors";
     }
     @GetMapping("/sectors/add")
@@ -46,7 +45,7 @@ public class SectorController {
     @PostMapping("/sectors/delete")
     public String deleteSector(@RequestParam int id , Model model) {
         model.addAttribute("sectorList", sectorService.removeSector(id));
-        model.addAttribute("sectorList", sectorService.getSectorList());
+        model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
         return "/sectors";
     }
     @GetMapping("/sectors/delete")
@@ -57,7 +56,8 @@ public class SectorController {
     @PostMapping("/sectors/update")
     public String updateSectorName(@RequestParam int id, @RequestParam String sectorTitle, Model model){
         model.addAttribute("sectorList", sectorService.updateSector(id, sectorTitle));
-        model.addAttribute("sectorList", sectorService.getSectorList());
+        //model.addAttribute("sectorList", sectorService.getSectorList());
+        model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
         return "/sectors";
     }
 
@@ -75,7 +75,7 @@ public class SectorController {
     @ExceptionHandler(InvalidSectorName.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String invalidSectorName(Model model){
-        model.addAttribute("sectorList", sectorService.getSectorList());
+        model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
         model.addAttribute("errorMessage", "Der Branchenname muss zwischen 3 und 50 Zeichen lang sein.");
         return "/sectors";
     }
