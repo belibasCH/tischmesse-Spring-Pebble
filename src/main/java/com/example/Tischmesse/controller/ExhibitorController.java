@@ -1,14 +1,18 @@
 package com.example.Tischmesse.controller;
 
 import com.example.Tischmesse.model.Exhibitor;
+import com.example.Tischmesse.model.User;
 import com.example.Tischmesse.service.ExhibitorService;
 import com.example.Tischmesse.service.SectorService;
+import com.example.Tischmesse.service.UserService;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,10 +21,12 @@ public class ExhibitorController {
 
     private final ExhibitorService exhibitorService;
     private final SectorService sectorService;
+    private final UserService userService;
 
-    public ExhibitorController(ExhibitorService aservice, SectorService bservice) {
+    public ExhibitorController(ExhibitorService aservice, SectorService bservice, UserService uservice) {
         this.exhibitorService = aservice;
         this.sectorService = bservice;
+        this.userService = uservice;
     }
 
     @GetMapping("/")
@@ -51,8 +57,14 @@ public class ExhibitorController {
                                @RequestParam Optional<String> address,
                                @RequestParam Optional<String> url,
                                @RequestParam Optional<String> imageUrl,
-                               @RequestParam Optional<List<String>> sectors) {
-        exhibitorService.addExhibitor(companyName, email, tel, description, plz, location, address, url, imageUrl, sectors);
+                               @RequestParam Optional<List<String>> sectors,
+                               @RequestParam String username,
+                               @RequestParam String pw) {
+
+        Exhibitor newExhibitor = exhibitorService.addExhibitor(companyName, email, tel, description, plz, location, address, url, imageUrl, sectors);
+        List<Exhibitor> exhibitorList = new ArrayList<Exhibitor>();
+        exhibitorList.add(newExhibitor);
+        userService.addUser(username, pw, exhibitorList);
 
         return "redirect:/confirmation";
     }

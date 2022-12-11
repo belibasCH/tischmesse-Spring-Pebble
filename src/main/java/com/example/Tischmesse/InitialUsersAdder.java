@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.Collections;
 import java.util.Set;
 
 @Component
@@ -41,7 +42,7 @@ public class InitialUsersAdder implements CommandLineRunner {
                 adminPW = generatePassword();
                 System.out.println("Password for 'administrator': " + adminPW);
             }
-            var admin = new User("administrator", encoder.encode(adminPW), Set.of("ADMINISTRATOR"));
+            var admin = new User("administrator", encoder.encode(adminPW), Set.of("ADMINISTRATOR"), Collections.emptyList());
             userRepo.save(admin);
         }
     }

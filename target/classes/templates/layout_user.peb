@@ -33,6 +33,7 @@
     <section class="footer-box">
         <h4>About</h4>
         <a href="{{ href("/about") }}"><p>Impressum</p> </a>
+        <a href="{{ href("/user-edit") }}"><p>Meinen Eintrag anpassen</p> </a>
         <a href="{{ href("/admin") }}"><p>Admin</p> </a>
 
     </section>
