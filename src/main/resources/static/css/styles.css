@@ -41,6 +41,12 @@ button, .btn{
     border: 0px;
     border-radius: 0px;
 }
+button a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: black;
+}
 button:hover, .btn:hover{
     background-color: var(--primary-variant-color);
 }

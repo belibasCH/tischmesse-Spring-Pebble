@@ -118,6 +118,7 @@ public class ExhibitorController {
     }
 
     private static class ExhibitorNotFound extends RuntimeException {
+
     }
 
 }

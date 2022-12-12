@@ -1,8 +1,7 @@
     {% import "macros/button" %}
 
-<html>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ href("/css/styles.css") }}">
@@ -43,5 +42,4 @@
 </footer>
     <script src="{{ href("/js/cardScript.js") }}"></script>
 </body>
-</html>
 </html>

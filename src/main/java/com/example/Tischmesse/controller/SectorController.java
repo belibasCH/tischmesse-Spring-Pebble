@@ -34,14 +34,13 @@ public class SectorController {
     @GetMapping("/sectors/add")
     public String addSectorRedirect(){
         return "redirect:/sectors";
-    }
 
+    }
 
     @PostMapping("/sectors/delete")
     public String deleteSector(@RequestParam int id , Model model) {
-        model.addAttribute("sectorList", sectorService.removeSector(id));
-        model.addAttribute("sectorList", sectorService.getSectorList());
-        return "/sectors";
+        sectorService.removeSector(id);
+        return "redirect:/sectors";
     }
     @GetMapping("/sectors/delete")
     public String deleteSectorRedirect(){

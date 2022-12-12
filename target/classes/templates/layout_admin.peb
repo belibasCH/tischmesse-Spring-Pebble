@@ -1,6 +1,5 @@
-<html>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <link href="{{ href("/css/styles.css") }}" rel="stylesheet">
@@ -33,5 +32,4 @@
     </main>
     </div>
 </body>
-</html>
 </html>
