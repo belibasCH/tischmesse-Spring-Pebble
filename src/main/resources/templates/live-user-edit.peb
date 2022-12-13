@@ -4,13 +4,16 @@
     {% block content %}
         <header>
             <div id="anmeldung-title">
-                <h2>Anmeldung</h2>
+                <h2>Meinde Daten Anpassen</h2>
+                {% for entry in exhibitorlist%}
+                <h2>{{entry.companyName}}</h2>
+                    {%endfor%}
             </div>
         </header>
     <main>
         <div class="content-form">
-
-            <form action="{{ href("/exhibitor/add") }}" method="post">
+                {% for entry in exhibitorList %}
+            <form action="{{ href("/exhibitor/edit") }}" method="post">
                 <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
                        value="{{ request.getAttribute("_csrf").token }}">
 
@@ -18,16 +21,15 @@
                     <div id="aussteller-left">
                         <h3>Informationen übe Sie und Ihre Firma</h3>
 
-                        {{ forminput("companyName", "text", "Firmenname*","")}}
-                        {{ forminput("email", "email", "E-Mail","")}}
-                        {{ forminput("tel", "text", "Telefon","")}}
-                        {{ forminput("plz", "number", "PlZ","")}}
-                        {{ forminput("location", "text", "Ort","")}}
-                        {{ forminput("address", "text", "Adresse","")}}
-                        {{ forminput("url", "text", "Webseiten-URL","")}}
-                        {{ forminput("imageUrl", "url", "Logo-URL","")}}
-                        {{ forminput("username", "text", "UserName","")}}
-                        {{ forminput("pw", "password", "Passwort","")}}
+                        {{ forminput("companyName", "text", "Firmenname*",entry.companyName)}}
+                        {{ forminput("email", "email", "E-Mail",entry.email)}}
+                        {{ forminput("tel", "text", "Telefon",entry.tel)}}
+                        {{ forminput("plz", "number", "PlZ",entry.plz)}}
+                        {{ forminput("location", "text", "Ort",entry.location)}}
+                        {{ forminput("address", "text", "Adresse",entry.address)}}
+                        {{ forminput("url", "text", "Webseiten-URL",entry.url)}}
+                        {{ forminput("imageUrl", "url", "Logo-URL",entry.imageUrl)}}
+
 
                     </div>
                     <div id="aussteller-right">
@@ -37,16 +39,16 @@
 
                         <div class="form-block">
                             <label for="description" class="form-label">Beschreibung (max 700 Zeichen)</label>
-                            <textarea name="description" id="description" maxlength="700"></textarea>
+                            <textarea name="description" id="description" maxlength="700" placeholder={{ entry.description }}></textarea>
                         </div>
                         <label for="sectors" class="form-label">Branche</label>
 
                         <div id="checkboxes">
-                                {% for entry in sectorList %}
+                                {% for sector in entry.sectors %}
 
                                 <div class="checkbox-div">
-                                    <input type="checkbox" name="sectors" value={{ entry.sectorName }}>
-                                    <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
+                                    <input type="checkbox" name="sectors" value={{ sector.sectorName }}>
+                                    <label for="sectors" class="form-label"> {{ sector.sectorName }}</label>
 
                                 </div>
                                 {% endfor %}
@@ -61,6 +63,7 @@
 
                 </div>
             </form>
+                {% endfor %}
         </div>
     </main>
     {% endblock %}

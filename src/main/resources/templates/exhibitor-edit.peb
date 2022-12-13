@@ -38,15 +38,15 @@
                         <h2>Branchen</h2>
                             {% for entry in currentExhibitor.sectors %}
                             <div class="checkbox-div">
-                                <input type="checkbox" name="sectors" checked value={{ entry.sectorName }}>
-                                <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
+                                <input type="checkbox" id="sectors-checked-{{ entry.sectorName }}"  name="sectors" checked value="{{ entry.sectorName }}">
+                                <label for="sectors-checked-{{ entry.sectorName }}" class="form-label"> {{ entry.sectorName }}</label>
 
                             </div>
                             {% endfor %}
                         {% for entry in sectorList %}
                             <div class="checkbox-div">
-                                <input type="checkbox" name="sectors" value={{ entry.sectorName }}>
-                                <label for="sectors" class="form-label"> {{ entry.sectorName }}</label>
+                                <input type="checkbox" id="sectors-{{ entry.sectorName }}" name="sectors" value="{{ entry.sectorName }}">
+                                <label for="sectors-{{ entry.sectorName }}" class="form-label"> {{ entry.sectorName }}</label>
 
                             </div>
                         {% endfor %}

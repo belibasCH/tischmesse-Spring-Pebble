@@ -14,8 +14,8 @@
             <div class="aussteller-card">
                 <p>{{ user.username}}</p>
                 <div class="aussteller-card-icons">
-                    <a href=" {{ href("/user/"+user.id+"/edit") }}"title="Bearbeiten"><img src="/img/edit-icon.svg" alt="edit icon"/></a>
-                    <a href=" {{ href("/user/"+user.id+"/delete") }}"title="Löschen"><img src="/img/del-icon.svg" alt="delete icon"/></a>
+                    <a href=" {{ href("/user/"+user.id+"/edit") }}" title="Bearbeiten"><img src="/img/edit-icon.svg" alt="edit icon"></a>
+                    <a href=" {{ href("/user/"+user.id+"/delete") }}" title="Löschen"><img src="/img/del-icon.svg" alt="delete icon"></a>
 
                 </div>
             </div>

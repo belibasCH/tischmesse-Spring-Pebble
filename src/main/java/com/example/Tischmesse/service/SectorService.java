@@ -39,9 +39,8 @@ public class SectorService {
         return repo.findAll();
     }
 
-    public List<Sector> removeSector(int sectorId){
+    public void removeSector(int sectorId){
         repo.deleteById(sectorId);
-        return repo.findAll();
     }
 
     public Optional<Sector> findSectorById(int id){ return repo.findById(id);}

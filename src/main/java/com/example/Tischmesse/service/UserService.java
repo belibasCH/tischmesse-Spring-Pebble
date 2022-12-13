@@ -1,5 +1,6 @@
 package com.example.Tischmesse.service;
 
+import com.example.Tischmesse.model.Exhibitor;
 import com.example.Tischmesse.model.User;
 import com.example.Tischmesse.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,11 +32,10 @@ public class UserService implements UserDetailsService {
 
     }
 
-    public void addUser(String username, String pw) {
+    public void addUser(String username, String pw, List<Exhibitor> exhibitors) {
         var encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        var newUser = new User(username, encoder.encode(pw), Set.of("EDITOR"));
+        var newUser = new User(username, encoder.encode(pw), Set.of("EDITOR"), exhibitors);
             repo.save(newUser);
-
     }
 
     public void deleteUser(int id) {
@@ -51,6 +51,11 @@ public class UserService implements UserDetailsService {
 
     public User findUserById(int id) {
        return repo.findById(id).orElseThrow(UserNotFound::new);
+    }
+
+    public User findUser(String name) {
+        System.out.println(name);
+        return repo.findByUsername(name).orElseThrow(UserNotFound::new);
     }
 
     private static class UserNotFound extends RuntimeException {

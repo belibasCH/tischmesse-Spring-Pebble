@@ -35,10 +35,15 @@ footer {
     background-color: #222222;
     color: #EEEEEE;
     margin-top: 2rem;
-    padding: 1rem;
     display: flex;
     justify-content: space-between;
-    padding: 5%;
+    position:absolute;
+    width:100%;
+    bottom: 0px;
+    gap: 1rem;
+}
+footer section {
+    padding: 2rem;
 }
 
 article {
@@ -98,6 +103,43 @@ article {
     font-size: 2rem;
     text-align: center;
 }
+
+.login{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    width: 70%;
+    margin: 15%;
+}
+.login section{
+    width: 50%;
+}
+#form-container{
+    background: #EEEEEE;
+    padding: 1rem;
+}
+#form-container-inner{
+    border: 3px solid var(--primary-color);
+    padding: 1rem;
+}
+#form-slogan {
+    background: #BBBBBB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
 
 #container404{
     display: flex;

@@ -6,17 +6,7 @@
                 <h2>Branche</h2>
             </div>
             <div class="sector-view">
-{#                    {% for entry in sectorList %}#}
-{#                    <div class="sector-card">#}
-{#                        <p class="form-label">#}
-{#                            <form action="{{ href("/sectors/update") }}" class="update-form" method="post">#}
-{#                                <input type="text" name="sectorTitle" class="no-outline" value={{ entry.sectorName }}>#}
-{#                                <input type="hidden" name="id" value={{ entry.id }}>#}
-{#                                <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22px" height="22px">#}
-{#                            </form>#}
-{#                    </div>#}
-{#                    {% endfor %}#}
-                {% for entry in sectorList %}
+                    {% for entry in sectorList %}
                     <div class="sector-card">
                         <p class="form-label">
                         <form action="{{ href("/sectors/update") }}" class="update-form" method="post">

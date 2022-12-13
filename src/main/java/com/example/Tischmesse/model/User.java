@@ -4,11 +4,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 import static javax.persistence.FetchType.EAGER;
@@ -23,6 +21,11 @@ public class User implements UserDetails {
     private Integer id;
     private String username;
     private String password;
+
+    @ManyToMany
+    private List<Exhibitor> exhibitors;
+
+
 
     public void setUsername(String username) {
         this.username = username;
@@ -52,9 +55,10 @@ public class User implements UserDetails {
 
     protected User() {}
 
-    public User(String username, String password, Set<String> roles) {
+    public User(String username, String password, Set<String> roles, List<Exhibitor> exhibitors) {
         this.username = username;
         this.password = password;
+        this.exhibitors = exhibitors;
         this.roles = roles;
     }
 
@@ -66,6 +70,14 @@ public class User implements UserDetails {
     @Override
     public String getPassword() {
         return password;
+    }
+
+    public List<Exhibitor> getExhibitors() {
+        return exhibitors;
+    }
+
+    public void setExhibitors(List<Exhibitor> exhibitors) {
+        this.exhibitors = exhibitors;
     }
 
     @Override

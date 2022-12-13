@@ -12,10 +12,10 @@
             <article>
                 <div>
 
-                <section class="card-top">
+                <div class="card-top">
                     <h3>{{ entry.companyName }}</h3>
                     <h4>Tisch Nr. {{ entry.tableNr }}</h4>
-                </section>
+                </div>
                 <img src="{{ entry.imageUrl }}" alt="logo {{ entry.companyName }}" class="logo-image">
                 </div>
                 <section class="card-center" id="card-{{ entry.id }}" style="display: none">

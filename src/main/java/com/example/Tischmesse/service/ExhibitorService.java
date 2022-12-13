@@ -3,6 +3,7 @@ package com.example.Tischmesse.service;
 
 import com.example.Tischmesse.model.Exhibitor;
 import com.example.Tischmesse.model.Sector;
+import com.example.Tischmesse.model.User;
 import com.example.Tischmesse.repository.ExhibitorRepository;
 import com.example.Tischmesse.repository.SectorRepository;
 import org.springframework.stereotype.Service;
@@ -40,7 +41,7 @@ public class ExhibitorService {
         repo.deleteById(id);
     }
 
-    public void addExhibitor(String firmenname,
+    public Exhibitor addExhibitor(String firmenname,
                              Optional<String> email,
                              Optional<String> telefonNr,
                              Optional<String> beschreibung,
@@ -68,7 +69,7 @@ public class ExhibitorService {
         List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).toList();
         exhibitor.setSectors(sectorsList);
         repo.save(exhibitor);
-
+        return exhibitor;
     }
 
     public Exhibitor add(Exhibitor exhibitor) {
@@ -116,6 +117,7 @@ public class ExhibitorService {
         List<Sector> sectorsList = stringList.stream().map(e -> sectorRepo.findSectorBySectorName(e)).collect(Collectors.toList());
         return sectorsList;
     }
+
 
 
     private static class ExhibitorNotFound extends RuntimeException {
