@@ -49,13 +49,16 @@ nav {
     min-width: 200px;
 }
 
-ul{
+nav ul{
     display: flex;
     gap: 2rem;
     flex-direction: column;
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+ul {
+    text-align: start;
 }
 nav li a{
     display: flex;
@@ -181,7 +184,7 @@ input, select{
 }
 
 .sector-card{
-    text-align: center;
+
     background-color: white;
     padding: 0 1rem;
     padding-bottom: 2rem;

@@ -4,7 +4,7 @@
     {% block content %}
         <header>
             <div id="anmeldung-title">
-                <h2>Meinde Daten Anpassen</h2>
+                <h2>Meine Firmendaten Anpassen</h2>
                 {% for entry in exhibitorlist%}
                 <h2>{{entry.companyName}}</h2>
                     {%endfor%}
