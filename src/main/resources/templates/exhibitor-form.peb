@@ -17,8 +17,10 @@
                 <div id="aussteller-form">
                     <div id="aussteller-left">
                         <h3>Informationen übe Sie und Ihre Firma</h3>
-
-                        {{ forminput("companyName", "text", "Firmenname*","")}}
+                        <div class="form-block">
+                            <label for="companyName" class="form-label">Firmenname*</label>
+                            <input type="text" name="companyName" id="companyName" required>
+                        </div>
                         {{ forminput("email", "email", "E-Mail","")}}
                         {{ forminput("tel", "text", "Telefon","")}}
                         {{ forminput("plz", "number", "PlZ","")}}
@@ -61,6 +63,11 @@
 
                 </div>
             </form>
+            {% if errorMessage != null %}
+                <p class="error-message">
+                        {{ errorMessage }}
+                </p>
+            {% endif %}
         </div>
     </main>
     {% endblock %}

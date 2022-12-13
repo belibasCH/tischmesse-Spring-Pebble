@@ -5,6 +5,7 @@ import com.example.Tischmesse.model.User;
 import com.example.Tischmesse.service.ExhibitorService;
 import com.example.Tischmesse.service.SectorService;
 import com.example.Tischmesse.service.UserService;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,7 +61,7 @@ public class ExhibitorController {
                                @RequestParam Optional<List<String>> sectors,
                                @RequestParam String username,
                                @RequestParam String pw) {
-
+        checkExhibitornameName(companyName);
         Exhibitor newExhibitor = exhibitorService.addExhibitor(companyName, email, tel, description, plz, location, address, url, imageUrl, sectors);
         List<Exhibitor> exhibitorList = new ArrayList<Exhibitor>();
         exhibitorList.add(newExhibitor);
@@ -117,8 +118,21 @@ public class ExhibitorController {
         return "/exhibitor-edit";
     }
 
-    private static class ExhibitorNotFound extends RuntimeException {
-
+    private void checkExhibitornameName(String exName) {
+        if (exhibitorService.doesExhibitorExist(exName)) {
+            throw new InvalidExhibitorName();
+        }
     }
+
+    @ExceptionHandler(ExhibitorController.InvalidExhibitorName.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String invalidExhibitorName(Model model){
+        model.addAttribute("errorMessage", "Es ist bereits eine Firma mit diesem Namen angemeldet");
+        model.addAttribute("sectorList", sectorService.getSectorList());
+        return "/exhibitor-form";
+    }
+
+    private static class InvalidExhibitorName extends RuntimeException{}
+    private static class ExhibitorNotFound extends RuntimeException {}
 
 }
