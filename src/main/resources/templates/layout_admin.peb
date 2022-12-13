@@ -14,7 +14,7 @@
         <a href={{ href("/admin") }}><h1>Tischmesse - Admin</h1></a>
         <div id="user">
             <img src="{{ href("/img/single-user-icon.svg") }}" alt="Single-User-icon">
-        <p>Elias Braem</p>
+        <p>Administrator</p>
         </div>
     </header>
     <main>

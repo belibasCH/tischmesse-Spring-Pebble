@@ -8,17 +8,17 @@
             {{ button("/user/add", "Button zurück", "/img/back-icon.svg","zurück" )}}
 
         </div>
-        <form action="{{ href("/user/add") }}" method="post">
+        <form action="{{ href("/user/edit") }}" method="post">
             <p>
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" value="{{ currentUser.username }}">
             </p>
             <p>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password">
             </p>
             <p>
-                <button type="submit" class="btn">Register</button>
+                <button type="submit" class="btn">Speichern</button>
             </p>
             <input type="hidden"
                    name="{{ request.getAttribute("_csrf").parameterName }}"

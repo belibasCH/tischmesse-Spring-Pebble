@@ -17,9 +17,9 @@
                         <p> bezahlt  {% if entry.paid %}<img  src="/img/check-icon.svg" alt="check-icon"> {% else%}<img src="/img/missing-icon.svg" alt="missing-icon">{% endif%}</p>
                         <p> akzeptiert  {% if entry.accepted %}<img  src="/img/check-icon.svg" alt="check-icon"> {% else%}<img src="/img/missing-icon.svg" alt="missing-icon">{% endif%}</p>
                     </div>
-                    <a href=" {{ href("/exhibitor/"+entry.id) }}" title="Detailansicht"><img src="/img/eye-icon.svg" alt="view icon"/></a>
-                        <a href=" {{ href("/exhibitor/"+entry.id+"/edit") }}"title="Bearbeiten"><img src="/img/edit-icon.svg" alt="edit icon"/></a>
-                        <a href=" {{ href("/exhibitor/"+entry.id+"/delete") }}"title="Löschen"><img src="/img/del-icon.svg" alt="delete icon"/></a>
+                    <a href=" {{ href("/exhibitor/"+entry.id) }}" title="Detailansicht"><img src="/img/eye-icon.svg" alt="view icon"></a>
+                        <a href=" {{ href("/exhibitor/"+entry.id+"/edit") }}" title="Bearbeiten"><img src="/img/edit-icon.svg" alt="edit icon"></a>
+                        <a href=" {{ href("/exhibitor/"+entry.id+"/delete") }}" title="Löschen"><img src="/img/del-icon.svg" alt="delete icon"></a>
                     </div>
                 </div>
 
