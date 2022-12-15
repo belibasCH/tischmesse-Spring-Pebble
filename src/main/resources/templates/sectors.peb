@@ -1,23 +1,13 @@
     {% extends "layout_admin" %}
     {% block content %}
-    <div class="content" id="sector-content">
-        <div class="sector-content-left">
-            <div class="admin-title">
+    <section class="content" id="sector-content">
+        <section class="sector-content-left">
+            <label class="admin-title">
                 <h2>Branche</h2>
-            </div>
-            <div class="sector-view">
-{#                    {% for entry in sectorList %}#}
-{#                    <div class="sector-card">#}
-{#                        <p class="form-label">#}
-{#                            <form action="{{ href("/sectors/update") }}" class="update-form" method="post">#}
-{#                                <input type="text" name="sectorTitle" class="no-outline" value={{ entry.sectorName }}>#}
-{#                                <input type="hidden" name="id" value={{ entry.id }}>#}
-{#                                <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22px" height="22px">#}
-{#                            </form>#}
-{#                    </div>#}
-{#                    {% endfor %}#}
+            </label>
+            <section class="sector-view">
                 {% for entry in sectorList %}
-                    <div class="sector-card">
+                    <article class="sector-card">
                         <p class="form-label">
                         <form action="{{ href("/sectors/update") }}" class="update-form" method="post">
                             <input type="text" name="sectorTitle" class="no-outline" value={{ entry.getKey().sectorName }}>
@@ -36,11 +26,11 @@
                                 <p class="no-items-present">No list-items</p>
                             {% endif %}
                         </div>
-                    </div>
+                    </article>
                 {% endfor %}
-            </div>
-        </div>
-        <div id="add-sector-box">
+            </section>
+        </section>
+        <section id="add-sector-box">
             <h2>Branchen-Editor</h2>
             <form action={{ href("/sectors/add") }} method="post">
                 <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
@@ -54,7 +44,7 @@
                         {{ errorMessage }}
                 </p>
             {% endif %}
-            <div id="sector-uebersicht">
+            <section id="sector-uebersicht">
                 <h3>Branchen-Übersicht</h3>
                 {% for entry in sectorList %}
                     <form action="{{ href("/sectors/delete") }}" method="post">
@@ -67,8 +57,8 @@
                         </div>
                     </form>
                 {% endfor %}
-            </div>
-        </div>
-    </div>
+            </section>
+        </section>
+    </section>
 
     {% endblock %}
