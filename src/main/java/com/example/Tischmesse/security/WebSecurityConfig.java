@@ -1,7 +1,6 @@
 package com.example.Tischmesse.security;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -13,6 +12,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/").permitAll()
             .antMatchers("/h2-console/**").permitAll()
             .antMatchers("/exhibitor/add").permitAll()
+            .antMatchers("/user-edit").permitAll()
             .antMatchers("/confirmation").permitAll()
             .antMatchers("/css/**").permitAll()
             .antMatchers("/js/**").permitAll()

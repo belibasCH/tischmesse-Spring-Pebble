@@ -5,6 +5,7 @@
     <div id="about-page-overview">
 
         <h4 id="project-name">Projekt Tischmesse</h4>
+
         <p>Seit 1997 organisiert die Generis AG alle zwei Jahre die Schaffhauser Tischmesse.
             Firmen können dabei als Austeller an einem Tisch ihre Produkte bewerben.
             Doch es steckt viel mehr dahinter. Es geht nämlich vor allem auch um die
@@ -18,18 +19,32 @@
             entwickelt, wodurch den Organisatoren der Generis AG das Organisieren und Planen
             des Events erheblich vereinfacht wird.</p>
         <br>
+        <h2>User Bereich</h2>
+        <p>
+            Als User kann ich mich per Formular für die Tischmesse anmelden. Zudem kann ich einen User erstellen und danach meinen Eintrag bearbeiten.
+            Auf der Startseine können alle akzepierten Aussteller angezeigt werden.
+        </p>
+        <h2>Admin-Bereich</h2>
         <p>In unser Projekt haben wir verschiedene Features eingebaut. Im Admin-Interface
             kann man eine Liste aller Aussteller betrachen. Dazu sieht der Admin sofort, wer
             der Aussteller bereits bezahlt hat und wer bereits akzeptiert ist. Es können
             einzelne Aussteller angezeigt, bearbeitet, gelöscht oder hinzugefügt werden.
             Unter der Branchenansicht können alle vertretenen Branchen und die jeweils
             zugehörigen Aussteller angezeigt werden. Ebenfalls kann man hier Branchen
-            hinzufügen oder löschen. [...User...]. </p>
+            hinzufügen oder löschen. Im Bereich User können registrierten User editiert, hinzugefügt und gelöscht werden.  </p>
         <br>
+        <h2>Zusatzfeatures</h2>
+        <ul>
+            <li>Responsive design für die Startseite. Auf der Admin Page wird keine responsiv View benötigt</li>
+            <li>Authentication & Authorization für den Admin-Bereich und User editiermodus</li>
+            <li>"Mini"-Rich-Client mit JavaScript für aufklappbare Ausstellercard auf der Homepage</li>
+        </ul>
+        <h2>Hinweise für Herr Faes</h2>
+        <ul>
+            <li>Über den Editmode können die Firemen den Branchen zugewiesen werden. Dies ist in den Sample-Daten nicht inbegriffen</li>
 
-            <li>Responsive design für die Seite, die Sinn macht: Homepage</li>
-            <li>Rich-Client mit JavaScript auf der Homepage</li>
-            <li>Authentication & Authorization für den Admin-Bereich</li>
+
+        </ul>
 
     </div>
 

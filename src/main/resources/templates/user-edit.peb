@@ -9,18 +9,16 @@
 
         </div>
         <form action="{{ href("/user/edit") }}" method="post">
-            <input type="hidden"  name="id" value={{ currentUser.id}}>
             <p>
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" value="{{ currentUser.username}}">
+                <input type="text" name="username" id="username" value="{{ currentUser.username }}">
             </p>
             <p>
-                <label for="password">neues Passwort</label>
-                <input type="password" name="password" id="password" value="">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
             </p>
             <p>
-                <button type="submit" class="delete">Register</button>
-                <a class="button" href="/user">Back</a>
+                <button type="submit" class="btn">Speichern</button>
             </p>
             <input type="hidden"
                    name="{{ request.getAttribute("_csrf").parameterName }}"

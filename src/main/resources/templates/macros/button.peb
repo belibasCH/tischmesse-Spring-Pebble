@@ -1,8 +1,10 @@
 {% macro button(link, alt, icon, text) %}
-<a href="{{ link}}">
-    <button>
+
+    <div class="btn">
+        <a href="{{ link}}">
         <img src="{{ icon }}" alt="{{alt}}">
         {{text}}
-    </button>
-</a>
+        </a>
+    </div>
+
 {% endmacro %}

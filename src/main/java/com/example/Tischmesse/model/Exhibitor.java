@@ -31,11 +31,6 @@ public class Exhibitor {
     @ManyToMany
     private List<Sector> sectors;
 
-    @OneToMany
-    private List<User> users;
-
-    //Liste mit Personen
-
     public Exhibitor(String companyName, String email, String tel, String description, LocalDate registrationDate, Integer tableNr, Integer plz, String location, String adress, String url) {
         this.companyName = companyName;
         this.email = email;
@@ -176,13 +171,6 @@ public class Exhibitor {
         this.plz = plz;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 
     public void setTableNr(Integer tableNr) {
         this.tableNr = tableNr;

@@ -22,7 +22,7 @@
 
             </div>
 
-            {{ button("/exhibitor/"+currentExhibitor.id +"/edit", "Button edit", "/img/plus-icon.svg","Bearbeiten" )}}
+            {{ button("/exhibitor/"+currentExhibitor.id +"/edit", "Button edit", "/img/edit-icon.svg","Bearbeiten" )}}
         </div>
 
         <div class="article-container">

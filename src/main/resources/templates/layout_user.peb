@@ -1,8 +1,7 @@
     {% import "macros/button" %}
 
-<html>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ href("/css/styles.css") }}">
@@ -33,6 +32,7 @@
     <section class="footer-box">
         <h4>About</h4>
         <a href="{{ href("/about") }}"><p>Impressum</p> </a>
+        <a href="{{ href("/user-edit") }}"><p>Meinen Eintrag anpassen</p> </a>
         <a href="{{ href("/admin") }}"><p>Admin</p> </a>
 
     </section>
@@ -42,5 +42,4 @@
 </footer>
     <script src="{{ href("/js/cardScript.js") }}"></script>
 </body>
-</html>
 </html>
