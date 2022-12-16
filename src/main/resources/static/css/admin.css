@@ -282,6 +282,10 @@ input[value=Hinzufügen]{
     font-family: 'Montserrat', sans-serif;
 }
 
+.delete-icon{
+    padding-right: 20px;
+}
+
 #checkboxes {
     display: flex;
     flex-direction: column;

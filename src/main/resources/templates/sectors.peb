@@ -10,7 +10,7 @@
                     <article class="sector-card">
                         <p class="form-label">
                         <form action="{{ href("/sectors/update") }}" class="update-form" method="post">
-                            <input type="text" name="sectorTitle" class="no-outline" value={{ entry.getKey().sectorName }}>
+                            <input type="text" name="sectorTitle" class="no-outline" value="{{ entry.getKey().sectorName }}">
                             <input type="hidden" name="id" value={{ entry.getKey().id }}>
                             <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22px" height="22px">
                         </form>
@@ -53,7 +53,7 @@
                         <div id="sector-delete">
                             <p class="sector-label" id="sector-name-delete">{{ entry.getKey().sectorName }}</p>
                             <input type="hidden" name="id" value={{ entry.getKey().id }}>
-                            <input type="image" class="no-outline" alt="Submit" src="/img/del-icon.svg" width="22px" height="22px">
+                            <input type="image" class="no-outline delete-icon" alt="Submit" src="/img/del-icon.svg" width="22px" height="22px">
                         </div>
                     </form>
                 {% endfor %}
