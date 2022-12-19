@@ -131,8 +131,12 @@ public class ExhibitorController {
         model.addAttribute("sectorList", sectorService.getSectorList());
         return "/exhibitor-form";
     }
-
+    @ExceptionHandler(ExhibitorController.ExhibitorNotFound.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String exhibitorNotFound(){
+        return "notFound";
+    }
     private static class InvalidExhibitorName extends RuntimeException{}
-    private static class ExhibitorNotFound extends RuntimeException {}
+    private static class ExhibitorNotFound extends RuntimeException {    }
 
 }

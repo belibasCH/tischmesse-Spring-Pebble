@@ -9,7 +9,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -39,25 +41,23 @@ public class UserService implements UserDetailsService {
     }
 
     public void deleteUser(int id) {
-        repo.delete(repo.findById(id).orElseThrow(UserNotFound::new));
+        repo.deleteById(id);
     }
 
     public void editUser(int id, String username, String pw) {
         var encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        User currentUser = repo.findById(id).orElseThrow(UserNotFound::new);
+        User currentUser = repo.findById(id).orElse(new User(username, pw, Set.of("EDITOR"), Collections.emptyList()));
         currentUser.setPassword(encoder.encode(pw));
         currentUser.setUsername(username);
     }
 
-    public User findUserById(int id) {
-       return repo.findById(id).orElseThrow(UserNotFound::new);
+    public Optional<User> findUserById(int id) {
+       return repo.findById(id);
     }
 
-    public User findUser(String name) {
+    public Optional<User> findUser(String name) {
         System.out.println(name);
-        return repo.findByUsername(name).orElseThrow(UserNotFound::new);
+        return repo.findByUsername(name);
     }
 
-    private static class UserNotFound extends RuntimeException {
-    }
 }

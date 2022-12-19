@@ -3,15 +3,13 @@ package com.example.Tischmesse.controller;
 
 import com.example.Tischmesse.model.User;
 import com.example.Tischmesse.service.UserService;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 
@@ -42,6 +40,7 @@ public class UserController {
     }
     @GetMapping("/user/{id}/edit")
     public String editUser(@PathVariable int id,  Model model) {
+        User user = service.findUserById(id).orElseThrow(InvalidUserName::new);
         model.addAttribute("currentUser", service.findUserById(id));
         return "/user-edit";
     }
@@ -63,8 +62,15 @@ public class UserController {
         if (auth == null){
             return "/login";
         }
-        User currentUser  = service.findUser(auth.getName());
+        User currentUser  = service.findUser(auth.getName()).orElseThrow(InvalidUserName::new);
         model.addAttribute("exhibitorList", currentUser.getExhibitors());
         return "/live-user-edit";
     }
+
+    @ExceptionHandler(UserController.InvalidUserName.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String invalidExhibitorName(Model model){
+        return "notFound";
+    }
+    private static class InvalidUserName extends RuntimeException{}
 }

@@ -1,0 +1,12 @@
+    {% import "macros/button" %}
+        {% extends "layout_admin" %}
+    {% block content %}
+    <div class="content">
+
+        <section class="admin-title">
+            <h2>Ihre Anfrage wurde nicht gefunden</h2>
+            {{ button("/admin", "Button back", "/img/back-icon.svg","zurück" )}}
+        </section>
+
+    </div>
+    {% endblock %}
