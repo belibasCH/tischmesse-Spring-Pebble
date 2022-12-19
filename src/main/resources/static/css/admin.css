@@ -1,9 +1,4 @@
 
-
-#container  {
-    display: flex;
-    flex-direction: column;
-}
 header {
     display: flex;
     justify-content: space-between;
@@ -331,4 +326,16 @@ input[value=Hinzufügen]{
 .no-items-present{
     font-size: 0.8rem;
     color: #bbbbbb;
+}
+
+#header-icon{
+    display: flex;
+    flex-direction: row;
+}
+
+#grid-icon{
+    margin-right: 1rem;
+    align-self: center;
+    height: 20px;
+    widht: 20px
 }
