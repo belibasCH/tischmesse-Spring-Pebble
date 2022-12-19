@@ -67,10 +67,10 @@ public class SectorController {
         return "redirect:/sectors";
     }
 
-    @GetMapping("/sectors/update")
-    public String updateSectorRedirect(){
-        return "redirect:/sectors";
-    }
+//    @GetMapping("/sectors/update")
+//    public String updateSectorRedirect(){
+//        return "redirect:/sectors";
+//    }
 
     private void checkSectorName(String sectorName){
         if(sectorName == null || sectorName.length() < 2 || sectorName.length() > 50){
