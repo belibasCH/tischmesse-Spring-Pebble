@@ -22,9 +22,7 @@
                         <a href=" {{ href("/exhibitor/"+entry.id+"/delete") }}" title="Löschen"><img src="/img/del-icon.svg" alt="delete icon"></a>
                     </div>
                 </div>
-
             {% endfor %}
         </div>
-
     </div>
     {% endblock %}

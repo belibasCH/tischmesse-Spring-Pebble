@@ -1,8 +1,6 @@
     {% import "macros/button" %}
-
     {% extends "layout_user" %}
     {% block content %}
-
     <header>
         <div id="anmeldung-title">
             <h2>Besten Dank für Ihre Anmeldung</h2><br><br>
@@ -13,9 +11,5 @@
             <p>Das Tischmesse Team</p><br><br>
         </div>
         {{ button("/", "Home", "/img/aussteller-icon.svg","zum Firmenverzeichnis" )}}
-
     </header>
-
-
-
     {% endblock %}

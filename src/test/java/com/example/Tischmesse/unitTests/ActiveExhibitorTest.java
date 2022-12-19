@@ -5,10 +5,8 @@ import com.example.Tischmesse.repository.ExhibitorRepository;
 import com.example.Tischmesse.repository.SectorRepository;
 import com.example.Tischmesse.service.ExhibitorService;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

@@ -20,9 +20,6 @@ public class Exhibitor {
     private String location;
     private String address;
     private String url;
-
-
-
     private String imageUrl;
     private Boolean paid;
     private Boolean accepted;
@@ -166,11 +163,9 @@ public class Exhibitor {
         return imageUrl;
     }
 
-
     public void setPlz(Integer plz) {
         this.plz = plz;
     }
-
 
     public void setTableNr(Integer tableNr) {
         this.tableNr = tableNr;

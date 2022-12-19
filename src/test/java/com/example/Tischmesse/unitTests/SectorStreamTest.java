@@ -1,14 +1,11 @@
 package com.example.Tischmesse.unitTests;
 
 import com.example.Tischmesse.model.Sector;
-import com.example.Tischmesse.repository.ExhibitorRepository;
 import com.example.Tischmesse.repository.SectorRepository;
 import com.example.Tischmesse.service.ExhibitorService;
 import com.example.Tischmesse.service.SectorService;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 import java.util.List;

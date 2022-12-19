@@ -3,11 +3,8 @@ package com.example.Tischmesse.unitTests;
 import com.example.Tischmesse.model.Exhibitor;
 import com.example.Tischmesse.model.Sector;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ConstructorTests {
 
