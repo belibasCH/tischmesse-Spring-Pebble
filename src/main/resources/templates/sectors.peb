@@ -15,11 +15,11 @@
                         <div class="matching-exhibitor-list">
 
                             {% if entry.getValue().size > 0 %}
-                                <p>Liste der Aussteller:</p>
+                                <ul>
                                 {% for listEntry in entry.getValue()%}
                                     <li>{{ listEntry.companyName }}</li>
-
                                 {% endfor %}
+                                </ul>
                                 {% else %}
                                 <p class="no-items-present">No list-items</p>
                             {% endif %}

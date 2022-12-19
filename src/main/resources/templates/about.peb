@@ -14,36 +14,19 @@
         <br>
         <p>Die Generis AG selbst hat dafür bis Heute stets Flyer ausgedruckt, um für diesen
             Event zu werben. Für unser Web-Engineering-Projekt haben wir uns jedoch gedacht,
-            dass das besser geht. Nicht nur haben wir auf unserer öffentlichen Webpage Platz,
-            um alle Aussteller anzuzeigen, wir haben hauptsächlich auch ein Admin-Interface
-            entwickelt, wodurch den Organisatoren der Generis AG das Organisieren und Planen
+            dass das besser geht. Unsere Web-Applikation stellt die Aussteller in einem Firmenverzeichnis dar, welches auf der Messe verwendet werden kann.
+            Daneben haben wir ein Admin Interface Entwickelt, in dem den Organisatoren der Generis AG die Planung
             des Events erheblich vereinfacht wird.</p>
         <br>
-        <h2>User Bereich</h2>
-        <p>
-            Als User kann ich mich per Formular für die Tischmesse anmelden. Zudem kann ich einen User erstellen und danach meinen Eintrag bearbeiten.
-            Auf der Startseine können alle akzepierten Aussteller angezeigt werden.
-        </p>
-        <h2>Admin-Bereich</h2>
-        <p>In unser Projekt haben wir verschiedene Features eingebaut. Im Admin-Interface
-            kann man eine Liste aller Aussteller betrachen. Dazu sieht der Admin sofort, wer
-            der Aussteller bereits bezahlt hat und wer bereits akzeptiert ist. Es können
-            einzelne Aussteller angezeigt, bearbeitet, gelöscht oder hinzugefügt werden.
-            Unter der Branchenansicht können alle vertretenen Branchen und die jeweils
-            zugehörigen Aussteller angezeigt werden. Ebenfalls kann man hier Branchen
-            hinzufügen oder löschen. Im Bereich User können registrierten User editiert, hinzugefügt und gelöscht werden.  </p>
-        <br>
-        <h2>Zusatzfeatures</h2>
-        <ul>
-            <li>Responsive design für die Startseite. Auf der Admin Page wird keine responsiv View benötigt</li>
-            <li>Authentication & Authorization für den Admin-Bereich und User editiermodus</li>
-            <li>"Mini"-Rich-Client mit JavaScript für aufklappbare Ausstellercard auf der Homepage</li>
-        </ul>
-        <h2>Hinweise für Herr Faes</h2>
-        <ul>
-            <li>Über den Editmode können die Firemen den Branchen zugewiesen werden. Dies ist in den Sample-Daten nicht inbegriffen</li>
 
+        <h2>Projektteam</h2>
+        <p>Joel Finger und ELias Bräm</p>
 
+        <h2>Features</h2>
+        <ul>
+            <li>Firmenverzeichnis - mit Anmeldung</li>
+            <li>Adminbereich - Aussteller, Branchen, User (edit, add, delete)</li>
+            <li>UserEditmode - Aussteller können mit Ihrem Nutzernamen Ihren Eintrag bearbeiten</li>
         </ul>
 
     </div>

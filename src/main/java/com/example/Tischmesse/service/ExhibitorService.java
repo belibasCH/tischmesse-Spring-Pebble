@@ -118,6 +118,9 @@ public class ExhibitorService {
         return sectorsList;
     }
 
+    public boolean doesExhibitorExist(String exName) {
+        return (repo.findExhibitorByCompanyName(exName) != null);
+    }
 
 
     private static class ExhibitorNotFound extends RuntimeException {

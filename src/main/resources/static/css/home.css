@@ -38,11 +38,15 @@ footer {
     display: flex;
     justify-content: space-between;
     width:100%;
-    bottom: 0px;
     gap: 1rem;
 }
 footer section {
     padding: 2rem;
+}
+@media screen and (max-width: 750px) {
+    footer {
+        flex-direction: column;
+    }
 }
 
 article {
