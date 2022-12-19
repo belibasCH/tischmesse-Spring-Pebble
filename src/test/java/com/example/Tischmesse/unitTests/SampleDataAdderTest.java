@@ -16,15 +16,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
  class SampleDataAdderTest {
-
-
     ExhibitorService service;
 
     SampleDataAdderTest() throws IOException {
         var mapper = new ObjectMapper().configure(FAIL_ON_UNKNOWN_PROPERTIES, false);
         var exhibitors = SampleDataAdder.loadSampleExhibitors(mapper);
         var sectors = SampleDataAdder.loadSampleSectors(mapper);
-
         var stubExhibitor = Mockito.mock(ExhibitorRepository.class);
         when(stubExhibitor.findAll()).thenReturn(exhibitors);
         var stubSector = Mockito.mock(SectorRepository.class);
