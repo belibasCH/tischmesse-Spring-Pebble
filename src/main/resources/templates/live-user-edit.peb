@@ -4,7 +4,7 @@
     {% block content %}
         <header>
             <div id="anmeldung-title">
-                <h2>Meinde Daten Anpassen</h2>
+                <h2>Meine Firmendaten anpassen</h2>
                 {% for entry in exhibitorlist%}
                 <h2>{{entry.companyName}}</h2>
                     {%endfor%}
@@ -12,6 +12,10 @@
         </header>
     <main>
         <div class="content-form">
+        {% if exhibitorList is empty %}
+            <p>Sie sind keiner Firma zugewiesen.</p>
+            <p>Bitte wenden Sie sich an den Administrator.</p>
+        {% endif %}
                 {% for entry in exhibitorList %}
             <form action="{{ href("/exhibitor/edit") }}" method="post">
                 <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
