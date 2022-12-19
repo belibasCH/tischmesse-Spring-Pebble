@@ -1,3 +1,4 @@
+    {% import "macros/button" %}
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -11,7 +12,10 @@
 <body>
 <div id="container">
     <header>
-        <a href={{ href("/admin") }}><h1>Tischmesse - Admin</h1></a>
+        <div id="header-icon">
+            <img src="/img/grid-icon.svg" id="grid-icon">
+            <a href={{ href("/") }}><h1>Tischmesse</h1></a>
+        </div>
         <div id="user">
             <img src="{{ href("/img/single-user-icon.svg") }}" alt="Single-User-icon">
         <p>Administrator</p>
