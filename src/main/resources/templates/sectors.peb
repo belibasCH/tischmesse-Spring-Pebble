@@ -8,6 +8,8 @@
                     <article class="sector-card">
                         <p class="form-label">
                         <form action="{{ href("/sectors/update") }}" class="update-form" method="post">
+                            <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
+                               value="{{ request.getAttribute("_csrf").token }}">
                             <input type="text" name="sectorTitle" class="no-outline" value="{{ entry.getKey().sectorName }}">
                             <input type="hidden" name="id" value="{{ entry.getKey().id }}">
                             <input type="image" class="no-outline" alt="Submit" src="/img/save-icon.png" width="22" height="22">
@@ -58,5 +60,4 @@
             </div>
         </section>
     </section>
-
     {% endblock %}

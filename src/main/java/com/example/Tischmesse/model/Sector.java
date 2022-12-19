@@ -18,10 +18,7 @@ public class Sector {
         this.sectorName = sectorName;
     }
 
-    public Sector() {
-
-    }
-
+    public Sector() {}
 
     public String getSectorName(){
         return sectorName;

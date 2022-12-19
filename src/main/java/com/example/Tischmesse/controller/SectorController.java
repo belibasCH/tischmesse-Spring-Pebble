@@ -16,11 +16,8 @@ public class SectorController {
 
     private final SectorService sectorService;
 
-    private final ExhibitorService exhibitorService;
-
-    public SectorController(SectorService sectorService, ExhibitorService exhibitorService) {
+    public SectorController(SectorService sectorService) {
         this.sectorService = sectorService;
-        this.exhibitorService = exhibitorService;
     }
 
     @GetMapping("/sectors")

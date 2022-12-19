@@ -16,9 +16,8 @@ body {
 
 a:not(:hover) {
     text-decoration: none;
-
-
 }
+
 a{
     color: #EEEEEE;
 }
@@ -44,6 +43,7 @@ button, .btn{
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
 }
+
 .btn a {
     display: flex;
     align-items: center;
@@ -51,8 +51,8 @@ button, .btn{
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
-
 }
+
 button:hover, .btn:hover{
     background-color: var(--primary-variant-color);
 }
@@ -93,7 +93,6 @@ input, select{
     padding: 5px;
 }
 
-
 textarea{
     border: 1px solid var(--onBackground-color);
     background-color: var(--background-color);
@@ -101,7 +100,6 @@ textarea{
     height: 8em;
     padding: 5px;
 }
-
 
 #checkboxes {
     display: flex;
@@ -111,5 +109,4 @@ textarea{
 .checkbox-div {
     display: flex;
     align-items: center;
-
 }
