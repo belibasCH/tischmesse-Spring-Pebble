@@ -218,7 +218,7 @@ textarea{
     flex-direction: unset;
 }
 
-#sector-delete{
+.sector-delete{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
