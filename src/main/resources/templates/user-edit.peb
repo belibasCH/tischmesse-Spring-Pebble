@@ -5,7 +5,7 @@
 
         <div class="admin-title">
             <h2>Benutzer hinzufügen</h2>
-            {{ button("/user/add", "Button zurück", "/img/back-icon.svg","zurück" )}}
+            {{ button("/user", "Button zurück", "/img/back-icon.svg","zurück" )}}
 
         </div>
         <form action="{{ href("/user/edit") }}" method="post">

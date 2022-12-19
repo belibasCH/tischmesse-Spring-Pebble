@@ -5,6 +5,8 @@ import com.example.Tischmesse.repository.ExhibitorRepository;
 import com.example.Tischmesse.repository.SectorRepository;
 import com.example.Tischmesse.service.ExhibitorService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -19,7 +21,7 @@ import static org.mockito.Mockito.when;
     ExhibitorService service;
 
     SampleDataAdderTest() throws IOException {
-        var mapper = new ObjectMapper().configure(FAIL_ON_UNKNOWN_PROPERTIES, false);
+        var mapper = JsonMapper.builder().addModule(new JavaTimeModule()).build().configure(FAIL_ON_UNKNOWN_PROPERTIES, false);
         var exhibitors = SampleDataAdder.loadSampleExhibitors(mapper);
         var sectors = SampleDataAdder.loadSampleSectors(mapper);
         var stubExhibitor = Mockito.mock(ExhibitorRepository.class);
