@@ -30,47 +30,23 @@ public class SectorController {
     }
 
     @PostMapping("/sectors/add")
-    public String addSector(@RequestParam String sectorName, Model model){
+    public String addSector(@RequestParam String sectorName){
             checkSectorName(sectorName);
             sectorService.addSector(sectorName);
-            //model.addAttribute("sectorList", sectorService.addSector(sectorName));
-            //model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
-            //return "/sectors";
             return "redirect:/sectors";
     }
-    @GetMapping("/sectors/add")
-    public String addSectorRedirect(){
-        return "redirect:/sectors";
-    }
-
-
 
     @PostMapping("/sectors/delete")
-    public String deleteSector(@RequestParam int id , Model model) {
+    public String deleteSector(@RequestParam int id) {
         sectorService.removeSector(id);
-        //model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
-        //return "/sectors";
-        return "redirect:/sectors";
-    }
-    @GetMapping("/sectors/delete")
-    public String deleteSectorRedirect(){
         return "redirect:/sectors";
     }
 
     @PostMapping("/sectors/update")
-    public String updateSectorName(@RequestParam int id, @RequestParam String sectorTitle, Model model){
-        //model.addAttribute("sectorList", sectorService.updateSector(id, sectorTitle));
-        //model.addAttribute("sectorList", sectorService.getSectorList());
-        //model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
-        //return "/sectors";
+    public String updateSectorName(@RequestParam int id, @RequestParam String sectorTitle){
         sectorService.updateSector(id, sectorTitle);
         return "redirect:/sectors";
     }
-
-//    @GetMapping("/sectors/update")
-//    public String updateSectorRedirect(){
-//        return "redirect:/sectors";
-//    }
 
     private void checkSectorName(String sectorName){
         if(sectorName == null || sectorName.length() < 2 || sectorName.length() > 50){
