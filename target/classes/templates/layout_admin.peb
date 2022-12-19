@@ -28,9 +28,7 @@
                 <li><a href="{{ href("/sectors") }}"><img src="{{ href("/img/branchen-icon.svg") }}" alt="Branchen-icon"> Branchen</a></li>
                 <li><a href="{{ href("/user") }}"><img src="{{ href("/img/user-icon.svg") }}" alt="User-icon"> User </a></li>
             </ul>
-
         </nav>
-
         {% block content %}
         {% endblock %}
     </main>
