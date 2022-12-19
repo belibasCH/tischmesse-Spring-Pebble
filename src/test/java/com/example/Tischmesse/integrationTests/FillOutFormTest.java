@@ -49,19 +49,6 @@ public class FillOutFormTest {
     }
 
     @Test
-    public void testFillOutExhibitorFormWithValidEntry(){
-        login();
-        var pageExhibitorList = ExhibitorAdminPage.create(driver, port);
-        int startExhibitorCount = pageExhibitorList.getAllExhibitors().size();
-        var pageForm = ExhibitorFormPage.create(driver, port);
-        pageForm.getCompanyNameInputField().sendKeys("Elias AG");
-        pageForm.getFormEntryButton().click();
-        var pageExhibitorListAfter = ExhibitorAdminPage.create(driver, port);
-        int allExhibitors = pageExhibitorListAfter.getAllExhibitors().size();
-        assertTrue(startExhibitorCount < allExhibitors);
-    }
-
-    @Test
     public void testFillOutExhibitorFormWithValidExhibitorName(){
         login();
         var pageExhibitorList = ExhibitorAdminPage.create(driver, port);
@@ -85,7 +72,6 @@ public class FillOutFormTest {
         var pageExhibitorListAfter = ExhibitorAdminPage.create(driver, port);
         int allExhibitors = pageExhibitorListAfter.getAllExhibitors().size();
         assertEquals(startExhibitorCount, allExhibitors);
-        //assertTrue(startExhibitorCount == allExhibitors);
     }
 
     private void login(){

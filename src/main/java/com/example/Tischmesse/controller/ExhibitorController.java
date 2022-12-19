@@ -119,7 +119,7 @@ public class ExhibitorController {
     }
 
     private void checkExhibitornameName(String exName) {
-        if (exhibitorService.doesExhibitorExist(exName)) {
+        if (exhibitorService.doesExhibitorExist(exName) || exName.length()<1) {
             throw new InvalidExhibitorName();
         }
     }
