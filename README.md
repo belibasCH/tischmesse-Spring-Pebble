@@ -32,4 +32,4 @@ In unser Projekt haben wir verschiedene Features eingebaut. Im Admin-Interface k
 ### Zusatzfeatures
 - Responsive design für die Startseite. Auf der Admin Page wird keine responsiv View benötigt
 - Authentication & Authorization für den Admin-Bereich und User editiermodus
-- "Mini"-Rich-Client mit JavaScript für aufklappbare Ausstellercard auf der Homepage
+- "Mini"-JavaScript Erweiterung  für aufklappbare Ausstellercard auf der Homepage
