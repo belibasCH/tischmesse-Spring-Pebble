@@ -20,7 +20,6 @@
                                 <ul>
                                 {% for listEntry in entry.getValue()%}
                                     <li>{{ listEntry.companyName }}</li>
-
                                 {% endfor %}
                                 </ul>
                                 {% else %}
