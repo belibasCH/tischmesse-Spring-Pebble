@@ -2,7 +2,7 @@
     {% block content%}
     <main id="container404">
         <div id="center404">
-            <img src="/img/error-icon.svg" id="error-icon">
+            <img src="/img/page-not-found.svg" id="error-icon">
             <p id="text404">Diese Seite konnte leider nicht gefunden werden.</p>
         </div>
     </main>

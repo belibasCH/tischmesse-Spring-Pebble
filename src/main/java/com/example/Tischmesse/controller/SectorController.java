@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -33,9 +32,11 @@ public class SectorController {
     @PostMapping("/sectors/add")
     public String addSector(@RequestParam String sectorName, Model model){
             checkSectorName(sectorName);
-            model.addAttribute("sectorList", sectorService.addSector(sectorName));
-            model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
-            return "/sectors";
+            sectorService.addSector(sectorName);
+            //model.addAttribute("sectorList", sectorService.addSector(sectorName));
+            //model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
+            //return "/sectors";
+            return "redirect:/sectors";
     }
     @GetMapping("/sectors/add")
     public String addSectorRedirect(){
@@ -47,8 +48,9 @@ public class SectorController {
     @PostMapping("/sectors/delete")
     public String deleteSector(@RequestParam int id , Model model) {
         sectorService.removeSector(id);
-        model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
-        return "/sectors";
+        //model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
+        //return "/sectors";
+        return "redirect:/sectors";
     }
     @GetMapping("/sectors/delete")
     public String deleteSectorRedirect(){
@@ -57,16 +59,18 @@ public class SectorController {
 
     @PostMapping("/sectors/update")
     public String updateSectorName(@RequestParam int id, @RequestParam String sectorTitle, Model model){
-        model.addAttribute("sectorList", sectorService.updateSector(id, sectorTitle));
+        //model.addAttribute("sectorList", sectorService.updateSector(id, sectorTitle));
         //model.addAttribute("sectorList", sectorService.getSectorList());
-        model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
-        return "/sectors";
-    }
-
-    @GetMapping("/sectors/update")
-    public String updateSectorRedirect(){
+        //model.addAttribute("sectorList", sectorService.getMatchingExhibitorList());
+        //return "/sectors";
+        sectorService.updateSector(id, sectorTitle);
         return "redirect:/sectors";
     }
+
+//    @GetMapping("/sectors/update")
+//    public String updateSectorRedirect(){
+//        return "redirect:/sectors";
+//    }
 
     private void checkSectorName(String sectorName){
         if(sectorName == null || sectorName.length() < 2 || sectorName.length() > 50){
@@ -83,5 +87,4 @@ public class SectorController {
     }
 
     private static class InvalidSectorName extends RuntimeException{}
-
 }

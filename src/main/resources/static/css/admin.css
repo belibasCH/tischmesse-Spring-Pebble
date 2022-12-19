@@ -189,6 +189,7 @@ input, select{
     padding: 0 1rem;
     padding-bottom: 2rem;
     margin: 1rem;
+    gap: 0rem;
 }
 
 .sector-view{
@@ -220,7 +221,7 @@ textarea{
     flex-direction: unset;
 }
 
-#sector-delete{
+.sector-delete{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -282,6 +283,10 @@ input[value=Hinzufügen]{
     font-size: 0.9rem;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+}
+
+.delete-icon{
+    padding-right: 20px;
 }
 
 #checkboxes {
