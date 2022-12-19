@@ -1,7 +1,5 @@
 {% extends "layout_user" %}
-
 {% block content %}
-
     <div id="about-page-overview">
 
         <h4 id="project-name">Projekt Tischmesse</h4>
@@ -30,6 +28,4 @@
         </ul>
 
     </div>
-
-
 {% endblock %}

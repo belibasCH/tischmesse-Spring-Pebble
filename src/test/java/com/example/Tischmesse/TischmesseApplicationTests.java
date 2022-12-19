@@ -9,5 +9,4 @@ class TischmesseApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

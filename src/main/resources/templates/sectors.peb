@@ -1,11 +1,11 @@
     {% extends "layout_admin" %}
     {% block content %}
-    <section class="content" id="sector-content">
+    <div class="content" id="sector-content">
         <section class="sector-content-left">
                 <h2 class="admin-title">Branche</h2>
             <div class="sector-view">
                 {% for entry in sectorList %}
-                    <article class="sector-card">
+                    <div class="sector-card">
                         <p class="form-label">
                         <form action="{{ href("/sectors/update") }}" class="update-form" method="post">
                             <input type="hidden" name="{{ request.getAttribute("_csrf").parameterName }}"
@@ -26,7 +26,7 @@
                                 <p class="no-items-present">No list-items</p>
                             {% endif %}
                         </div>
-                    </article>
+                    </div>
                 {% endfor %}
             </div>
         </section>
@@ -59,5 +59,5 @@
                 {% endfor %}
             </div>
         </section>
-    </section>
+    </div>
     {% endblock %}
