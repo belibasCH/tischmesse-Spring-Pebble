@@ -1,6 +1,5 @@
 package com.example.Tischmesse.controller;
 
-import com.example.Tischmesse.service.ExhibitorService;
 import com.example.Tischmesse.service.SectorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

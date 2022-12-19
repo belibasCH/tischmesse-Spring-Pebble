@@ -11,8 +11,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.type.TypeReference;
-
-
 import java.io.IOException;
 import java.util.List;
 
@@ -55,8 +53,6 @@ public class SampleDataAdder implements CommandLineRunner {
             loadSampleExhibitors(mapper).forEach(exhibitorService::add);
         }
     }
-
-
 
     public static List<Exhibitor> loadSampleExhibitors(ObjectMapper mapper) throws IOException {
         return mapper.readValue(SampleDataAdder.class.getResource(JSON_FILE_EXHIBITORS),

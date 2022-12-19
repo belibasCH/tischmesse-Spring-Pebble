@@ -1,15 +1,11 @@
 package com.example.Tischmesse.service;
 
-
 import com.example.Tischmesse.model.Exhibitor;
 import com.example.Tischmesse.model.Sector;
-import com.example.Tischmesse.model.User;
 import com.example.Tischmesse.repository.ExhibitorRepository;
 import com.example.Tischmesse.repository.SectorRepository;
 import org.springframework.stereotype.Service;
-
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;

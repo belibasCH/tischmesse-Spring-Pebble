@@ -3,7 +3,6 @@ package com.example.Tischmesse.model;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
@@ -14,8 +13,6 @@ import static javax.persistence.FetchType.EAGER;
 @Entity
 public class User implements UserDetails {
 
-
-
     @Id
     @GeneratedValue
     private Integer id;
@@ -24,8 +21,6 @@ public class User implements UserDetails {
 
     @ManyToMany
     private List<Exhibitor> exhibitors;
-
-
 
     public void setUsername(String username) {
         this.username = username;

@@ -1,4 +1,3 @@
-
 header {
     display: flex;
     justify-content: space-between;
@@ -7,7 +6,6 @@ header {
     background-color: var(--newblack-color);
     padding: 0 1rem;
     box-sizing: border-box;
-
 }
 
 #user {
@@ -32,9 +30,11 @@ h1{
     font-size: 1.2em;
     color: var(--background-color);
 }
+
 main {
     display: flex;
 }
+
 nav {
     padding: 1rem;
     display: flex;
@@ -52,9 +52,11 @@ nav ul{
     margin: 0;
     padding: 0;
 }
+
 ul {
     text-align: start;
 }
+
 nav li a{
     display: flex;
     align-items: center;
@@ -72,23 +74,25 @@ li a img {
     width: 21px;
     height: 21px;
 }
+
 #navigation-bottom {
     background-color: var(--primary-color);
 }
+
 .content {
     width: 100%;
     min-height: 100vh;
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
     background-color: var(--background-color);
     padding: 1rem;
     gap: 1rem;
-
 }
 #sector-content {
     flex-direction: row;
     justify-content: space-between;
 }
+
 .sector-content-left {
     flex-grow: 2;
 }
@@ -103,8 +107,8 @@ li a img {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-
 }
+
 article{
     background-color: white;
     padding: 1rem;
@@ -114,10 +118,12 @@ article{
     align-items: center;
     box-shadow: 3px 4px 5px 0px #bbbbbb;
 }
+
 article img{
     max-height: 75px;
     max-width: 170px;
 }
+
 .aussteller-card {
     display: flex;
     flex-direction: row;
@@ -126,22 +132,20 @@ article img{
     padding: 0 1rem;
     box-shadow: 3px 4px 5px 0px #bbbbbb;
 }
+
 .aussteller-card-icons {
     display: flex;
     gap: 1rem;
     align-items: center;
-
 }
 .aussteller-card-icons img{
-height: 1rem;
-
+    height: 1rem;
 }
 
 .admin-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 #aussteller-form {
@@ -173,13 +177,13 @@ input, select{
     border-radius: 0.5rem;
     padding: 5px;
 }
+
 #anmeldung-title{
     display: flex;
     justify-content: space-between;
 }
 
 .sector-card{
-
     background-color: white;
     padding: 0 1rem;
     padding-bottom: 2rem;
@@ -190,7 +194,7 @@ input, select{
 .sector-view{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
-   }
+}
 
 textarea{
     border: 1px solid var(--onBackground-color);
@@ -199,6 +203,7 @@ textarea{
     height: 8em;
     padding: 5px;
 }
+
 .aussteller-status {
     display: flex;
     gap: 2rem;
@@ -209,7 +214,6 @@ textarea{
     flex-basis: 18rem;
     border-left: 3px solid grey;
 }
-
 
 #entry-block{
     padding-bottom: 0.5em;
@@ -243,14 +247,12 @@ input[value=Hinzufügen]{
     background-color: #ffd82a;
 }
 
-
 .aussteller-status div{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
-
 
 .error-message{
     background-color: crimson;
@@ -307,9 +309,11 @@ input[value=Hinzufügen]{
     justify-content: space-between;
     gap: 5px;
 }
+
 .warning-true {
     color: darkred;
 }
+
 .warning-false {
     color: darkgreen;
 }

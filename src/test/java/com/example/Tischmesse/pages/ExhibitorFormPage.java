@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-
 public class ExhibitorFormPage {
 
     private static final String BASE_URL = "http://localhost:";
@@ -46,8 +44,6 @@ public class ExhibitorFormPage {
 
     @FindBy(css = "#submit-Button-Form")
     private WebElement formEntryButton;
-
-
 
     public WebElement getCompanyNameInputField(){ return companyName;}
 

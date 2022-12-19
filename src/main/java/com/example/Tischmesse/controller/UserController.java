@@ -1,26 +1,20 @@
 package com.example.Tischmesse.controller;
 
-
 import com.example.Tischmesse.model.User;
 import com.example.Tischmesse.service.UserService;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.Collections;
-
 
 @Controller
 public class UserController {
 
     private final UserService service;
-
 
     public UserController(UserService service) {
         this.service = service;
