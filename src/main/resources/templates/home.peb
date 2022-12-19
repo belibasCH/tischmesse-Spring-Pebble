@@ -36,7 +36,7 @@
                         <img src="{{ href("/img/sector-icon.svg") }}" alt="sector-icon">
                         <p>
                                 {%if entry.sectors is empty %}
-                                    ?
+                                    Keiner Branche zugewiesen
                                 {%endif%}
                                 {%for sector in entry.sectors %}
                                     {{ sector.sectorName }},
